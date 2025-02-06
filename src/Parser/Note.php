@@ -38,13 +38,14 @@ class Note extends \Geekish\Gedcom\Parser\Component
 
         $parser->forward();
 
-        while (!$parser->eof()) {
+        while (! $parser->eof()) {
             $record = $parser->getCurrentLineRecord();
             $currentDepth = (int) $record[0];
             $recordType = strtoupper(trim((string) $record[1]));
 
             if ($currentDepth <= $depth) {
                 $parser->back();
+
                 break;
             }
 
@@ -54,26 +55,32 @@ class Note extends \Geekish\Gedcom\Parser\Component
                     if (isset($record[2])) {
                         $note->setNote($note->getNote().$record[2]);
                     }
+
                     break;
                 case 'CONC':
                     if (isset($record[2])) {
                         $note->setNote($note->getNote().$record[2]);
                     }
+
                     break;
                 case 'REFN':
                     $refn = \Geekish\Gedcom\Parser\Refn::parse($parser);
                     $note->addRefn($refn);
+
                     break;
                 case 'RIN':
                     $note->setRin(trim((string) $record[2]));
+
                     break;
                 case 'SOUR':
                     $sour = \Geekish\Gedcom\Parser\SourRef::parse($parser);
                     $note->addSour($sour);
+
                     break;
                 case 'CHAN':
                     $chan = \Geekish\Gedcom\Parser\Chan::parse($parser);
                     $note->setChan($chan);
+
                     break;
                 default:
                     $parser->logUnhandledRecord(self::class.' @ '.__LINE__);

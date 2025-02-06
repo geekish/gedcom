@@ -17,6 +17,7 @@ class WriterTest extends TestCase
                 ->method('get' . ucfirst($property))
                 ->willReturn($mock);
         }
+
         return $gedcom;
     }
 

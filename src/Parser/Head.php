@@ -38,13 +38,14 @@ class Head extends \Geekish\Gedcom\Parser\Component
 
         $parser->forward();
 
-        while (!$parser->eof()) {
+        while (! $parser->eof()) {
             $record = $parser->getCurrentLineRecord();
             $currentDepth = (int) $record[0];
             $recordType = strtoupper(trim((string) $record[1]));
 
             if ($currentDepth <= $depth) {
                 $parser->back();
+
                 break;
             }
 
@@ -52,44 +53,56 @@ class Head extends \Geekish\Gedcom\Parser\Component
                 case 'SOUR':
                     $sour = \Geekish\Gedcom\Parser\Head\Sour::parse($parser);
                     $head->setSour($sour);
+
                     break;
                 case 'SUBM':
                     $head->setSubm($parser->normalizeIdentifier($record[2]));
+
                     break;
                 case 'SUBN':
                     $head->setSubn($parser->normalizeIdentifier($record[2]));
+
                     break;
                 case 'DEST':
                     $dest = \Geekish\Gedcom\Parser\Head\Dest::parse($parser);
                     $head->setDest($dest);
+
                     break;
                 case 'FILE':
                     $head->setFile(trim((string) $record[2]));
+
                     break;
                 case 'COPR':
                     $head->setCopr(trim((string) $record[2]));
+
                     break;
                 case 'LANG':
                     $head->setLang(trim((string) $record[2]));
+
                     break;
                 case 'DATE':
                     $date = \Geekish\Gedcom\Parser\Head\Date::parse($parser);
                     $head->setDate($date);
+
                     break;
                 case 'GEDC':
                     $gedc = \Geekish\Gedcom\Parser\Head\Gedc::parse($parser);
                     $head->setGedc($gedc);
+
                     break;
                 case 'CHAR':
                     $char = \Geekish\Gedcom\Parser\Head\Char::parse($parser);
                     $head->setChar($char);
+
                     break;
                 case 'PLAC':
                     $plac = \Geekish\Gedcom\Parser\Head\Plac::parse($parser);
                     $head->setPlac($plac);
+
                     break;
                 case 'NOTE':
                     $head->setNote($parser->parseMultiLineRecord());
+
                     break;
                 default:
                     $parser->logUnhandledRecord(self::class.' @ '.__LINE__);

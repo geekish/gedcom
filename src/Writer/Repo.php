@@ -68,7 +68,7 @@ class Repo
 
         // REFN
         $refn = $repo->getRefn();
-        if (!empty($refn) && $refn !== []) {
+        if (! empty($refn) && $refn !== []) {
             foreach ($refn as $item) {
                 if ($item) {
                     $_convert = \Geekish\Gedcom\Writer\Refn::convert($item, $level);

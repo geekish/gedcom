@@ -30,17 +30,17 @@ class Chan
         $level++;
         // DATE
         $_date = $chan->getDate();
-        if (!empty($_date)) {
+        if (! empty($_date)) {
             $output .= $level.' DATE '.$_date."\n";
         }
         // TIME
         $_time = $chan->getDate();
-        if (!empty($_time)) {
+        if (! empty($_time)) {
             $output .= $level.' DATE '.$_time."\n";
         }
         // $_note = array()
         $_note = $chan->getNote();
-        if (!empty($_note) && $_note !== []) {
+        if (! empty($_note) && $_note !== []) {
             foreach ($_note as $item) {
                 $_convert = \Geekish\Gedcom\Writer\NoteRef::convert($item, $level);
                 $output .= $_convert;

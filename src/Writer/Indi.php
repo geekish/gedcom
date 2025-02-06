@@ -37,7 +37,7 @@ class Indi
 
         // uid
         $uid = $indi->getUid();
-        if (!empty($uid)) {
+        if (! empty($uid)) {
             $output .= $level.' _UID '.$uid."\n";
         }
 
@@ -45,7 +45,7 @@ class Indi
         // Gedcom/Record/Attr extend Gedcom/Record/Even and there is no change.
         // So used convert Even
         $attr = $indi->getAllAttr();
-        if (!empty($attr) && $attr !== []) {
+        if (! empty($attr) && $attr !== []) {
             foreach ($attr as $item) {
                 $_convert = \Geekish\Gedcom\Writer\Indi\Even::convert($item, $level);
                 $output .= $_convert;
@@ -54,7 +54,7 @@ class Indi
 
         // $even
         $even = $indi->getAllEven();
-        if (!empty($even) && $even !== []) {
+        if (! empty($even) && $even !== []) {
             foreach ($even as $items) {
                 foreach ($items as $item) {
                     if ($item) {
@@ -68,7 +68,7 @@ class Indi
         // $note
 
         $note = $indi->getNote();
-        if (!empty($note) && $note !== []) {
+        if (! empty($note) && $note !== []) {
             foreach ($note as $item) {
                 $_convert = \Geekish\Gedcom\Writer\NoteRef::convert($item, $level);
                 $output .= $_convert;
@@ -77,7 +77,7 @@ class Indi
 
         // $obje
         $obje = $indi->getObje();
-        if (!empty($obje) && $obje !== []) {
+        if (! empty($obje) && $obje !== []) {
             foreach ($obje as $item) {
                 $_convert = \Geekish\Gedcom\Writer\ObjeRef::convert($item, $level);
                 $output .= $_convert;
@@ -86,7 +86,7 @@ class Indi
 
         // $sour
         $sour = $indi->getSour();
-        if (!empty($sour) && $sour !== []) {
+        if (! empty($sour) && $sour !== []) {
             foreach ($sour as $item) {
                 $_convert = \Geekish\Gedcom\Writer\SourRef::convert($item, $level);
                 $output .= $_convert;
@@ -95,7 +95,7 @@ class Indi
 
         // $name
         $name = $indi->getName();
-        if (!empty($name) && $name !== []) {
+        if (! empty($name) && $name !== []) {
             foreach ($name as $item) {
                 $_convert = \Geekish\Gedcom\Writer\Indi\Name::convert($item, $level);
                 $output .= $_convert;
@@ -104,9 +104,9 @@ class Indi
 
         // $alia
         $alia = $indi->getAlia();
-        if (!empty($alia) && $alia !== []) {
+        if (! empty($alia) && $alia !== []) {
             foreach ($alia as $item) {
-                if (!empty($item)) {
+                if (! empty($item)) {
                     $_convert = $level.' ALIA '.$item."\n";
                     $output .= $_convert;
                 }
@@ -115,58 +115,58 @@ class Indi
 
         // $sex
         $sex = $indi->getSex();
-        if (!empty($sex)) {
+        if (! empty($sex)) {
             $output .= $level.' SEX '.$sex."\n";
         }
 
         // $birthday
         $birthday = $indi->getBirt();
-        if (!empty($birthday)) {
+        if (! empty($birthday)) {
             $output .= $level.' BIRT '."\n";
             $output .= ($level + 1).' DATE '.$birthday."\n";
         }
 
         // $deathday
         $deathday = $indi->getDeat();
-        if (!empty($deathday)) {
+        if (! empty($deathday)) {
             $output .= $level.' DEAT '."\n";
             $output .= ($level + 1).' DATE '.$deathday."\n";
         }
 
         // $burialday
         $burialday = $indi->getBuri();
-        if (!empty($burialday)) {
+        if (! empty($burialday)) {
             $output .= $level.' BURI '."\n";
             $output .= ($level + 1).' DATE '.$burialday."\n";
         }
 
         // $rin
         $rin = $indi->getRin();
-        if (!empty($rin)) {
+        if (! empty($rin)) {
             $output .= $level.' RIN '.$rin."\n";
         }
 
         // $resn
         $resn = $indi->getResn();
-        if (!empty($resn)) {
+        if (! empty($resn)) {
             $output .= $level.' RESN '.$resn."\n";
         }
 
         // $rfn
         $rfn = $indi->getRfn();
-        if (!empty($rfn)) {
+        if (! empty($rfn)) {
             $output .= $level.' RFN '.$rfn."\n";
         }
 
         // $afn
         $afn = $indi->getAfn();
-        if (!empty($afn)) {
+        if (! empty($afn)) {
             $output .= $level.' AFN '.$afn."\n";
         }
 
         // Fams[]
         $fams = $indi->getFams();
-        if (!empty($fams) && $fams !== []) {
+        if (! empty($fams) && $fams !== []) {
             foreach ($fams as $item) {
                 $_convert = \Geekish\Gedcom\Writer\Indi\Fams::convert($item, $level);
                 $output .= $_convert;
@@ -175,7 +175,7 @@ class Indi
 
         // Famc[]
         $famc = $indi->getFamc();
-        if (!empty($famc) && $famc !== []) {
+        if (! empty($famc) && $famc !== []) {
             foreach ($famc as $item) {
                 $_convert = \Geekish\Gedcom\Writer\Indi\Famc::convert($item, $level);
                 $output .= $_convert;
@@ -184,7 +184,7 @@ class Indi
 
         // Asso[]
         $asso = $indi->getAsso();
-        if (!empty($asso) && $asso !== []) {
+        if (! empty($asso) && $asso !== []) {
             foreach ($asso as $item) {
                 $_convert = \Geekish\Gedcom\Writer\Indi\Asso::convert($item, $level);
                 $output .= $_convert;
@@ -193,9 +193,9 @@ class Indi
 
         // $subm
         $subm = $indi->getSubm();
-        if (!empty($subm) && $subm !== []) {
+        if (! empty($subm) && $subm !== []) {
             foreach ($subm as $item) {
-                if (!empty($item)) {
+                if (! empty($item)) {
                     $_convert = $level.' SUBM '.$item."\n";
                     $output .= $_convert;
                 }
@@ -204,7 +204,7 @@ class Indi
 
         // $anci
         $anci = $indi->getAnci();
-        if (!empty($anci) && $anci !== []) {
+        if (! empty($anci) && $anci !== []) {
             foreach ($anci as $item) {
                 $_convert = $level.' ANCI '.$item."\n";
                 $output .= $_convert;
@@ -213,7 +213,7 @@ class Indi
 
         // $desi
         $desi = $indi->getDesi();
-        if (!empty($desi) && $desi !== []) {
+        if (! empty($desi) && $desi !== []) {
             foreach ($desi as $item) {
                 $_convert = $level.' DESI '.$item."\n";
                 $output .= $_convert;
@@ -222,7 +222,7 @@ class Indi
 
         // Refn[]
         $refn = $indi->getRefn();
-        if (!empty($refn) && $refn !== []) {
+        if (! empty($refn) && $refn !== []) {
             foreach ($refn as $item) {
                 $_convert = \Geekish\Gedcom\Writer\Refn::convert($item, $level);
                 $output .= $_convert;
@@ -231,7 +231,7 @@ class Indi
 
         // chan
         $chan = $indi->getChan();
-        if (!empty($chan)) {
+        if (! empty($chan)) {
             $output .= $level.' CHAN '."\n";
             $output .= ($level + 1).' DATE '.$chan[0]."\n";
             $output .= ($level + 1).' TIME '.$chan[1]."\n";

@@ -33,31 +33,36 @@ class ObjeRef extends \Geekish\Gedcom\Parser\Component
 
         $parser->forward();
 
-        while (!$parser->eof()) {
+        while (! $parser->eof()) {
             $record = $parser->getCurrentLineRecord();
             $recordType = strtoupper(trim((string) $record[1]));
             $currentDepth = (int) $record[0];
 
             if ($currentDepth <= $depth) {
                 $parser->back();
+
                 break;
             }
 
             switch ($recordType) {
                 case 'TITL':
                     $obje->setTitl(trim((string) $record[2]));
+
                     break;
                 case 'FILE':
                     $obje->setFile(trim((string) $record[2]));
+
                     break;
                 case 'FORM':
                     $obje->setForm(trim((string) $record[2]));
+
                     break;
                 case 'NOTE':
                     $note = \Geekish\Gedcom\Parser\NoteRef::parse($parser);
                     if ($note) {
                         $obje->addNote($note);
                     }
+
                     break;
                 default:
                     $parser->logUnhandledRecord(get_class() . ' @ ' . __LINE__);

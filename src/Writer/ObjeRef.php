@@ -29,7 +29,7 @@ class ObjeRef
 
         // $_note
         $_obje = $obje->getObje();
-        if (!empty($_note)) {
+        if (! empty($_note)) {
             $output .= $level.' OBJE '.$_obje."\n";
         } else {
             $output .= $level." OBJE \n";
@@ -38,25 +38,25 @@ class ObjeRef
         $level++;
         // _form
         $_form = $obje->getForm();
-        if (!empty($_form)) {
+        if (! empty($_form)) {
             $output .= $level.' FORM '.$_form."\n";
         }
 
         // _titl
         $_titl = $obje->getTitl();
-        if (!empty($_titl)) {
+        if (! empty($_titl)) {
             $output .= $level.' TITL '.$_titl."\n";
         }
 
         // _file
         $_file = $obje->getFile();
-        if (!empty($_file)) {
+        if (! empty($_file)) {
             $output .= $level.' FILE '.$_file."\n";
         }
 
         // $_note = array()
         $_note = $obje->getNote();
-        if (!empty($_note) && (is_countable($_note) ? count($_note) : 0) > 0) {
+        if (! empty($_note) && (is_countable($_note) ? count($_note) : 0) > 0) {
             foreach ($_note as $item) {
                 $_convert = \Geekish\Gedcom\Writer\NoteRef::convert($item, $level);
                 $output .= $_convert;

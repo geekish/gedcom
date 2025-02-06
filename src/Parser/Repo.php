@@ -36,51 +36,62 @@ class Repo extends \Geekish\Gedcom\Parser\Component
 
         $parser->forward();
 
-        while (!$parser->eof()) {
+        while (! $parser->eof()) {
             $record = $parser->getCurrentLineRecord();
             $currentDepth = (int) $record[0];
             $recordType = strtoupper(trim((string) $record[1]));
 
             if ($currentDepth <= $depth) {
                 $parser->back();
+
                 break;
             }
 
             switch ($recordType) {
                 case 'NAME':
                     $repo->setName(trim((string) $record[2]));
+
                     break;
                 case 'ADDR':
                     $addr = \Geekish\Gedcom\Parser\Addr::parse($parser);
                     $repo->setAddr($addr);
+
                     break;
                 case 'PHON':
                     $repo->addPhon(trim((string) $record[2]));
+
                     break;
                 case 'EMAIL':
                     $repo->addEmail(trim((string) $record[2]));
+
                     break;
                 case 'FAX':
                     $repo->addFax(trim((string) $record[2]));
+
                     break;
                 case 'WWW':
                     $repo->addWww(trim((string) $record[2]));
+
                     break;
                 case 'NOTE':
                     if ($note = \Geekish\Gedcom\Parser\NoteRef::parse($parser)) {
                         $repo->addNote($note);
                     }
+
                     break;
                 case 'REFN':
                     $refn = \Geekish\Gedcom\Parser\Refn::parse($parser);
                     $repo->addRefn($refn);
+
                     break;
                 case 'RIN':
                     $repo->setRin(trim((string) $record[2]));
+
                     break;
                 case 'CHAN':
                     $chan = \Geekish\Gedcom\Parser\Chan::parse($parser);
                     $repo->setChan($chan);
+
                     break;
                 default:
                     $parser->logUnhandledRecord(self::class.' @ '.__LINE__);

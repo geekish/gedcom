@@ -32,57 +32,69 @@ class Name extends \Geekish\Gedcom\Parser\Component
 
         $parser->forward();
 
-        while (!$parser->eof()) {
+        while (! $parser->eof()) {
             $record = $parser->getCurrentLineRecord();
             $recordType = strtoupper(trim((string) $record[1]));
             $currentDepth = (int) $record[0];
 
             if ($currentDepth <= $depth) {
                 $parser->back();
+
                 break;
             }
 
-            if (!isset($record[2])) {
+            if (! isset($record[2])) {
                 $record[2] = '';
             }
 
             switch ($recordType) {
                 case 'TYPE':
                     $name->setType(trim((string) $record[2]));
+
                     break;
                 case 'NPFX':
                     $name->setNpfx(trim((string) $record[2]));
+
                     break;
                 case 'GIVN':
                     $name->setGivn(trim((string) $record[2]));
+
                     break;
                 case 'NICK':
                     $name->setNick(trim((string) $record[2]));
+
                     break;
                 case 'SPFX':
                     $name->setSpfx(trim((string) $record[2]));
+
                     break;
                 case 'SURN':
                     $name->setSurn(trim((string) $record[2]));
+
                     break;
                 case 'NSFX':
                     $name->setNsfx(trim((string) $record[2]));
+
                     break;
                 case 'SOUR':
                     $sour = \Geekish\Gedcom\Parser\SourRef::parse($parser);
                     $name->addSour($sour);
+
                     break;
                 case 'NOTE':
                     $note = \Geekish\Gedcom\Parser\NoteRef::parse($parser);
                     if ($note) {
                         $name->addNote($note);
                     }
+
                     break;
                 case 'FONE':
                     $name->setFone(\Parser\Indi\Name\Fone::parse($parser));
+
                     break;
                 case 'ROMN':
                     $name->setRomn(\Parser\Indi\Name\Romn::parse($parser));
+
                     break;
                 default:
                     $parser->logUnhandledRecord(self::class.' @ '.__LINE__);

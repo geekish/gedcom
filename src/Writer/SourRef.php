@@ -26,13 +26,13 @@ class SourRef
     {
         $output = '';
         $_sour = $sour->getSour();
-        if (!empty($_sour)) {
+        if (! empty($_sour)) {
             $output .= $level.' SOUR '.$_sour."\n";
         }
         $level++;
         // protected $_text    = null;
         $_text = $sour->getText();
-        if (!empty($_text)) {
+        if (! empty($_text)) {
             $output .= $level.' TEXT '.$_text."\n";
         }
         // protected $_note    = array();
@@ -49,7 +49,7 @@ class SourRef
         }
         // protected $_page setPage
         $_page = $sour->getPage();
-        if (!empty($_page)) {
+        if (! empty($_page)) {
             $output .= $level.' PAGE '.$_page."\n";
         }
         // protected $_even    = null;
@@ -60,9 +60,10 @@ class SourRef
         }
         // protected $_quay
         $_quay = $sour->getQuay();
-        if (!empty($_quay)) {
+        if (! empty($_quay)) {
             $output .= $level.' QUAY '.$_quay."\n";
         }
+
         // protected $_obje    = array();
         // This is not defined in parser.
         return $output;

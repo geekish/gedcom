@@ -38,7 +38,7 @@ class Caln
 
         // medi
         $medi = $caln->getMedi();
-        if (!empty($medi)) {
+        if (! empty($medi)) {
             $output .= $level.' MEDI '.$medi."\n";
         }
 

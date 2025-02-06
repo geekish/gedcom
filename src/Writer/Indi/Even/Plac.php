@@ -28,7 +28,7 @@ class Plac
 
         // $plac
         $_plac = $plac->getPlac();
-        if (!empty($_plac)) {
+        if (! empty($_plac)) {
             $output .= $level.' PLAC '.$_plac."\n";
         } else {
             $output .= $level." PLAC\n";
@@ -39,7 +39,7 @@ class Plac
 
         // $form
         $form = $plac->getForm();
-        if (!empty($form)) {
+        if (! empty($form)) {
             $output .= $level.' FORM '.$form."\n";
         }
 

@@ -36,62 +36,75 @@ class Subm extends \Geekish\Gedcom\Parser\Component
 
         $parser->forward();
 
-        while (!$parser->eof()) {
+        while (! $parser->eof()) {
             $record = $parser->getCurrentLineRecord();
             $currentDepth = (int) $record[0];
             $recordType = strtoupper(trim((string) $record[1]));
 
             if ($currentDepth <= $depth) {
                 $parser->back();
+
                 break;
             }
 
             switch ($recordType) {
                 case 'NAME':
                     $subm->setName(isset($record[2]) ? trim((string) $record[2]) : '');
+
                     break;
                 case 'ADDR':
                     $addr = \Geekish\Gedcom\Parser\Addr::parse($parser);
                     $subm->setAddr($addr);
+
                     break;
                 case 'PHON':
                     $phone = \Geekish\Gedcom\Parser\Phon::parse($parser);
                     $subm->addPhon($phone);
+
                     break;
                 case 'EMAIL':
                     $email = isset($record[2]) ? trim((string) $record[2]) : '';
                     $subm->addEmail($email);
+
                     break;
                 case 'FAX':
                     $fax = isset($record[2]) ? trim((string) $record[2]) : '';
                     $subm->addFax($fax);
+
                     break;
                 case 'WWW':
                     $www = isset($record[2]) ? trim((string) $record[2]) : '';
                     $subm->addWww($www);
+
                     break;
                 case 'NOTE':
                     $note = \Geekish\Gedcom\Parser\NoteRef::parse($parser);
                     if ($note) {
                         $subm->addNote($note);
                     }
+
                     break;
                 case 'OBJE':
                     $obje = \Geekish\Gedcom\Parser\ObjeRef::parse($parser);
                     $subm->addObje($obje);
+
                     break;
                 case 'CHAN':
                     $chan = \Geekish\Gedcom\Parser\Chan::parse($parser);
                     $subm->setChan($chan);
+
                     break;
                 case 'RIN':
                     $subm->setRin(isset($record[2]) ? trim((string) $record[2]) : '');
+
                     break;
                 case 'RFN':
                     $subm->setRfn(isset($record[2]) ? trim((string) $record[2]) : '');
+
                     break;
                 case 'LANG':
                     $subm->addLang(isset($record[2]) ? trim((string) $record[2]) : '');
+
                     break;
                 default:
                     $parser->logUnhandledRecord(self::class.' @ '.__LINE__);

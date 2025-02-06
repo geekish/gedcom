@@ -37,13 +37,13 @@ class Famc
 
         // PEDI
         $pedi = $famc->getPedi();
-        if (!empty($pedi)) {
+        if (! empty($pedi)) {
             $output .= $level.' PEDI '.$pedi."\n";
         }
 
         // note
         $note = $famc->getNote();
-        if (!empty($note) && (is_countable($note) ? count($note) : 0) > 0) {
+        if (! empty($note) && (is_countable($note) ? count($note) : 0) > 0) {
             foreach ($note as $item) {
                 $_convert = \Geekish\Gedcom\Writer\NoteRef::convert($item, $level);
                 $output .= $_convert;

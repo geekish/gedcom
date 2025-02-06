@@ -29,19 +29,19 @@ class Data
 
         // $_date;
         $date = $data->getDate();
-        if (!empty($date)) {
+        if (! empty($date)) {
             $output .= $level.' DATE '.$date."\n";
         }
 
         // $_agnc AGNC
         $_agnc = $data->getAgnc();
-        if (!empty($_agnc)) {
+        if (! empty($_agnc)) {
             $output .= $level.' AGNC '.$_agnc."\n";
         }
 
         // $_text
         $_text = $data->getText();
-        if (!empty($_text)) {
+        if (! empty($_text)) {
             $output .= $level.' TEXT '.$_text."\n";
         }
 

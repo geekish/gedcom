@@ -38,56 +38,68 @@ abstract class Attr extends \Geekish\Gedcom\Parser\Component
 
         $parser->forward();
 
-        while (!$parser->eof()) {
+        while (! $parser->eof()) {
             $record = $parser->getCurrentLineRecord();
             $recordType = strtoupper(trim((string) $record[1]));
             $currentDepth = (int) $record[0];
 
             if ($currentDepth <= $depth) {
                 $parser->back();
+
                 break;
             }
 
             switch ($recordType) {
                 case 'TYPE':
                     $attr->setType(trim((string) $record[2]));
+
                     break;
                 case 'DATE':
                     $attr->setDate(trim((string) $record[2]));
+
                     break;
                 case 'PLAC':
                     $plac = \Geekish\Gedcom\Parser\Indi\Even\Plac::parse($parser);
                     $attr->setPlac($plac);
+
                     break;
                 case 'ADDR':
                     $attr->setAddr(\Geekish\Gedcom\Parser\Addr::parse($parser));
+
                     break;
                 case 'PHON':
                     $phone = \Geekish\Gedcom\Parser\Phon::parse($parser);
                     $attr->addPhon($phone);
+
                     break;
                 case 'CAUS':
                     $attr->setCaus(trim((string) $record[2]));
+
                     break;
                 case 'AGE':
                     $attr->setAge(trim((string) $record[2]));
+
                     break;
                 case 'AGNC':
                     $attr->setAgnc(trim((string) $record[2]));
+
                     break;
                 case 'SOUR':
                     $sour = \Geekish\Gedcom\Parser\SourRef::parse($parser);
                     $attr->addSour($sour);
+
                     break;
                 case 'OBJE':
                     $obje = \Geekish\Gedcom\Parser\ObjeRef::parse($parser);
                     $attr->addObje($obje);
+
                     break;
                 case 'NOTE':
                     $note = \Geekish\Gedcom\Parser\NoteRef::parse($parser);
                     if ($note) {
                         $attr->addNote($note);
                     }
+
                     break;
                 default:
                     $parser->logUnhandledRecord(self::class.' @ '.__LINE__);

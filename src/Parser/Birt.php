@@ -26,13 +26,14 @@ class Birt extends \Geekish\Gedcom\Parser\Component
 
         $birt = new \Geekish\Gedcom\Record\Birt();
 
-        while (!$parser->eof()) {
+        while (! $parser->eof()) {
             $record = $parser->getCurrentLineRecord();
             $recordType = trim((string) $record[1]);
             $currentDepth = (int) $record[0];
 
             if ($currentDepth <= $depth) {
                 $parser->back();
+
                 break;
             }
 

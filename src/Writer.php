@@ -73,6 +73,7 @@ class Writer
         if ($head) {
             $output = $formatInformation . Head::convert($head, $format);
         }
+
         return $output;
     }
 
@@ -82,6 +83,7 @@ class Writer
         if ($subn) {
             $output .= Subn::convert($subn);
         }
+
         return $output;
     }
 
@@ -93,6 +95,7 @@ class Writer
                 $output .= Subm::convert($item);
             }
         }
+
         return $output;
     }
 
@@ -104,6 +107,7 @@ class Writer
                 $output .= Sour::convert($item, 0);
             }
         }
+
         return $output;
     }
 
@@ -120,6 +124,7 @@ class Writer
                 }
             }
         }
+
         return $output;
     }
 
@@ -131,9 +136,9 @@ class Writer
                 $output .= Fam::convert($item);
             }
         }
+
         return $output;
     }
-
 
     protected static function convertNotes(array $notes): string
     {
@@ -143,6 +148,7 @@ class Writer
                 $output .= Note::convert($item);
             }
         }
+
         return $output;
     }
 
@@ -154,6 +160,7 @@ class Writer
                 $output .= Repo::convert($item);
             }
         }
+
         return $output;
     }
 
@@ -165,6 +172,7 @@ class Writer
                 $output .= Obje::convert($item);
             }
         }
+
         return $output;
     }
 }

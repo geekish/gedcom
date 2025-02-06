@@ -29,22 +29,25 @@ class File extends \Geekish\Gedcom\Parser\Component
         }
         $parser->forward();
 
-        while (!$parser->eof()) {
+        while (! $parser->eof()) {
             $record = $parser->getCurrentLineRecord();
             $recordType = strtoupper(trim((string) $record[1]));
             $currentDepth = (int) $record[0];
 
             if ($currentDepth <= $depth) {
                 $parser->back();
+
                 break;
             }
 
             switch ($recordType) {
                 case 'FORM':
                     $file->setDate(\Geekish\Gedcom\Parser\ObjeRef\File\Form::parse($parser));
+
                     break;
                 case 'TITL':
                     $file->setTitl(trim((string) $record[2]));
+                    // no break
                 default:
                     $parser->logUnhandledRecord(self::class.' @ '.__LINE__);
             }

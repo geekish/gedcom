@@ -33,7 +33,7 @@ class Wife
 
         // AGE
         $age = $wife->getAge();
-        if (!empty($age)) {
+        if (! empty($age)) {
             $output .= $level.' AGE '.$age."\n";
         }
 
