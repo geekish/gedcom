@@ -28,7 +28,7 @@ class NoteRef
 
         // $_note
         $_note = $note->getNote();
-        if (!empty($_note)) {
+        if (! empty($_note)) {
             $output .= $level.' NOTE '.$_note."\n";
         }
 

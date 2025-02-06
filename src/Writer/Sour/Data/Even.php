@@ -29,13 +29,13 @@ class Even
 
         // $date;
         $date = $even->getDate();
-        if (!empty($date)) {
+        if (! empty($date)) {
             $output .= $level.' DATE '.$date."\n";
         }
 
         // Plac
         $plac = $even->getPlac();
-        if (!empty($plac)) {
+        if (! empty($plac)) {
             $output .= $level.' PLAC '.$plac."\n";
         }
 

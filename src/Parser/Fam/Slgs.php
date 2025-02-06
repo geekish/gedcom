@@ -26,13 +26,14 @@ class Slgs extends \Geekish\Gedcom\Parser\Component
 
         $parser->forward();
 
-        while (!$parser->eof()) {
+        while (! $parser->eof()) {
             $record = $parser->getCurrentLineRecord();
             $recordType = strtoupper(trim((string) $record[1]));
             $currentDepth = (int) $record[0];
 
             if ($currentDepth <= $depth) {
                 $parser->back();
+
                 break;
             }
 
@@ -40,25 +41,31 @@ class Slgs extends \Geekish\Gedcom\Parser\Component
                 case 'STAT':
                     $stat = \Geekish\Gedcom\Parser\Fam\Slgs\Stat::parse($parser);
                     $slgs->setStat($stat);
+
                     break;
                 case 'DATE':
                     $slgs->setDate(trim((string) $record[2]));
+
                     break;
                 case 'PLAC':
                     $slgs->setPlac(trim((string) $record[2]));
+
                     break;
                 case 'TEMP':
                     $slgs->setTemp(trim((string) $record[2]));
+
                     break;
                 case 'SOUR':
                     $sour = \Geekish\Gedcom\Parser\SourRef::parse($parser);
                     $slgs->addSour($sour);
+
                     break;
                 case 'NOTE':
                     $note = \Geekish\Gedcom\Parser\NoteRef::parse($parser);
                     if ($note) {
                         $slgs->addNote($note);
                     }
+
                     break;
                 default:
                     $parser->logUnhandledRecord(self::class.' @ '.__LINE__);

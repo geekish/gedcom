@@ -23,7 +23,7 @@ class Date extends \Geekish\Gedcom\Parser\Component
 
         if (isset($record[1])) {
             $dat = new \Geekish\Gedcom\Record\Date();
-            if (!empty($record[2])) {
+            if (! empty($record[2])) {
                 $dat->setDate($record[2]);
             }
         } else {

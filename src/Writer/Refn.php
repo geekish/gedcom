@@ -36,7 +36,7 @@ class Refn
         $level++;
         // DATE
         $type = $refn->getType();
-        if (!empty($type)) {
+        if (! empty($type)) {
             $output .= $level.' TYPE '.$type."\n";
         }
 

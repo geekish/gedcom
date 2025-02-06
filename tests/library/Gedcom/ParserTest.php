@@ -61,8 +61,6 @@ class ParserTest extends TestCase
         $this->assertEquals(
             $head->getSour()->getCorp()->getAddr()->getAddr(),
             "7108 South Pine Cone Street\nSalt Lake City, UT 84121\nUSA"
-
-
         );
         $this->assertEquals($head->getSour()->getCorp()->getAddr()->getCity(), 'Salt Lake City');
         $this->assertEquals($head->getSour()->getCorp()->getAddr()->getStae(), 'UT');

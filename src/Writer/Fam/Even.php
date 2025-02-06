@@ -27,7 +27,7 @@ class Even
         $output = '';
 
         // $type;
-        if (!empty($eventType)) {
+        if (! empty($eventType)) {
             $output .= $level.' '.$eventType."\n";
         } else {
             return $output;
@@ -36,45 +36,45 @@ class Even
 
         // $type;
         $type = $even->getType();
-        if (!empty($type) && $type != $eventType) {
+        if (! empty($type) && $type != $eventType) {
             $output .= $level.' TYPE '.$type."\n";
         }
 
         // $date;
         $date = $even->getDate();
-        if (!empty($date)) {
+        if (! empty($date)) {
             $output .= $level.' DATE '.$date."\n";
         }
 
         // Plac
         $plac = $even->getPlac();
-        if (!empty($plac)) {
+        if (! empty($plac)) {
             $_convert = \Geekish\Gedcom\Writer\Indi\Even\Plac::convert($plac, $level);
             $output .= $_convert;
         }
 
         // $caus;
         $caus = $even->getCaus();
-        if (!empty($caus)) {
+        if (! empty($caus)) {
             $output .= $level.' CAUS '.$caus."\n";
         }
 
         // $age;
         $age = $even->getAge();
-        if (!empty($age)) {
+        if (! empty($age)) {
             $output .= $level.' AGE '.$age."\n";
         }
 
         // $addr
         $addr = $even->getAddr();
-        if (!empty($addr)) {
+        if (! empty($addr)) {
             $_convert = \Geekish\Gedcom\Writer\Addr::convert($addr, $level);
             $output .= $_convert;
         }
 
         // $phon = array()
         $phon = $even->getPhon();
-        if (!empty($phon) && (is_countable($phon) ? count($phon) : 0) > 0) {
+        if (! empty($phon) && (is_countable($phon) ? count($phon) : 0) > 0) {
             foreach ($phon as $item) {
                 $_convert = \Geekish\Gedcom\Writer\Phon::convert($item, $level);
                 $output .= $_convert;
@@ -82,20 +82,20 @@ class Even
         }
         // $agnc
         $agnc = $even->getAgnc();
-        if (!empty($agnc)) {
+        if (! empty($agnc)) {
             $output .= $level.' AGNC '.$agnc."\n";
         }
 
         // HUSB
         $husb = $even->getHusb();
-        if (!empty($husb)) {
+        if (! empty($husb)) {
             $_convert = \Geekish\Gedcom\Writer\Fam\Even\Husb::convert($husb, $level);
             $output .= $_convert;
         }
 
         // WIFE
         $wife = $even->getWife();
-        if (!empty($wife)) {
+        if (! empty($wife)) {
             $_convert = \Geekish\Gedcom\Writer\Fam\Even\Wife::convert($wife, $level);
             $output .= $_convert;
         }
@@ -105,7 +105,7 @@ class Even
 
         // $obje = array();
         $obje = $even->getObje();
-        if (!empty($obje) && $obje !== []) {
+        if (! empty($obje) && $obje !== []) {
             foreach ($obje as $item) {
                 $_convert = \Geekish\Gedcom\Writer\ObjeRef::convert($item, $level);
                 $output .= $_convert;
@@ -113,7 +113,7 @@ class Even
         }
         // $sour = array();
         $sour = $even->getSour();
-        if (!empty($sour) && $sour !== []) {
+        if (! empty($sour) && $sour !== []) {
             foreach ($sour as $item) {
                 $_convert = \Geekish\Gedcom\Writer\SourRef::convert($item, $level);
                 $output .= $_convert;
@@ -121,7 +121,7 @@ class Even
         }
         // $note = array();
         $note = $even->getNote();
-        if (!empty($note) && $note !== []) {
+        if (! empty($note) && $note !== []) {
             foreach ($note as $item) {
                 $_convert = \Geekish\Gedcom\Writer\NoteRef::convert($item, $level);
                 $output .= $_convert;

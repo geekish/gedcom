@@ -34,13 +34,14 @@ class Caln extends \Geekish\Gedcom\Parser\Component
 
         $parser->forward();
 
-        while (!$parser->eof()) {
+        while (! $parser->eof()) {
             $record = $parser->getCurrentLineRecord();
             $recordType = strtolower(trim((string) $record[1]));
             $lineDepth = (int) $record[0];
 
             if ($lineDepth <= $depth) {
                 $parser->back();
+
                 break;
             }
 

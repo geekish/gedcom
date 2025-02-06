@@ -38,7 +38,7 @@ class Subm
 
         // NAME
         $name = $subm->getName();
-        if (!empty($name)) {
+        if (! empty($name)) {
             $output .= $level.' NAME '.$name."\n";
         }
         // $chan
@@ -57,19 +57,19 @@ class Subm
 
         // $rin
         $rin = $subm->getRin();
-        if (!empty($rin)) {
+        if (! empty($rin)) {
             $output .= $level.' RIN '.$rin."\n";
         }
 
         // $rfn
         $rfn = $subm->getRfn();
-        if (!empty($rfn)) {
+        if (! empty($rfn)) {
             $output .= $level.' RFN '.$rfn."\n";
         }
 
         // $lang = array()
         $langs = $subm->getLang();
-        if (!empty($langs) && $langs !== []) {
+        if (! empty($langs) && $langs !== []) {
             foreach ($langs as $item) {
                 if ($item) {
                     $_convert = $level.' LANG '.$item."\n";
@@ -80,7 +80,7 @@ class Subm
 
         // $phon = array()
         $phon = $subm->getLang();
-        if (!empty($phon) && $phon !== []) {
+        if (! empty($phon) && $phon !== []) {
             foreach ($phon as $item) {
                 if ($item) {
                     $_convert = \Geekish\Gedcom\Writer\Phon::convert($item, $level);
@@ -91,7 +91,7 @@ class Subm
 
         // $obje = array()
         $obje = $subm->getObje();
-        if (!empty($obje) && $obje !== []) {
+        if (! empty($obje) && $obje !== []) {
             foreach ($obje as $item) {
                 $_convert = \Geekish\Gedcom\Writer\ObjeRef::convert($item, $level);
                 $output .= $_convert;
@@ -100,7 +100,7 @@ class Subm
 
         // note
         $note = $subm->getNote();
-        if (!empty($note) && $note !== []) {
+        if (! empty($note) && $note !== []) {
             foreach ($note as $item) {
                 $_convert = \Geekish\Gedcom\Writer\NoteRef::convert($item, $level);
                 $output .= $_convert;

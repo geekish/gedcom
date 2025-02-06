@@ -19,6 +19,7 @@ class DataOptimizer
     public static function normalizeIdentifier(string $identifier): string
     {
         $trimmed = self::trimString($identifier);
+
         return trim($trimmed, '@');
     }
 

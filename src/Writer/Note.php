@@ -28,7 +28,7 @@ class Note
         $level = 0;
         $output = '';
         $id = $note->getId();
-        if (!empty($id)) {
+        if (! empty($id)) {
             $output .= $level.' '.$id.' '." NOTE \n";
         } else {
             return $output;
@@ -50,7 +50,7 @@ class Note
 
         // REFN
         $refn = $note->getRefn();
-        if (!empty($refn) && (is_countable($refn) ? count($refn) : 0) > 0) {
+        if (! empty($refn) && (is_countable($refn) ? count($refn) : 0) > 0) {
             foreach ($refn as $item) {
                 if ($item) {
                     $_convert = \Geekish\Gedcom\Writer\Refn::convert($item, $level);
@@ -67,7 +67,7 @@ class Note
 
         // SOUR array
         $sour = $note->getSour();
-        if (!empty($sour) && (is_countable($sour) ? count($sour) : 0) > 0) {
+        if (! empty($sour) && (is_countable($sour) ? count($sour) : 0) > 0) {
             foreach ($sour as $item) {
                 if ($item) {
                     $_convert = \Geekish\Gedcom\Writer\SourRef::convert($item, $level);

@@ -37,38 +37,38 @@ class Name
 
         // NPFX
         $npfx = $name->getNpfx();
-        if (!empty($npfx)) {
+        if (! empty($npfx)) {
             $output .= $level.' NPFX '.$npfx."\n";
         }
 
         // GIVN
         $givn = $name->getGivn();
-        if (!empty($givn)) {
+        if (! empty($givn)) {
             $output .= $level.' GIVN '.$givn."\n";
         }
         // NICK
         $nick = $name->getNick();
-        if (!empty($nick)) {
+        if (! empty($nick)) {
             $output .= $level.' NICK '.$nick."\n";
         }
         // SPFX
         $spfx = $name->getSpfx();
-        if (!empty($spfx)) {
+        if (! empty($spfx)) {
             $output .= $level.' SPFX '.$spfx."\n";
         }
         // SURN
         $surn = $name->getSurn();
-        if (!empty($surn)) {
+        if (! empty($surn)) {
             $output .= $level.' SURN '.$surn."\n";
         }
         // NSFX
         $nsfx = $name->getNsfx();
-        if (!empty($nsfx)) {
+        if (! empty($nsfx)) {
             $output .= $level.' NSFX '.$nsfx."\n";
         }
         // SOUR
         $sour = $name->getSour();
-        if (!empty($sour) && (is_countable($sour) ? count($sour) : 0) > 0) {
+        if (! empty($sour) && (is_countable($sour) ? count($sour) : 0) > 0) {
             foreach ($sour as $item) {
                 $_convert = \Geekish\Gedcom\Writer\SourRef::convert($item, $level);
                 $output .= $_convert;
@@ -76,7 +76,7 @@ class Name
         }
         // note
         $note = $name->getSour();
-        if (!empty($note) && (is_countable($note) ? count($note) : 0) > 0) {
+        if (! empty($note) && (is_countable($note) ? count($note) : 0) > 0) {
             foreach ($note as $item) {
                 $_convert = \Geekish\Gedcom\Writer\NoteRef::convert($item, $level);
                 $output .= $_convert;

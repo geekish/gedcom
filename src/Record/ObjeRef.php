@@ -20,32 +20,32 @@ class ObjeRef extends \Geekish\Gedcom\Record
     /**
      * @var bool
      */
-    protected $_isRef   = false;
+    protected $_isRef = false;
 
     /**
      *
      */
-    protected $_obje    = null;
+    protected $_obje = null;
 
     /**
      *
      */
-    protected $_form    = null;
+    protected $_form = null;
 
     /**
      *
      */
-    protected $_titl    = null;
+    protected $_titl = null;
 
     /**
      *
      */
-    protected $_file    = null;
+    protected $_file = null;
 
     /**
      *
      */
-    protected $_note = array();
+    protected $_note = [];
 
     /**
      *

@@ -27,13 +27,14 @@ class Addr extends \Geekish\Gedcom\Parser\Component
         $addr->setAddr($line);
         $parser->forward();
 
-        while (!$parser->eof()) {
+        while (! $parser->eof()) {
             $record = $parser->getCurrentLineRecord();
             $recordType = strtolower(trim((string) $record[1]));
             $currentDepth = (int) $record[0];
 
             if ($currentDepth <= $depth) {
                 $parser->back();
+
                 break;
             }
 

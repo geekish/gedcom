@@ -26,28 +26,32 @@ class Chan extends \Geekish\Gedcom\Parser\Component
 
         $chan = new \Geekish\Gedcom\Record\Chan();
 
-        while (!$parser->eof()) {
+        while (! $parser->eof()) {
             $record = $parser->getCurrentLineRecord();
             $recordType = trim((string) $record[1]);
             $currentDepth = (int) $record[0];
 
             if ($currentDepth <= $depth) {
                 $parser->back();
+
                 break;
             }
 
             switch ($recordType) {
                 case 'DATE':
                     $chan->setDate(trim((string) $record[2]));
+
                     break;
                 case 'TIME':
                     $chan->setTime(trim((string) $record[2]));
+
                     break;
                 case 'NOTE':
                     $note = \Geekish\Gedcom\Parser\NoteRef::parse($parser);
                     if ($note) {
                         $chan->addNote($note);
                     }
+
                     break;
                 default:
                     $parser->logUnhandledRecord(self::class.' @ '.__LINE__);

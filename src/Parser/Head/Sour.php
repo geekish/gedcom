@@ -32,30 +32,35 @@ class Sour extends \Geekish\Gedcom\Parser\Component
 
         $parser->forward();
 
-        while (!$parser->eof()) {
+        while (! $parser->eof()) {
             $record = $parser->getCurrentLineRecord();
             $recordType = strtoupper(trim((string) $record[1]));
             $currentDepth = (int) $record[0];
 
             if ($currentDepth <= $depth) {
                 $parser->back();
+
                 break;
             }
 
             switch ($recordType) {
                 case 'VERS':
                     $source->setVers(trim((string) $record[2]));
+
                     break;
                 case 'NAME':
                     $source->setName(trim((string) $record[2]));
+
                     break;
                 case 'CORP':
                     $corp = \Geekish\Gedcom\Parser\Head\Sour\Corp::parse($parser);
                     $source->setCorp($corp);
+
                     break;
                 case 'DATA':
                     $data = \Geekish\Gedcom\Parser\Head\Sour\Data::parse($parser);
                     $source->setData($data);
+
                     break;
                 default:
                     $parser->logUnhandledRecord(self::class.' @ '.__LINE__);

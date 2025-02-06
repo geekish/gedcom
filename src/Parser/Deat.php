@@ -26,13 +26,14 @@ class Deat extends \Geekish\Gedcom\Parser\Component
 
         $deat = new \Geekish\Gedcom\Record\Deat();
 
-        while (!$parser->eof()) {
+        while (! $parser->eof()) {
             $record = $parser->getCurrentLineRecord();
             $recordType = trim((string) $record[1]);
             $currentDepth = (int) $record[0];
 
             if ($currentDepth <= $depth) {
                 $parser->back();
+
                 break;
             }
 

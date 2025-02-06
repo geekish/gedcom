@@ -36,45 +36,54 @@ class Obje extends \Geekish\Gedcom\Parser\Component
 
         $parser->forward();
 
-        while (!$parser->eof()) {
+        while (! $parser->eof()) {
             $record = $parser->getCurrentLineRecord();
             $currentDepth = (int) $record[0];
             $recordType = strtoupper(trim((string) $record[1]));
 
             if ($currentDepth <= $depth) {
                 $parser->back();
+
                 break;
             }
 
             switch ($recordType) {
                 case 'FORM':
                     $obje->setForm(trim($record[2]));
+
                     break;
                 case 'TITL':
                     $obje->setTitl(trim($record[2]));
+
                     break;
                 case 'OBJE':
                     $obje->setForm($parser->normalizeIdentifier($record[2]));
+
                     break;
                 case 'RIN':
                     $obje->setRin(trim($record[2]));
+
                     break;
                 case 'REFN':
                     $refn = \Geekish\Gedcom\Parser\Refn::parse($parser);
                     $obje->addRefn($refn);
+
                     break;
                 case 'BLOB':
                     $obje->setBlob($parser->parseMultiLineRecord());
+
                     break;
                 case 'NOTE':
                     $note = \Geekish\Gedcom\Parser\NoteRef::parse($parser);
                     if ($note) {
                         $obje->addNote($note);
                     }
+
                     break;
                 case 'CHAN':
                     $chan = \Geekish\Gedcom\Parser\Chan::parse($parser);
                     $obje->setChan($chan);
+
                     break;
                 default:
                     $parser->logUnhandledRecord(self::class.' @ '.__LINE__);

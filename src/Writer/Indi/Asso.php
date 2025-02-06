@@ -37,12 +37,12 @@ class Asso
 
         // RELA
         $rela = $asso->getRela();
-        if (!empty($rela)) {
+        if (! empty($rela)) {
             $output .= $level.' RELA '.$rela."\n";
         }
         // sour
         $sour = $asso->getSour();
-        if (!empty($sour) && (is_countable($sour) ? count($sour) : 0) > 0) {
+        if (! empty($sour) && (is_countable($sour) ? count($sour) : 0) > 0) {
             foreach ($sour as $item) {
                 $_convert = \Geekish\Gedcom\Writer\SourRef::convert($item, $level);
                 $output .= $_convert;
@@ -51,7 +51,7 @@ class Asso
 
         // note
         $note = $asso->getSour();
-        if (!empty($note) && (is_countable($note) ? count($note) : 0) > 0) {
+        if (! empty($note) && (is_countable($note) ? count($note) : 0) > 0) {
             foreach ($note as $item) {
                 $_convert = \Geekish\Gedcom\Writer\NoteRef::convert($item, $level);
                 $output .= $_convert;

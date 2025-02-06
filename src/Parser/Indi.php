@@ -36,13 +36,14 @@ class Indi extends \Geekish\Gedcom\Parser\Component
 
         $parser->forward();
 
-        while (!$parser->eof()) {
+        while (! $parser->eof()) {
             $record = $parser->getCurrentLineRecord();
             $recordType = strtoupper(trim((string) $record[1]));
             $currentDepth = (int) $record[0];
 
             if ($currentDepth <= $depth) {
                 $parser->back();
+
                 break;
             }
 
@@ -53,61 +54,77 @@ class Indi extends \Geekish\Gedcom\Parser\Component
             switch ($recordType) {
                 case '_UID':
                     $indi->setUid(trim((string) $record[2]));
+
                     break;
                 case 'NAME':
                     $name = \Geekish\Gedcom\Parser\Indi\Name::parse($parser);
                     $indi->addName($name);
+
                     break;
                 case 'ALIA':
                     $indi->addAlia($parser->normalizeIdentifier($record[2]));
+
                     break;
                 case 'SEX':
                     $indi->setSex(isset($record[2]) ? trim((string) $record[2]) : '');
+
                     break;
                 case 'RIN':
                     $indi->setRin(trim((string) $record[2]));
+
                     break;
                 case 'RESN':
                     $indi->setResn(trim((string) $record[2]));
+
                     break;
                 case 'RFN':
                     $indi->setRfn(trim((string) $record[2]));
+
                     break;
                 case 'AFN':
                     $indi->setAfn(trim((string) $record[2]));
+
                     break;
                 case 'CHAN':
                     $chan = \Geekish\Gedcom\Parser\Chan::parse($parser);
                     $indi->setChan($chan);
+
                     break;
                 case 'FAMS':
                     $fams = \Geekish\Gedcom\Parser\Indi\Fams::parse($parser);
                     if ($fams) {
                         $indi->addFams($fams);
                     }
+
                     break;
                 case 'FAMC':
                     $famc = \Geekish\Gedcom\Parser\Indi\Famc::parse($parser);
                     if ($famc) {
                         $indi->addFamc($famc);
                     }
+
                     break;
                 case 'ASSO':
                     $asso = \Geekish\Gedcom\Parser\Indi\Asso::parse($parser);
                     $indi->addAsso($asso);
+
                     break;
                 case 'ANCI':
                     $indi->addAnci($parser->normalizeIdentifier($record[2]));
+
                     break;
                 case 'DESI':
                     $indi->addDesi($parser->normalizeIdentifier($record[2]));
+
                     break;
                 case 'SUBM':
                     $indi->addSubm($parser->normalizeIdentifier($record[2]));
+
                     break;
                 case 'REFN':
                     $ref = \Geekish\Gedcom\Parser\Refn::parse($parser);
                     $indi->addRefn($ref);
+
                     break;
                 case 'BAPL':
                 case 'CONL':
@@ -118,20 +135,24 @@ class Indi extends \Geekish\Gedcom\Parser\Component
 
                     $lds = $class::parse($parser);
                     $indi->{'set' . $recordType}($lds);
+
                     break;
                 case 'OBJE':
                     $obje = \Geekish\Gedcom\Parser\ObjeRef::parse($parser);
                     $indi->addObje($obje);
+
                     break;
                 case 'NOTE':
                     $note = \Geekish\Gedcom\Parser\NoteRef::parse($parser);
                     if ($note) {
                         $indi->addNote($note);
                     }
+
                     break;
                 case 'SOUR':
                     $sour = \Geekish\Gedcom\Parser\SourRef::parse($parser);
                     $indi->addSour($sour);
+
                     break;
                 case 'ADOP':
                 case 'BIRT':
@@ -161,6 +182,7 @@ class Indi extends \Geekish\Gedcom\Parser\Component
 
                     $event = $class::parse($parser);
                     $indi->addEven($event);
+
                     break;
                 case 'CAST':
                 case 'DSCR':
@@ -180,6 +202,7 @@ class Indi extends \Geekish\Gedcom\Parser\Component
 
                     $att = $class::parse($parser);
                     $indi->addAttr($att);
+
                     break;
                 default:
                     $parser->logUnhandledRecord(self::class . ' @ ' . __LINE__);

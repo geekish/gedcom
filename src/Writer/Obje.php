@@ -60,7 +60,7 @@ class Obje
 
         // REFN
         $refn = $obje->getRefn();
-        if (!empty($refn) && (is_countable($refn) ? count($refn) : 0) > 0) {
+        if (! empty($refn) && (is_countable($refn) ? count($refn) : 0) > 0) {
             foreach ($refn as $item) {
                 if ($item) {
                     $_convert = \Geekish\Gedcom\Writer\Refn::convert($item, $level);

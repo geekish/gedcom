@@ -13,13 +13,14 @@ class Dest extends \Geekish\Gedcom\Parser\Component
 
         $parser->forward();
 
-        while (!$parser->eof()) {
+        while (! $parser->eof()) {
             $record = $parser->getCurrentLineRecord();
             $currentDepth = (int) $record[0];
             $recordType = strtoupper(trim((string) $record[1]));
 
             if ($currentDepth <= $depth) {
                 $parser->back();
+
                 break;
             }
 

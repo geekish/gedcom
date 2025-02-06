@@ -39,68 +39,81 @@ class Even extends \Geekish\Gedcom\Parser\Component
         }
 
         // ensures we capture any data following the EVEN type
-        if (isset($record[2]) && !empty($record[2])) {
+        if (isset($record[2]) && ! empty($record[2])) {
             $even->setAttr(trim((string) $record[2]));
         }
 
         $parser->forward();
 
-        while (!$parser->eof()) {
+        while (! $parser->eof()) {
             $record = $parser->getCurrentLineRecord();
             $recordType = strtoupper(trim((string) $record[1]));
             $currentDepth = (int) $record[0];
 
             if ($currentDepth <= $depth) {
                 $parser->back();
+
                 break;
             }
 
             switch ($recordType) {
                 case 'TYPE':
                     $even->setType(trim((string) $record[2]));
+
                     break;
                 case 'DATE':
                     $dat = \Geekish\Gedcom\Parser\Date::parse($parser);
                     $even->setDate($dat);
+
                     //$even->setDate(trim($record[2]))
                     break;
                 case 'PLAC':
                     $plac = \Geekish\Gedcom\Parser\Indi\Even\Plac::parse($parser);
                     $even->setPlac($plac);
+
                     break;
                 case 'ADDR':
                     $even->setAddr(\Geekish\Gedcom\Parser\Addr::parse($parser));
+
                     break;
                 case 'PHON':
                     $phone = \Geekish\Gedcom\Parser\Phon::parse($parser);
                     $even->addPhone($phone);
+
                     break;
                 case 'CAUS':
                     $even->setCaus(trim((string) $record[2]));
+
                     break;
                 case 'AGE':
                     $even->setAge($record);
+
                     break;
                 case 'AGNC':
                     $even->setAgnc(trim((string) $record[2]));
+
                     break;
                 case 'SOUR':
                     $sour = \Geekish\Gedcom\Parser\SourRef::parse($parser);
                     $even->addSour($sour);
+
                     break;
                 case 'OBJE':
                     $obje = \Geekish\Gedcom\Parser\ObjeRef::parse($parser);
                     $even->addObje($obje);
+
                     break;
                 case 'NOTE':
                     $note = \Geekish\Gedcom\Parser\NoteRef::parse($parser);
                     if ($note) {
                         $even->addNote($note);
                     }
+
                     break;
                 case 'CHAN':
                     $change = \Geekish\Gedcom\Parser\Chan::parse($parser);
                     $even->setChan($change);
+
                     break;
                 default:
                     $self = static::class;

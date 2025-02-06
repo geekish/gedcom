@@ -71,25 +71,26 @@ abstract class Record implements \Geekish\Gedcom\Models\RecordInterface
         if (str_starts_with((string) $method, 'add')) {
             $arr = strtolower(substr((string) $method, 3));
 
-            if (!property_exists($this, '_' . $arr) || !is_array($this->{'_' . $arr})) {
+            if (! property_exists($this, '_' . $arr) || ! is_array($this->{'_' . $arr})) {
                 throw new \Exception('Unknown ' . static::class . '::' . $arr);
             }
 
-            if (!is_array($args)) {
+            if (! is_array($args)) {
                 throw new \Exception('Incorrect arguments to ' . $method);
             }
 
-            if (!isset($args[0])) {
+            if (! isset($args[0])) {
                 // Argument can be empty since we trim it's value
                 return;
+
                 throw new \Exception('Unknown ' . static::class . '::' . $arr);
             }
 
-            if (!is_array($args)) {
+            if (! is_array($args)) {
                 throw new \Exception('Incorrect arguments to ' . $method);
             }
 
-            if (!isset($args[0])) {
+            if (! isset($args[0])) {
                 // Argument can be empty since we trim it's value
                 return;
             }
@@ -104,15 +105,15 @@ abstract class Record implements \Geekish\Gedcom\Models\RecordInterface
         } elseif (str_starts_with((string) $method, 'set')) {
             $arr = strtolower(substr((string) $method, 3));
 
-            if (!property_exists($this, '_' . $arr)) {
+            if (! property_exists($this, '_' . $arr)) {
                 throw new \Exception('Unknown ' . static::class . '::' . $arr);
             }
 
-            if (!is_array($args)) {
+            if (! is_array($args)) {
                 throw new \Exception('Incorrect arguments to ' . $method);
             }
 
-            if (!isset($args[0])) {
+            if (! isset($args[0])) {
                 // Argument can be empty since we trim it's value
                 return;
             }
@@ -127,7 +128,7 @@ abstract class Record implements \Geekish\Gedcom\Models\RecordInterface
         } elseif (str_starts_with((string) $method, 'get')) {
             $arr = strtolower(substr($method, 3));
 
-            if (!property_exists($this, '_' . $arr)) {
+            if (! property_exists($this, '_' . $arr)) {
                 throw new \Exception('Unknown ' . get_class($this) . '::' . $arr);
             }
 

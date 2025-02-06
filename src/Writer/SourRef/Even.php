@@ -28,7 +28,7 @@ class Even
 
         // $_date;
         $_even = $even->getEven();
-        if (!empty($_even)) {
+        if (! empty($_even)) {
             $output .= $level.' EVEN '.$_even."\n";
         } else {
             $output = $level." EVEN\n";
@@ -38,7 +38,7 @@ class Even
 
         // $_role ROLE
         $_role = $data->getRole();
-        if (!empty($_role)) {
+        if (! empty($_role)) {
             $output .= $level.' ROLE '.$_role."\n";
         }
 

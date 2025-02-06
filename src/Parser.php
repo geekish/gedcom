@@ -72,7 +72,7 @@ class Parser implements \Geekish\Gedcom\Parser\Interfaces\ParserInterface
         // line and blank out the returnedLine variable, otherwise grab
         // the next line from the file
 
-        if (!empty($this->_returnedLine)) {
+        if (! empty($this->_returnedLine)) {
             $this->_line = $this->_returnedLine;
             $this->_returnedLine = '';
         } else {
@@ -100,7 +100,6 @@ class Parser implements \Geekish\Gedcom\Parser\Interfaces\ParserInterface
 
         return $this;
     }
-
 
     /**
      * Skips to the next level in the GEDCOM file that is less than or equal to the specified level.
@@ -159,13 +158,14 @@ class Parser implements \Geekish\Gedcom\Parser\Interfaces\ParserInterface
 
         $this->forward();
 
-        while (!$this->eof()) {
+        while (! $this->eof()) {
             $record = $this->getCurrentLineRecord();
             $recordType = strtoupper(trim((string) $record[1]));
             $currentDepth = (int) $record[0];
 
             if ($currentDepth <= $depth) {
                 $this->back();
+
                 break;
             }
 
@@ -174,13 +174,14 @@ class Parser implements \Geekish\Gedcom\Parser\Interfaces\ParserInterface
                     $dataInstance = new \Geekish\Gedcom\Record\Data();
                     $this->forward();
 
-                    while (!$this->eof()) {
+                    while (! $this->eof()) {
                         $record = $this->getCurrentLineRecord();
                         $recordTypeData = strtoupper(trim((string) $record[1]));
                         $dataDepth = (int) $record[0];
 
                         if ($dataDepth <= $currentDepth) {
                             $this->back();
+
                             break;
                         }
 
@@ -188,13 +189,16 @@ class Parser implements \Geekish\Gedcom\Parser\Interfaces\ParserInterface
                             case 'TEXT':
                                 $textData = isset($record[2]) ? trim((string) $record[2]) : '';
                                 $dataInstance->setText($textData);
+
                                 break;
                             case 'CONT':
                                 $contData = isset($record[2]) ? "\n" + trim((string) $record[2]) : "\n";
                                 $dataInstance->setText($dataInstance->getText() + $contData);
+
                                 break;
                             default:
                                 $this->back();
+
                                 break 2;
                         }
 
@@ -210,14 +214,17 @@ class Parser implements \Geekish\Gedcom\Parser\Interfaces\ParserInterface
                     if (isset($record[2])) {
                         $data .= trim((string) $record[2]);
                     }
+
                     break;
                 case 'CONC':
                     if (isset($record[2])) {
                         $data .= ' ' . trim((string) $record[2]);
                     }
+
                     break;
                 default:
                     $this->back();
+
                     break 2;
             }
 
@@ -247,7 +254,7 @@ class Parser implements \Geekish\Gedcom\Parser\Interfaces\ParserInterface
      */
     public function getCurrentLineRecord($pieces = 3)
     {
-        if (!is_null($this->_lineRecord) && $this->_linePieces == $pieces) {
+        if (! is_null($this->_lineRecord) && $this->_linePieces == $pieces) {
             return $this->_lineRecord;
         }
 
@@ -340,14 +347,15 @@ class Parser implements \Geekish\Gedcom\Parser\Interfaces\ParserInterface
     {
         $this->_file = fopen($fileName, 'r'); //explode("\n", mb_convert_encoding($contents, 'UTF-8'));
 
-        if (!$this->_file) {
+        if (! $this->_file) {
             error_log("Failed to open file: ". $fileName);
+
             return null;
         }
 
         $this->forward();
 
-        while (!$this->eof()) {
+        while (! $this->eof()) {
             $record = $this->getCurrentLineRecord();
 
             if ($record === false) {

@@ -51,7 +51,7 @@ class Fam extends \Geekish\Gedcom\Record implements Noteable, Sourceable, Object
 
     public function addEven($recordType, $even)
     {
-        if (!array_key_exists($recordType, $this->_even)) {
+        if (! array_key_exists($recordType, $this->_even)) {
             $this->_even[$recordType] = [];
         }
 
@@ -120,7 +120,7 @@ class Fam extends \Geekish\Gedcom\Record implements Noteable, Sourceable, Object
 
     public function getExtensionTag(string $tag): string
     {
-        if (!isset($this->_extensiontags["_$tag"])) {
+        if (! isset($this->_extensiontags["_$tag"])) {
             return '';
         }
 

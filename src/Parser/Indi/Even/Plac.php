@@ -30,29 +30,33 @@ class Plac extends \Geekish\Gedcom\Parser\Component
 
         $parser->forward();
 
-        while (!$parser->eof()) {
+        while (! $parser->eof()) {
             $record = $parser->getCurrentLineRecord();
             $recordType = strtoupper(trim((string) $record[1]));
             $currentDepth = (int) $record[0];
 
             if ($currentDepth <= $depth) {
                 $parser->back();
+
                 break;
             }
 
             switch ($recordType) {
                 case 'FORM':
                     $plac->setForm(trim((string) $record[2]));
+
                     break;
                 case 'NOTE':
                     $note = \Geekish\Gedcom\Parser\NoteRef::parse($parser);
                     if ($note) {
                         $plac->addNote($note);
                     }
+
                     break;
                 case 'SOUR':
                     $sour = \Geekish\Gedcom\Parser\SourRef::parse($parser);
                     $plac->addSour($sour);
+
                     break;
                 default:
                     $parser->logUnhandledRecord(self::class.' @ '.__LINE__);

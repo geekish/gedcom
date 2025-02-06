@@ -33,7 +33,7 @@ class Husb
 
         // AGE
         $age = $husb->getAge();
-        if (!empty($age)) {
+        if (! empty($age)) {
             $output .= $level.' AGE '.$age."\n";
         }
 

@@ -281,7 +281,7 @@ class Indi extends \Geekish\Gedcom\Record implements Noteable, Objectable, Sourc
     {
         $attrName = $attr->getType();
 
-        if (!array_key_exists($attrName, $this->attr)) {
+        if (! array_key_exists($attrName, $this->attr)) {
             $this->attr[$attrName] = [];
         }
 
@@ -317,7 +317,7 @@ class Indi extends \Geekish\Gedcom\Record implements Noteable, Objectable, Sourc
     {
         $evenName = $even->getType();
 
-        if (!array_key_exists($evenName, $this->even)) {
+        if (! array_key_exists($evenName, $this->even)) {
             $this->even[$evenName] = [];
         }
 

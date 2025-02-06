@@ -32,38 +32,45 @@ abstract class Lds extends \Geekish\Gedcom\Parser\Component
 
         $parser->forward();
 
-        while (!$parser->eof()) {
+        while (! $parser->eof()) {
             $record = $parser->getCurrentLineRecord();
             $recordType = strtoupper(trim((string) $record[1]));
             $currentDepth = (int) $record[0];
 
             if ($currentDepth <= $depth) {
                 $parser->back();
+
                 break;
             }
 
             switch ($recordType) {
                 case 'STAT':
                     $lds->setStat(trim((string) $record[2]));
+
                     break;
                 case 'DATE':
                     $lds->setDate(trim((string) $record[2]));
+
                     break;
                 case 'PLAC':
                     $lds->setPlac(trim((string) $record[2]));
+
                     break;
                 case 'TEMP':
                     $lds->setTemp(trim((string) $record[2]));
+
                     break;
                 case 'SOUR':
                     $sour = \Geekish\Gedcom\Parser\SourRef::parse($parser);
                     $lds->addSour($sour);
+
                     break;
                 case 'NOTE':
                     $note = \Geekish\Gedcom\Parser\NoteRef::parse($parser);
                     if ($note) {
                         $lds->addNote($note);
                     }
+
                     break;
                 default:
                     $self = static::class;
