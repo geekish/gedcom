@@ -9,14 +9,12 @@
     "homepage": "http://github.com/geekish/gedcom",
     "license": "MIT",
     "require": {
-        "php": ">=8.4"
+        "php": "^8.4"
     },
     "require-dev": {
-        "driftingly/rector-laravel": "^1.0",
         "friendsofphp/php-cs-fixer": "^3.21.1",
         "phpstan/phpstan": "^1.12",
         "phpunit/phpunit": "^11.0",
-        "rector/rector": "^1.0",
         "squizlabs/php_codesniffer": "^3.8"
     },
     "autoload": {
