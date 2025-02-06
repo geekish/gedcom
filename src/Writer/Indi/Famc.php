@@ -31,14 +31,14 @@ class Famc
         if (empty($_famc)) {
             return $output;
         }
-        $output .= $level.' FAMC @'.$_famc."@\n";
+        $output .= $level . ' FAMC @' . $_famc . "@\n";
         // level up
         $level++;
 
         // PEDI
         $pedi = $famc->getPedi();
         if (! empty($pedi)) {
-            $output .= $level.' PEDI '.$pedi."\n";
+            $output .= $level . ' PEDI ' . $pedi . "\n";
         }
 
         // note

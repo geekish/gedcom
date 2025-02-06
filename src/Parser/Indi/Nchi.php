@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Parser\Indi;
 
-class Nchi extends \Geekish\Gedcom\Parser\Indi\Attr
-{
-}
+class Nchi extends \Geekish\Gedcom\Parser\Indi\Attr {}

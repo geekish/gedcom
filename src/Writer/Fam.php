@@ -30,7 +30,7 @@ class Fam
         if (empty($id)) {
             return $output;
         } else {
-            $output .= $level.' @'.$id.'@ FAM '."\n";
+            $output .= $level . ' @' . $id . '@ FAM ' . "\n";
         }
         // level up
         $level++;
@@ -38,13 +38,13 @@ class Fam
         // HUSB
         $husb = $fam->getHusb();
         if (! empty($husb)) {
-            $output .= $level.' HUSB @'.$husb."@\n";
+            $output .= $level . ' HUSB @' . $husb . "@\n";
         }
 
         // WIFE
         $wife = $fam->getWife();
         if (! empty($wife)) {
-            $output .= $level.' WIFE @'.$wife."@\n";
+            $output .= $level . ' WIFE @' . $wife . "@\n";
         }
 
         // CHIL
@@ -52,7 +52,7 @@ class Fam
         if (! empty($chil) && (is_countable($chil) ? count($chil) : 0) > 0) {
             foreach ($chil as $item) {
                 if ($item) {
-                    $_convert = $level.' CHIL @'.$item."@\n";
+                    $_convert = $level . ' CHIL @' . $item . "@\n";
                     $output .= $_convert;
                 }
             }
@@ -60,7 +60,7 @@ class Fam
         // NCHI
         $nchi = $fam->getNchi();
         if (! empty($nchi)) {
-            $output .= $level.' NCHI '.$nchi."\n";
+            $output .= $level . ' NCHI ' . $nchi . "\n";
         }
 
         // SUBM array
@@ -69,7 +69,7 @@ class Fam
         if (! empty($subm) && (is_countable($subm) ? count($subm) : 0) > 0) {
             foreach ($subm as $item) {
                 if ($item) {
-                    $output .= $level.' SUBM '.$item."\n";
+                    $output .= $level . ' SUBM ' . $item . "\n";
                 }
             }
         }
@@ -77,7 +77,7 @@ class Fam
         // RIN
         $rin = $fam->getRin();
         if (! empty($rin)) {
-            $output .= $level.' RIN '.$rin."\n";
+            $output .= $level . ' RIN ' . $rin . "\n";
         }
         // CHAN
         $chan = $fam->getChan();

@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Parser\Indi;
 
-class Ssn extends \Geekish\Gedcom\Parser\Indi\Attr
-{
-}
+class Ssn extends \Geekish\Gedcom\Parser\Indi\Attr {}

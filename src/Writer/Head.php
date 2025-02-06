@@ -25,7 +25,7 @@ class Head
     public static function convert(\Geekish\Gedcom\Record\Head &$head, $format = self::GEDCOM55)
     {
         $level = 0;
-        $output = $level." HEAD\n";
+        $output = $level . " HEAD\n";
 
         // level up
         $level++;
@@ -40,37 +40,37 @@ class Head
         // DEST
         $dest = $head->getDest();
         if ($dest !== '' && $dest !== '0') {
-            $output .= $level.' DEST '.$dest."\n";
+            $output .= $level . ' DEST ' . $dest . "\n";
         }
 
         //Subm
         $subm = $head->getSubm();
         if ($subm !== '' && $subm !== '0') {
-            $output .= $level.' SUBM '.$subm."\n";
+            $output .= $level . ' SUBM ' . $subm . "\n";
         }
 
         // SUBN
         $subn = $head->getSubn();
         if ($subn !== '' && $subn !== '0') {
-            $output .= $level.' SUBN '.$subn."\n";
+            $output .= $level . ' SUBN ' . $subn . "\n";
         }
 
         // FILE
         $file = $head->getFile();
         if ($file !== '' && $file !== '0') {
-            $output .= $level.' FILE '.$file."\n";
+            $output .= $level . ' FILE ' . $file . "\n";
         }
 
         // COPR
         $copr = $head->getCopr();
         if ($copr !== '' && $copr !== '0') {
-            $output .= $level.' COPR '.$copr."\n";
+            $output .= $level . ' COPR ' . $copr . "\n";
         }
 
         // LANG
         $lang = $head->getLang();
         if ($lang !== '' && $lang !== '0') {
-            $output .= $level.' LANG '.$lang."\n";
+            $output .= $level . ' LANG ' . $lang . "\n";
         }
         // DATE
         $date = $head->getDate();
@@ -102,7 +102,7 @@ class Head
         // NOTE
         $note = $head->getNote();
         if ($note !== '' && $note !== '0') {
-            $output .= $level.' NOTE '.$note."\n";
+            $output .= $level . ' NOTE ' . $note . "\n";
         }
         //
         /*

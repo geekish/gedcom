@@ -30,14 +30,14 @@ class Refn
         if (empty($_refn)) {
             return $output;
         } else {
-            $output .= $level.' REFN '.$_refn."\n";
+            $output .= $level . ' REFN ' . $_refn . "\n";
         }
         // level up
         $level++;
         // DATE
         $type = $refn->getType();
         if (! empty($type)) {
-            $output .= $level.' TYPE '.$type."\n";
+            $output .= $level . ' TYPE ' . $type . "\n";
         }
 
         return $output;

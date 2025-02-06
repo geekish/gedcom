@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Record\Indi;
 
-class Note extends \Geekish\Gedcom\Record\NoteRefAbstract
-{
-}
+class Note extends \Geekish\Gedcom\Record\NoteRefAbstract {}

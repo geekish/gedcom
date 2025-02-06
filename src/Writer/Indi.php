@@ -30,7 +30,7 @@ class Indi
 
         // gid
         $gid = $indi->getGid();
-        $output = $level.' @'.$gid."@ INDI\n";
+        $output = $level . ' @' . $gid . "@ INDI\n";
 
         // increase level after start indi
         $level++;
@@ -38,7 +38,7 @@ class Indi
         // uid
         $uid = $indi->getUid();
         if (! empty($uid)) {
-            $output .= $level.' _UID '.$uid."\n";
+            $output .= $level . ' _UID ' . $uid . "\n";
         }
 
         // $attr
@@ -107,7 +107,7 @@ class Indi
         if (! empty($alia) && $alia !== []) {
             foreach ($alia as $item) {
                 if (! empty($item)) {
-                    $_convert = $level.' ALIA '.$item."\n";
+                    $_convert = $level . ' ALIA ' . $item . "\n";
                     $output .= $_convert;
                 }
             }
@@ -116,52 +116,52 @@ class Indi
         // $sex
         $sex = $indi->getSex();
         if (! empty($sex)) {
-            $output .= $level.' SEX '.$sex."\n";
+            $output .= $level . ' SEX ' . $sex . "\n";
         }
 
         // $birthday
         $birthday = $indi->getBirt();
         if (! empty($birthday)) {
-            $output .= $level.' BIRT '."\n";
-            $output .= ($level + 1).' DATE '.$birthday."\n";
+            $output .= $level . ' BIRT ' . "\n";
+            $output .= ($level + 1) . ' DATE ' . $birthday . "\n";
         }
 
         // $deathday
         $deathday = $indi->getDeat();
         if (! empty($deathday)) {
-            $output .= $level.' DEAT '."\n";
-            $output .= ($level + 1).' DATE '.$deathday."\n";
+            $output .= $level . ' DEAT ' . "\n";
+            $output .= ($level + 1) . ' DATE ' . $deathday . "\n";
         }
 
         // $burialday
         $burialday = $indi->getBuri();
         if (! empty($burialday)) {
-            $output .= $level.' BURI '."\n";
-            $output .= ($level + 1).' DATE '.$burialday."\n";
+            $output .= $level . ' BURI ' . "\n";
+            $output .= ($level + 1) . ' DATE ' . $burialday . "\n";
         }
 
         // $rin
         $rin = $indi->getRin();
         if (! empty($rin)) {
-            $output .= $level.' RIN '.$rin."\n";
+            $output .= $level . ' RIN ' . $rin . "\n";
         }
 
         // $resn
         $resn = $indi->getResn();
         if (! empty($resn)) {
-            $output .= $level.' RESN '.$resn."\n";
+            $output .= $level . ' RESN ' . $resn . "\n";
         }
 
         // $rfn
         $rfn = $indi->getRfn();
         if (! empty($rfn)) {
-            $output .= $level.' RFN '.$rfn."\n";
+            $output .= $level . ' RFN ' . $rfn . "\n";
         }
 
         // $afn
         $afn = $indi->getAfn();
         if (! empty($afn)) {
-            $output .= $level.' AFN '.$afn."\n";
+            $output .= $level . ' AFN ' . $afn . "\n";
         }
 
         // Fams[]
@@ -196,7 +196,7 @@ class Indi
         if (! empty($subm) && $subm !== []) {
             foreach ($subm as $item) {
                 if (! empty($item)) {
-                    $_convert = $level.' SUBM '.$item."\n";
+                    $_convert = $level . ' SUBM ' . $item . "\n";
                     $output .= $_convert;
                 }
             }
@@ -206,7 +206,7 @@ class Indi
         $anci = $indi->getAnci();
         if (! empty($anci) && $anci !== []) {
             foreach ($anci as $item) {
-                $_convert = $level.' ANCI '.$item."\n";
+                $_convert = $level . ' ANCI ' . $item . "\n";
                 $output .= $_convert;
             }
         }
@@ -215,7 +215,7 @@ class Indi
         $desi = $indi->getDesi();
         if (! empty($desi) && $desi !== []) {
             foreach ($desi as $item) {
-                $_convert = $level.' DESI '.$item."\n";
+                $_convert = $level . ' DESI ' . $item . "\n";
                 $output .= $_convert;
             }
         }
@@ -232,9 +232,9 @@ class Indi
         // chan
         $chan = $indi->getChan();
         if (! empty($chan)) {
-            $output .= $level.' CHAN '."\n";
-            $output .= ($level + 1).' DATE '.$chan[0]."\n";
-            $output .= ($level + 1).' TIME '.$chan[1]."\n";
+            $output .= $level . ' CHAN ' . "\n";
+            $output .= ($level + 1) . ' DATE ' . $chan[0] . "\n";
+            $output .= ($level + 1) . ' TIME ' . $chan[1] . "\n";
         }
 
         // Bapl

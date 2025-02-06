@@ -55,7 +55,7 @@ class Romn extends \Geekish\Gedcom\Parser\Component
                 'SPFX' => $romn->setSpfx(trim((string) $record[2])),
                 'SURN' => $romn->setSurn(trim((string) $record[2])),
                 'NSFX' => $romn->setNsfx(trim((string) $record[2])),
-                default => $parser->logUnhandledRecord(self::class.' @ '.__LINE__),
+                default => $parser->logUnhandledRecord(self::class . ' @ ' . __LINE__),
             };
 
             $parser->forward();

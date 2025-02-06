@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Parser\Indi;
 
-class Prob extends \Geekish\Gedcom\Parser\Indi\Even
-{
-}
+class Prob extends \Geekish\Gedcom\Parser\Indi\Even {}

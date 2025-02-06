@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Parser\Indi;
 
-class Barm extends \Geekish\Gedcom\Parser\Indi\Even
-{
-}
+class Barm extends \Geekish\Gedcom\Parser\Indi\Even {}

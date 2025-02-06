@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Record\Indi;
 
-class Immi extends \Geekish\Gedcom\Record\Indi\Even
-{
-}
+class Immi extends \Geekish\Gedcom\Record\Indi\Even {}

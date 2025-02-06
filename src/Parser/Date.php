@@ -31,11 +31,11 @@ class Date extends \Geekish\Gedcom\Parser\Component
         }
 
         if ($dat->getYear() && $dat->getMonth() && $dat->getDay()) {
-            return $dat->getYear().'-'.substr("0{$dat->getMonth()}", -2).'-'.substr("0{$dat->getDay()}", -2);
+            return $dat->getYear() . '-' . substr("0{$dat->getMonth()}", -2) . '-' . substr("0{$dat->getDay()}", -2);
         }
 
         if ($dat->getYear() && $dat->getMonth()) {
-            return $dat->getYear().'-'.substr("0{$dat->getMonth()}", -2);
+            return $dat->getYear() . '-' . substr("0{$dat->getMonth()}", -2);
         }
 
         return $dat->getYear();

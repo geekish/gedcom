@@ -30,7 +30,7 @@ class Caln
         if (empty($_caln)) {
             return $output;
         } else {
-            $output .= $level.' CALN '.$_caln."\n";
+            $output .= $level . ' CALN ' . $_caln . "\n";
         }
 
         // level up
@@ -39,7 +39,7 @@ class Caln
         // medi
         $medi = $caln->getMedi();
         if (! empty($medi)) {
-            $output .= $level.' MEDI '.$medi."\n";
+            $output .= $level . ' MEDI ' . $medi . "\n";
         }
 
         return $output;

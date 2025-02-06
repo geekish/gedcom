@@ -43,7 +43,7 @@ class Repo extends \Geekish\Gedcom\Parser\Component
             match ($recordType) {
                 'NOTE' => $repo->addNote(\Geekish\Gedcom\Parser\NoteRef::parse($parser)),
                 'CALN' => $repo->addCaln(\Geekish\Gedcom\Parser\Sour\Repo\Caln::parse($parser)),
-                default => $parser->logUnhandledRecord(self::class.' @ '.__LINE__),
+                default => $parser->logUnhandledRecord(self::class . ' @ ' . __LINE__),
             };
 
             $parser->forward();

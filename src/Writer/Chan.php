@@ -25,18 +25,18 @@ class Chan
      */
     public static function convert(\Geekish\Gedcom\Record\Chan &$chan, $level)
     {
-        $output = $level." CHAN \n";
+        $output = $level . " CHAN \n";
         // level up
         $level++;
         // DATE
         $_date = $chan->getDate();
         if (! empty($_date)) {
-            $output .= $level.' DATE '.$_date."\n";
+            $output .= $level . ' DATE ' . $_date . "\n";
         }
         // TIME
         $_time = $chan->getDate();
         if (! empty($_time)) {
-            $output .= $level.' DATE '.$_time."\n";
+            $output .= $level . ' DATE ' . $_time . "\n";
         }
         // $_note = array()
         $_note = $chan->getNote();

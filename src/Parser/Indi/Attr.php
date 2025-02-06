@@ -22,7 +22,7 @@ abstract class Attr extends \Geekish\Gedcom\Parser\Component
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
         if (isset($record[1])) {
-            $className = '\\Geekish\Gedcom\\Record\\Indi\\'.ucfirst(strtolower(trim((string) $record[1])));
+            $className = '\\Geekish\Gedcom\\Record\\Indi\\' . ucfirst(strtolower(trim((string) $record[1])));
             $attr = new $className();
 
             $attr->setType(trim((string) $record[1]));
@@ -102,7 +102,7 @@ abstract class Attr extends \Geekish\Gedcom\Parser\Component
 
                     break;
                 default:
-                    $parser->logUnhandledRecord(self::class.' @ '.__LINE__);
+                    $parser->logUnhandledRecord(self::class . ' @ ' . __LINE__);
             }
 
             $parser->forward();

@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Parser\Indi;
 
-class Ordn extends \Geekish\Gedcom\Parser\Indi\Even
-{
-}
+class Ordn extends \Geekish\Gedcom\Parser\Indi\Even {}

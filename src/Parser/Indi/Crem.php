@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Parser\Indi;
 
-class Crem extends \Geekish\Gedcom\Parser\Indi\Even
-{
-}
+class Crem extends \Geekish\Gedcom\Parser\Indi\Even {}

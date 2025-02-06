@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Parser\Fam;
 
-class Div extends \Geekish\Gedcom\Parser\Fam\Even
-{
-}
+class Div extends \Geekish\Gedcom\Parser\Fam\Even {}

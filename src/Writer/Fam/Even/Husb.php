@@ -27,14 +27,14 @@ class Husb
     {
         $output = '';
 
-        $output .= $level." HUSB \n";
+        $output .= $level . " HUSB \n";
         // level up
         $level++;
 
         // AGE
         $age = $husb->getAge();
         if (! empty($age)) {
-            $output .= $level.' AGE '.$age."\n";
+            $output .= $level . ' AGE ' . $age . "\n";
         }
 
         return $output;

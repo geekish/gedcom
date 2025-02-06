@@ -29,7 +29,7 @@ class Note
         $output = '';
         $id = $note->getId();
         if (! empty($id)) {
-            $output .= $level.' '.$id.' '." NOTE \n";
+            $output .= $level . ' ' . $id . ' ' . " NOTE \n";
         } else {
             return $output;
         }
@@ -39,13 +39,13 @@ class Note
         // RIN
         $rin = $note->getRin();
         if ($rin) {
-            $output .= $level.' RIN '.$rin."\n";
+            $output .= $level . ' RIN ' . $rin . "\n";
         }
 
         // cont
         $cont = $note->getNote();
         if ($cont) {
-            $output .= $level.' CONT '.$cont."\n";
+            $output .= $level . ' CONT ' . $cont . "\n";
         }
 
         // REFN

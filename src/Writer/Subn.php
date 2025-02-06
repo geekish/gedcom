@@ -31,7 +31,7 @@ class Subn
         if (empty($_subn)) {
             return $output;
         } else {
-            $output .= $level.' '.$_subn." SUBN \n";
+            $output .= $level . ' ' . $_subn . " SUBN \n";
         }
         // level up
         $level++;
@@ -39,42 +39,42 @@ class Subn
         // SUBM
         $subm = $subn->getSubm();
         if (! empty($subm)) {
-            $output .= $level.' SUBM '.$subm."\n";
+            $output .= $level . ' SUBM ' . $subm . "\n";
         }
 
         // FAMF
         $famf = $subn->getFamf();
         if (! empty($famf)) {
-            $output .= $level.' FAMF '.$famf."\n";
+            $output .= $level . ' FAMF ' . $famf . "\n";
         }
 
         // TEMP
         $temp = $subn->getTemp();
         if (! empty($temp)) {
-            $output .= $level.' TEMP '.$temp."\n";
+            $output .= $level . ' TEMP ' . $temp . "\n";
         }
 
         // ANCE
         $ance = $subn->getAnce();
         if (! empty($ance)) {
-            $output .= $level.' ANCE '.$ance."\n";
+            $output .= $level . ' ANCE ' . $ance . "\n";
         }
 
         // DESC
         $desc = $subn->getDesc();
         if (! empty($desc)) {
-            $output .= $level.' DESC '.$desc."\n";
+            $output .= $level . ' DESC ' . $desc . "\n";
         }
         // ORDI
         $ordi = $subn->getOrdi();
         if (! empty($ordi)) {
-            $output .= $level.' ORDI '.$ordi."\n";
+            $output .= $level . ' ORDI ' . $ordi . "\n";
         }
 
         // RIN
         $rin = $subn->getRin();
         if (! empty($rin)) {
-            $output .= $level.' RIN '.$rin."\n";
+            $output .= $level . ' RIN ' . $rin . "\n";
         }
 
         return $output;

@@ -41,7 +41,7 @@ class Buri extends \Geekish\Gedcom\Parser\Component
                 'DATE' => $buri->setDate(trim((string) $record[2])),
                 '_DATI' => $buri->setDati(trim((string) $record[2])),
                 'PLAC' => $buri->setPlac(trim((string) $record[2])),
-                default => $parser->logUnhandledRecord(self::class.' @ '.__LINE__),
+                default => $parser->logUnhandledRecord(self::class . ' @ ' . __LINE__),
             };
 
             $parser->forward();

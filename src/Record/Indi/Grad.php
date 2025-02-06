@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Record\Indi;
 
-class Grad extends \Geekish\Gedcom\Record\Indi\Even
-{
-}
+class Grad extends \Geekish\Gedcom\Record\Indi\Even {}

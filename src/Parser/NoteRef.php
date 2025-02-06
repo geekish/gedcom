@@ -25,7 +25,7 @@ class NoteRef extends \Geekish\Gedcom\Parser\Component
         $note = new \Geekish\Gedcom\Record\NoteRef();
 
         if ((is_countable($record) ? count($record) : 0) < 3) {
-            $parser->logSkippedRecord('Missing note information; '.self::class);
+            $parser->logSkippedRecord('Missing note information; ' . self::class);
             $parser->skipToNextLevel($depth);
 
             return null;
@@ -60,7 +60,7 @@ class NoteRef extends \Geekish\Gedcom\Parser\Component
 
                     break;
                 default:
-                    $parser->logUnhandledRecord(self::class.' @ '.__LINE__);
+                    $parser->logUnhandledRecord(self::class . ' @ ' . __LINE__);
             }
 
             $parser->forward();

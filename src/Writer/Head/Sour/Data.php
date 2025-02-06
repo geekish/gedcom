@@ -28,7 +28,7 @@ class Data
         $output = '';
         $_data = $data->getData();
         if ($_data) {
-            $output .= $level.' DATA '.$_data."\n";
+            $output .= $level . ' DATA ' . $_data . "\n";
         } else {
             return $output;
         }
@@ -39,13 +39,13 @@ class Data
         // DATE
         $date = $corp->getDate();
         if ($date) {
-            $output .= $level.' DATE '.$date."\n";
+            $output .= $level . ' DATE ' . $date . "\n";
         }
 
         // COPR
         $corp = $corp->getCorp();
         if ($corp) {
-            $output .= $level.' COPR '.$corp."\n";
+            $output .= $level . ' COPR ' . $corp . "\n";
         }
 
         return $output;

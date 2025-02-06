@@ -29,7 +29,7 @@ class Char
         // char
         $_char = $char->getChar();
         if ($_char) {
-            $output .= $level.' CHAR '.$_char."\n";
+            $output .= $level . ' CHAR ' . $_char . "\n";
         } else {
             return $output;
         }
@@ -39,7 +39,7 @@ class Char
         // VERS
         $vers = $char->getVersion();
         if ($vers) {
-            $output .= $level.' VERS '.$vers."\n";
+            $output .= $level . ' VERS ' . $vers . "\n";
         }
 
         return $output;

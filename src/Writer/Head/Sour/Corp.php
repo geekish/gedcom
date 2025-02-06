@@ -28,7 +28,7 @@ class Corp
         $output = '';
         $_corp = $corp->getCorp();
         if ($_corp) {
-            $output .= $level.' CORP '.$_corp."\n";
+            $output .= $level . ' CORP ' . $_corp . "\n";
         } else {
             return $output;
         }

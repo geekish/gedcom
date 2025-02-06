@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Parser\Indi;
 
-class Educ extends \Geekish\Gedcom\Parser\Indi\Attr
-{
-}
+class Educ extends \Geekish\Gedcom\Parser\Indi\Attr {}

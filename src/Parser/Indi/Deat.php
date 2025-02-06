@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Parser\Indi;
 
-class Deat extends \Geekish\Gedcom\Parser\Indi\Even
-{
-}
+class Deat extends \Geekish\Gedcom\Parser\Indi\Even {}

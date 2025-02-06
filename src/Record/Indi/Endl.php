@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Record\Indi;
 
-class Endl extends Lds
-{
-}
+class Endl extends Lds {}

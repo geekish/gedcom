@@ -39,7 +39,7 @@ class Husb extends \Geekish\Gedcom\Parser\Component
 
             match ($recordType) {
                 'AGE' => $husband->setAge(trim((string) $record[2])),
-                default => $parser->logUnhandledRecord(self::class.' @ '.__LINE__),
+                default => $parser->logUnhandledRecord(self::class . ' @ ' . __LINE__),
             };
 
             $parser->forward();

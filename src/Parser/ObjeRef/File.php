@@ -49,7 +49,7 @@ class File extends \Geekish\Gedcom\Parser\Component
                     $file->setTitl(trim((string) $record[2]));
                     // no break
                 default:
-                    $parser->logUnhandledRecord(self::class.' @ '.__LINE__);
+                    $parser->logUnhandledRecord(self::class . ' @ ' . __LINE__);
             }
 
             $parser->forward();

@@ -27,19 +27,19 @@ class Addr
     {
         $addrs = explode("\n", $addr->getAddr());
 
-        $output = "{$level} ADDR ".$addrs[0]."\n";
+        $output = "{$level} ADDR " . $addrs[0] . "\n";
 
         array_shift($addrs);
 
         foreach ($addrs as $cont) {
-            $output .= ($level + 1).' CONT '.$cont."\n";
+            $output .= ($level + 1) . ' CONT ' . $cont . "\n";
         }
 
-        return $output.(($level + 1).' ADR1 '.$addr->adr1."\n".
-            ($level + 1).' ADR2 '.$addr->getAdr2()."\n".
-            ($level + 1).' CITY '.$addr->getCity()."\n".
-            ($level + 1).' STAE '.$addr->getStae()."\n".
-            ($level + 1).' POST '.$addr->getPost()."\n".
-            ($level + 1).' CTRY '.$addr->getCtry()."\n");
+        return $output . (($level + 1) . ' ADR1 ' . $addr->adr1 . "\n" .
+            ($level + 1) . ' ADR2 ' . $addr->getAdr2() . "\n" .
+            ($level + 1) . ' CITY ' . $addr->getCity() . "\n" .
+            ($level + 1) . ' STAE ' . $addr->getStae() . "\n" .
+            ($level + 1) . ' POST ' . $addr->getPost() . "\n" .
+            ($level + 1) . ' CTRY ' . $addr->getCtry() . "\n");
     }
 }

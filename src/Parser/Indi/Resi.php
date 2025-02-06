@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Parser\Indi;
 
-class Resi extends \Geekish\Gedcom\Parser\Indi\Attr
-{
-}
+class Resi extends \Geekish\Gedcom\Parser\Indi\Attr {}

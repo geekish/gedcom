@@ -39,7 +39,7 @@ class Data extends \Geekish\Gedcom\Parser\Component
             match ($recordType) {
                 'DATE' => $data->setDate(trim((string) $record[2])),
                 'TEXT' => $data->setText($parser->parseMultiLineRecord()),
-                default => $parser->logUnhandledRecord(self::class.' @ '.__LINE__),
+                default => $parser->logUnhandledRecord(self::class . ' @ ' . __LINE__),
             };
 
             $parser->forward();

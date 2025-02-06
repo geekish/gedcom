@@ -28,7 +28,7 @@ class Sour
         $output = '';
         $_sour = $sour->getSour();
         if ($_sour) {
-            $output .= $level.' SOUR '.$_sour."\n";
+            $output .= $level . ' SOUR ' . $_sour . "\n";
         } else {
             return $output;
         }
@@ -39,13 +39,13 @@ class Sour
         // VERS
         $vers = $sour->getVersion();
         if ($vers) {
-            $output .= $level.' VERS '.$vers."\n";
+            $output .= $level . ' VERS ' . $vers . "\n";
         }
 
         // NAME
         $name = $sour->getName();
         if ($name) {
-            $output .= $level.' NAME '.$name."\n";
+            $output .= $level . ' NAME ' . $name . "\n";
         }
 
         // CORP

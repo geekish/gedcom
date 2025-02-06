@@ -39,15 +39,15 @@ class Addr extends \Geekish\Gedcom\Parser\Component
             }
 
             if ($addr->hasAttribute($recordType)) {
-                $addr->{'set'.$recordType}(trim((string) $record[2]));
+                $addr->{'set' . $recordType}(trim((string) $record[2]));
             } elseif ($recordType == 'cont') {
                 // FIXME: Can have CONT on multiple attributes
-                $addr->setAddr($addr->getAddr()."\n");
+                $addr->setAddr($addr->getAddr() . "\n");
                 if (isset($record[2])) {
-                    $addr->setAddr($addr->getAddr().trim((string) $record[2]));
+                    $addr->setAddr($addr->getAddr() . trim((string) $record[2]));
                 }
             } else {
-                $parser->logUnhandledRecord(self::class.' @ '.__LINE__);
+                $parser->logUnhandledRecord(self::class . ' @ ' . __LINE__);
             }
 
             $parser->forward();

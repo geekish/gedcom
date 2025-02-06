@@ -41,7 +41,7 @@ class Birt extends \Geekish\Gedcom\Parser\Component
                 'DATE' => $birt->setDate(trim((string) $record[2])),
                 '_DATI' => $birt->setDati(trim((string) $record[2])),
                 'PLAC' => $birt->setPlac(trim((string) $record[2])),
-                default => $parser->logUnhandledRecord(self::class.' @ '.__LINE__),
+                default => $parser->logUnhandledRecord(self::class . ' @ ' . __LINE__),
             };
 
             $parser->forward();

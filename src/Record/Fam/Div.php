@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Record\Fam;
 
-class Div extends \Geekish\Gedcom\Record\Fam\Even
-{
-}
+class Div extends \Geekish\Gedcom\Record\Fam\Even {}

@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Record\Fam;
 
-class Marc extends \Geekish\Gedcom\Record\Fam\Even
-{
-}
+class Marc extends \Geekish\Gedcom\Record\Fam\Even {}

@@ -9,7 +9,7 @@ class Dest
         $output = '';
         $_dest = $dest->getDest();
         if ($_dest) {
-            $output .= $level.' DEST '.$_dest."\n";
+            $output .= $level . ' DEST ' . $_dest . "\n";
         }
 
         // Add conversion for sub-tags if needed

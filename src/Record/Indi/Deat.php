@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Record\Indi;
 
-class Deat extends \Geekish\Gedcom\Record\Indi\Even
-{
-}
+class Deat extends \Geekish\Gedcom\Record\Indi\Even {}

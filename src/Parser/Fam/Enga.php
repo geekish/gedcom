@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Parser\Fam;
 
-class Enga extends \Geekish\Gedcom\Parser\Fam\Even
-{
-}
+class Enga extends \Geekish\Gedcom\Parser\Fam\Even {}

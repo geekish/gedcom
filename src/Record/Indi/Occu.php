@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Record\Indi;
 
-class Occu extends \Geekish\Gedcom\Record\Indi\Attr
-{
-}
+class Occu extends \Geekish\Gedcom\Record\Indi\Attr {}

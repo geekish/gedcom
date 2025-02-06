@@ -16,12 +16,12 @@
 namespace Geekish\Gedcom\Parser;
 
 class Sour extends \Geekish\Gedcom\Parser\Component
-    /**
-     * Parser for GEDCOM Source (SOUR) records.
-     *
-     * Handles the parsing of source records from GEDCOM files, extracting relevant data and attributes
-     * associated with sources.
-     */
+/**
+ * Parser for GEDCOM Source (SOUR) records.
+ *
+ * Handles the parsing of source records from GEDCOM files, extracting relevant data and attributes
+ * associated with sources.
+ */
 {
     public static function parse(\Geekish\Gedcom\Parser $parser)
     {
@@ -66,7 +66,7 @@ class Sour extends \Geekish\Gedcom\Parser\Component
             }
 
             switch ($recordType) {
-                /**
+                    /**
                  * Parses the source record's substructures and attributes.
                  *
                  * Iterates through the lines of the source record, parsing its substructures like DATA, AUTH, TITL, etc.,
@@ -139,7 +139,7 @@ class Sour extends \Geekish\Gedcom\Parser\Component
 
                     break;
                 default:
-                    $parser->logUnhandledRecord(self::class.' @ '.__LINE__);
+                    $parser->logUnhandledRecord(self::class . ' @ ' . __LINE__);
             }
 
             $parser->forward();

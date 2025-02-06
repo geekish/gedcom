@@ -28,7 +28,7 @@ class Date
         $output = '';
         $_date = $date->getDate();
         if ($_date) {
-            $output .= $level.' DATE '.$_date."\n";
+            $output .= $level . ' DATE ' . $_date . "\n";
         } else {
             return $output;
         }
@@ -38,7 +38,7 @@ class Date
         // Time
         $time = $date->getTime();
         if ($time) {
-            $output .= $level.' TIME '.$time."\n";
+            $output .= $level . ' TIME ' . $time . "\n";
         }
 
         return $output;

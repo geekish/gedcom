@@ -28,7 +28,7 @@ class Even
 
         // $type;
         if (! empty($eventType)) {
-            $output .= $level.' '.$eventType."\n";
+            $output .= $level . ' ' . $eventType . "\n";
         } else {
             return $output;
         }
@@ -37,13 +37,13 @@ class Even
         // $type;
         $type = $even->getType();
         if (! empty($type) && $type != $eventType) {
-            $output .= $level.' TYPE '.$type."\n";
+            $output .= $level . ' TYPE ' . $type . "\n";
         }
 
         // $date;
         $date = $even->getDate();
         if (! empty($date)) {
-            $output .= $level.' DATE '.$date."\n";
+            $output .= $level . ' DATE ' . $date . "\n";
         }
 
         // Plac
@@ -56,13 +56,13 @@ class Even
         // $caus;
         $caus = $even->getCaus();
         if (! empty($caus)) {
-            $output .= $level.' CAUS '.$caus."\n";
+            $output .= $level . ' CAUS ' . $caus . "\n";
         }
 
         // $age;
         $age = $even->getAge();
         if (! empty($age)) {
-            $output .= $level.' AGE '.$age."\n";
+            $output .= $level . ' AGE ' . $age . "\n";
         }
 
         // $addr
@@ -83,7 +83,7 @@ class Even
         // $agnc
         $agnc = $even->getAgnc();
         if (! empty($agnc)) {
-            $output .= $level.' AGNC '.$agnc."\n";
+            $output .= $level . ' AGNC ' . $agnc . "\n";
         }
 
         // HUSB

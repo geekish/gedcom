@@ -31,14 +31,14 @@ class Asso
         if (empty($_indi)) {
             return $output;
         }
-        $output .= $level.' ASSO '.$_indi."\n";
+        $output .= $level . ' ASSO ' . $_indi . "\n";
         // level up
         $level++;
 
         // RELA
         $rela = $asso->getRela();
         if (! empty($rela)) {
-            $output .= $level.' RELA '.$rela."\n";
+            $output .= $level . ' RELA ' . $rela . "\n";
         }
         // sour
         $sour = $asso->getSour();

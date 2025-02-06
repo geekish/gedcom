@@ -24,19 +24,19 @@ class Even
      */
     public static function convert(\Geekish\Gedcom\Record\Sour\Data\Even &$even, $level)
     {
-        $output = $level." EVEN\n";
+        $output = $level . " EVEN\n";
         $level++;
 
         // $date;
         $date = $even->getDate();
         if (! empty($date)) {
-            $output .= $level.' DATE '.$date."\n";
+            $output .= $level . ' DATE ' . $date . "\n";
         }
 
         // Plac
         $plac = $even->getPlac();
         if (! empty($plac)) {
-            $output .= $level.' PLAC '.$plac."\n";
+            $output .= $level . ' PLAC ' . $plac . "\n";
         }
 
         return $output;

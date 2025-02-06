@@ -54,13 +54,13 @@ class Chan extends \Geekish\Gedcom\Parser\Component
 
                     break;
                 default:
-                    $parser->logUnhandledRecord(self::class.' @ '.__LINE__);
+                    $parser->logUnhandledRecord(self::class . ' @ ' . __LINE__);
             }
 
             $parser->forward();
         }
 
-        $date = $chan->getYear().'-'.$chan->getMonth().'-'.$chan->getDay();
+        $date = $chan->getYear() . '-' . $chan->getMonth() . '-' . $chan->getDay();
         $chan->setDatetime($date);
 
         return $chan;

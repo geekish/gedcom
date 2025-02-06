@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Parser\Indi;
 
-class Nmr extends \Geekish\Gedcom\Parser\Indi\Attr
-{
-}
+class Nmr extends \Geekish\Gedcom\Parser\Indi\Attr {}

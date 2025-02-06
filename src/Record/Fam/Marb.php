@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Record\Fam;
 
-class Marb extends \Geekish\Gedcom\Record\Fam\Even
-{
-}
+class Marb extends \Geekish\Gedcom\Record\Fam\Even {}

@@ -21,8 +21,18 @@ namespace Geekish\Gedcom\Record;
 class Chr extends \Geekish\Gedcom\Record
 {
     private array $months = [
-        'JAN' => '01', 'FEB' => '02', 'MAR' => '03', 'APR' => '04', 'MAY' => '05', 'JUN' => '06',
-        'JUL' => '07', 'AUG' => '08', 'SEP' => '09', 'OCT' => '10', 'NOV' => '11', 'DEC' => '12',
+        'JAN' => '01',
+        'FEB' => '02',
+        'MAR' => '03',
+        'APR' => '04',
+        'MAY' => '05',
+        'JUN' => '06',
+        'JUL' => '07',
+        'AUG' => '08',
+        'SEP' => '09',
+        'OCT' => '10',
+        'NOV' => '11',
+        'DEC' => '12',
     ];
 
     public $date;
@@ -34,7 +44,7 @@ class Chr extends \Geekish\Gedcom\Record
     public function setDate($date)
     {
         $this->date = $date;
-        $this->dateFormatted = $this->getYear().'-'.$this->getMonth().'-'.substr("0{$this->getDay()}", -2);
+        $this->dateFormatted = $this->getYear() . '-' . $this->getMonth() . '-' . substr("0{$this->getDay()}", -2);
     }
 
     public function getDateFormatted()

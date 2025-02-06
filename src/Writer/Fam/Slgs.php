@@ -25,7 +25,7 @@ class Slgs
     public static function convert(\Geekish\Gedcom\Record\Fam\Slgs &$slgs, $level)
     {
         $output = '';
-        $output .= $level." SLGS \n";
+        $output .= $level . " SLGS \n";
 
         // Level up
         $level++;
@@ -33,25 +33,25 @@ class Slgs
         // $STAT;
         $stat = $slgs->getStat();
         if (! empty($stat)) {
-            $output .= $level.' STAT '.$stat."\n";
+            $output .= $level . ' STAT ' . $stat . "\n";
         }
 
         // $date;
         $date = $slgs->getDate();
         if (! empty($date)) {
-            $output .= $level.' DATE '.$date."\n";
+            $output .= $level . ' DATE ' . $date . "\n";
         }
 
         // PLAC
         $plac = $slgs->getPlac();
         if (! empty($plac)) {
-            $output .= $level.' PLAC '.$plac."\n";
+            $output .= $level . ' PLAC ' . $plac . "\n";
         }
 
         // $TEMP;
         $temp = $slgs->getTemp();
         if (! empty($temp)) {
-            $output .= $level.' TEMP '.$temp."\n";
+            $output .= $level . ' TEMP ' . $temp . "\n";
         }
 
         // $sour = array();

@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Parser\Fam;
 
-class Marc extends \Geekish\Gedcom\Parser\Fam\Even
-{
-}
+class Marc extends \Geekish\Gedcom\Parser\Fam\Even {}

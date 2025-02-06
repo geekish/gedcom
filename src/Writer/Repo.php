@@ -29,7 +29,7 @@ class Repo
         $output = '';
         $_repo = $repo->getRepo();
         if ($_repo !== '' && $_repo !== '0') {
-            $output .= $level.' '.$_repo." REPO\n";
+            $output .= $level . ' ' . $_repo . " REPO\n";
         } else {
             return $output;
         }
@@ -40,7 +40,7 @@ class Repo
         //NAME
         $name = $repo->getName();
         if ($name !== '' && $name !== '0') {
-            $output .= $level.' NAME '.$name."\n";
+            $output .= $level . ' NAME ' . $name . "\n";
         }
 
         // ADDR
@@ -87,7 +87,7 @@ class Repo
         // RIN
         $rin = $repo->getRin();
         if ($rin !== '' && $rin !== '0') {
-            $output .= $level.' RIN '.$rin."\n";
+            $output .= $level . ' RIN ' . $rin . "\n";
         }
 
         return $output;

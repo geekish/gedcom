@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Record\Indi;
 
-class Reti extends \Geekish\Gedcom\Record\Indi\Even
-{
-}
+class Reti extends \Geekish\Gedcom\Record\Indi\Even {}

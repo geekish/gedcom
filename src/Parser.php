@@ -348,7 +348,7 @@ class Parser implements \Geekish\Gedcom\Parser\Interfaces\ParserInterface
         $this->_file = fopen($fileName, 'r'); //explode("\n", mb_convert_encoding($contents, 'UTF-8'));
 
         if (! $this->_file) {
-            error_log("Failed to open file: ". $fileName);
+            error_log("Failed to open file: " . $fileName);
 
             return null;
         }

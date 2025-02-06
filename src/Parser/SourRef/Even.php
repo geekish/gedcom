@@ -45,7 +45,7 @@ class Even extends \Geekish\Gedcom\Parser\Component
 
             match ($recordType) {
                 'ROLE' => $even->setRole(trim((string) $record[2])),
-                default => $parser->logUnhandledRecord(self::class.' @ '.__LINE__),
+                default => $parser->logUnhandledRecord(self::class . ' @ ' . __LINE__),
             };
 
             $parser->forward();

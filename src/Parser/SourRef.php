@@ -94,7 +94,7 @@ class SourRef extends \Geekish\Gedcom\Parser\Component
 
                     break;
                 default:
-                    $parser->logUnhandledRecord(self::class.' @ '.__LINE__);
+                    $parser->logUnhandledRecord(self::class . ' @ ' . __LINE__);
             }
 
             $parser->forward();

@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Parser\Indi;
 
-class Dscr extends \Geekish\Gedcom\Parser\Indi\Attr
-{
-}
+class Dscr extends \Geekish\Gedcom\Parser\Indi\Attr {}

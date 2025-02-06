@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Parser\Fam;
 
-class Marb extends \Geekish\Gedcom\Parser\Fam\Even
-{
-}
+class Marb extends \Geekish\Gedcom\Parser\Fam\Even {}

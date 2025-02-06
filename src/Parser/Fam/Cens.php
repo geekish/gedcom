@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Parser\Fam;
 
-class Cens extends \Geekish\Gedcom\Parser\Fam\Even
-{
-}
+class Cens extends \Geekish\Gedcom\Parser\Fam\Even {}

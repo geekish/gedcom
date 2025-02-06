@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Parser\Indi;
 
-class Natu extends \Geekish\Gedcom\Parser\Indi\Even
-{
-}
+class Natu extends \Geekish\Gedcom\Parser\Indi\Even {}

@@ -21,8 +21,18 @@ namespace Geekish\Gedcom\Record;
 class Buri extends \Geekish\Gedcom\Record
 {
     private array $months = [
-        'JAN' => '01', 'FEB' => '02', 'MAR' => '03', 'APR' => '04', 'MAY' => '05', 'JUN' => '06',
-        'JUL' => '07', 'AUG' => '08', 'SEP' => '09', 'OCT' => '10', 'NOV' => '11', 'DEC' => '12',
+        'JAN' => '01',
+        'FEB' => '02',
+        'MAR' => '03',
+        'APR' => '04',
+        'MAY' => '05',
+        'JUN' => '06',
+        'JUL' => '07',
+        'AUG' => '08',
+        'SEP' => '09',
+        'OCT' => '10',
+        'NOV' => '11',
+        'DEC' => '12',
     ];
 
     public $date;
@@ -41,7 +51,7 @@ class Buri extends \Geekish\Gedcom\Record
     {
         $this->date = $date;
         if ($this->getDay()) {
-            $this->dateFormatted = $this->getYear().'-'.$this->getMonth().'-'.substr("0{$this->getDay()}", -2);
+            $this->dateFormatted = $this->getYear() . '-' . $this->getMonth() . '-' . substr("0{$this->getDay()}", -2);
         } else {
             $this->month = $this->getMonth();
             $this->year = $this->getYear();

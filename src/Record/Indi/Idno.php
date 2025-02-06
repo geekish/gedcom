@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Record\Indi;
 
-class Idno extends \Geekish\Gedcom\Record\Indi\Attr
-{
-}
+class Idno extends \Geekish\Gedcom\Record\Indi\Attr {}

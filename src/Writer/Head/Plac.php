@@ -25,14 +25,14 @@ class Plac
      */
     public static function convert(\Geekish\Gedcom\Record\Head\Plac &$plac, $level)
     {
-        $output = $level." PLAC \n";
+        $output = $level . " PLAC \n";
 
         // level up
         $level++;
         // FORM
         $form = $plac->getForm();
         if ($form) {
-            $output .= $level.' FORM '.$form."\n";
+            $output .= $level . ' FORM ' . $form . "\n";
         }
 
         return $output;

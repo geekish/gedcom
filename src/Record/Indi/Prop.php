@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Record\Indi;
 
-class Prop extends \Geekish\Gedcom\Record\Indi\Attr
-{
-}
+class Prop extends \Geekish\Gedcom\Record\Indi\Attr {}

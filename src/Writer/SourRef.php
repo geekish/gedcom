@@ -27,13 +27,13 @@ class SourRef
         $output = '';
         $_sour = $sour->getSour();
         if (! empty($_sour)) {
-            $output .= $level.' SOUR '.$_sour."\n";
+            $output .= $level . ' SOUR ' . $_sour . "\n";
         }
         $level++;
         // protected $_text    = null;
         $_text = $sour->getText();
         if (! empty($_text)) {
-            $output .= $level.' TEXT '.$_text."\n";
+            $output .= $level . ' TEXT ' . $_text . "\n";
         }
         // protected $_note    = array();
         $note = $sour->getNote();
@@ -50,7 +50,7 @@ class SourRef
         // protected $_page setPage
         $_page = $sour->getPage();
         if (! empty($_page)) {
-            $output .= $level.' PAGE '.$_page."\n";
+            $output .= $level . ' PAGE ' . $_page . "\n";
         }
         // protected $_even    = null;
         $_even = $sour->getData();
@@ -61,7 +61,7 @@ class SourRef
         // protected $_quay
         $_quay = $sour->getQuay();
         if (! empty($_quay)) {
-            $output .= $level.' QUAY '.$_quay."\n";
+            $output .= $level . ' QUAY ' . $_quay . "\n";
         }
 
         // protected $_obje    = array();

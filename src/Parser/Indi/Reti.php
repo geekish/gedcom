@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Parser\Indi;
 
-class Reti extends \Geekish\Gedcom\Parser\Indi\Even
-{
-}
+class Reti extends \Geekish\Gedcom\Parser\Indi\Even {}

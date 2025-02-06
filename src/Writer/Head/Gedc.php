@@ -25,20 +25,20 @@ class Gedc
      */
     public static function convert(\Geekish\Gedcom\Record\Head\Gedc &$gedc, $level)
     {
-        $output = $level." GEDC \n";
+        $output = $level . " GEDC \n";
 
         // level up
         $level++;
         // VERS
         $vers = $gedc->getVersion();
         if ($vers) {
-            $output .= $level.' VERS '.$vers."\n";
+            $output .= $level . ' VERS ' . $vers . "\n";
         }
 
         // FORM
         $form = $gedc->getForm();
         if ($form) {
-            $output .= $level.' FORM '.$form."\n";
+            $output .= $level . ' FORM ' . $form . "\n";
         }
 
         return $output;

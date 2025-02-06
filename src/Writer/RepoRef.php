@@ -29,7 +29,7 @@ class RepoRef
         if (empty($_sour)) {
             return $output;
         } else {
-            $output .= $level.' REPO '.$_repo."\n";
+            $output .= $level . ' REPO ' . $_repo . "\n";
         }
         // level up
         $level++;

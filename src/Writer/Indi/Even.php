@@ -29,22 +29,22 @@ class Even
         // $_attr;
         $attr = $even->getAttr();
         if (! empty($attr)) {
-            $output .= $level.' EVEN '.$attr."\n";
+            $output .= $level . ' EVEN ' . $attr . "\n";
         } else {
-            $output = $level." EVEN\n";
+            $output = $level . " EVEN\n";
         }
         $level++;
 
         // $type;
         $type = $even->getType();
         if (! empty($type)) {
-            $output .= $level.' TYPE '.$type."\n";
+            $output .= $level . ' TYPE ' . $type . "\n";
         }
 
         // $date;
         $date = $even->getDate();
         if (! empty($date)) {
-            $output .= $level.' DATE '.$date."\n";
+            $output .= $level . ' DATE ' . $date . "\n";
         }
 
         // Plac
@@ -57,13 +57,13 @@ class Even
         // $caus;
         $caus = $even->getCaus();
         if (! empty($caus)) {
-            $output .= $level.' CAUS '.$caus."\n";
+            $output .= $level . ' CAUS ' . $caus . "\n";
         }
 
         // $age;
         $age = $even->getAge();
         if (! empty($age)) {
-            $output .= $level.' AGE '.$age."\n";
+            $output .= $level . ' AGE ' . $age . "\n";
         }
 
         // $addr
@@ -84,7 +84,7 @@ class Even
         // $agnc
         $agnc = $even->getAgnc();
         if (! empty($agnc)) {
-            $output .= $level.' AGNC '.$agnc."\n";
+            $output .= $level . ' AGNC ' . $agnc . "\n";
         }
 
         // $ref = array();

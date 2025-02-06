@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Parser\Indi;
 
-class Emig extends \Geekish\Gedcom\Parser\Indi\Even
-{
-}
+class Emig extends \Geekish\Gedcom\Parser\Indi\Even {}

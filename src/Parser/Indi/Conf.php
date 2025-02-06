@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Parser\Indi;
 
-class Conf extends \Geekish\Gedcom\Parser\Indi\Even
-{
-}
+class Conf extends \Geekish\Gedcom\Parser\Indi\Even {}

@@ -23,7 +23,7 @@ class Fams extends \Geekish\Gedcom\Parser\Component
         $depth = (int) $record[0];
 
         if ((is_countable($record) ? count($record) : 0) < 3) {
-            $parser->logSkippedRecord('Missing family information; '.self::class);
+            $parser->logSkippedRecord('Missing family information; ' . self::class);
             $parser->skipToNextLevel($depth);
 
             return null;
@@ -56,7 +56,7 @@ class Fams extends \Geekish\Gedcom\Parser\Component
 
                     break;
                 default:
-                    $parser->logUnhandledRecord(self::class.' @ '.__LINE__);
+                    $parser->logUnhandledRecord(self::class . ' @ ' . __LINE__);
             }
 
             $parser->forward();

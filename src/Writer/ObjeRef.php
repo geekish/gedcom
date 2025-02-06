@@ -30,28 +30,28 @@ class ObjeRef
         // $_note
         $_obje = $obje->getObje();
         if (! empty($_note)) {
-            $output .= $level.' OBJE '.$_obje."\n";
+            $output .= $level . ' OBJE ' . $_obje . "\n";
         } else {
-            $output .= $level." OBJE \n";
+            $output .= $level . " OBJE \n";
         }
 
         $level++;
         // _form
         $_form = $obje->getForm();
         if (! empty($_form)) {
-            $output .= $level.' FORM '.$_form."\n";
+            $output .= $level . ' FORM ' . $_form . "\n";
         }
 
         // _titl
         $_titl = $obje->getTitl();
         if (! empty($_titl)) {
-            $output .= $level.' TITL '.$_titl."\n";
+            $output .= $level . ' TITL ' . $_titl . "\n";
         }
 
         // _file
         $_file = $obje->getFile();
         if (! empty($_file)) {
-            $output .= $level.' FILE '.$_file."\n";
+            $output .= $level . ' FILE ' . $_file . "\n";
         }
 
         // $_note = array()

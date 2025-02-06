@@ -31,40 +31,40 @@ class Name
         if (empty($_name)) {
             return $output;
         }
-        $output .= $level.' NAME '.$_name."\n";
+        $output .= $level . ' NAME ' . $_name . "\n";
         // level up
         $level++;
 
         // NPFX
         $npfx = $name->getNpfx();
         if (! empty($npfx)) {
-            $output .= $level.' NPFX '.$npfx."\n";
+            $output .= $level . ' NPFX ' . $npfx . "\n";
         }
 
         // GIVN
         $givn = $name->getGivn();
         if (! empty($givn)) {
-            $output .= $level.' GIVN '.$givn."\n";
+            $output .= $level . ' GIVN ' . $givn . "\n";
         }
         // NICK
         $nick = $name->getNick();
         if (! empty($nick)) {
-            $output .= $level.' NICK '.$nick."\n";
+            $output .= $level . ' NICK ' . $nick . "\n";
         }
         // SPFX
         $spfx = $name->getSpfx();
         if (! empty($spfx)) {
-            $output .= $level.' SPFX '.$spfx."\n";
+            $output .= $level . ' SPFX ' . $spfx . "\n";
         }
         // SURN
         $surn = $name->getSurn();
         if (! empty($surn)) {
-            $output .= $level.' SURN '.$surn."\n";
+            $output .= $level . ' SURN ' . $surn . "\n";
         }
         // NSFX
         $nsfx = $name->getNsfx();
         if (! empty($nsfx)) {
-            $output .= $level.' NSFX '.$nsfx."\n";
+            $output .= $level . ' NSFX ' . $nsfx . "\n";
         }
         // SOUR
         $sour = $name->getSour();

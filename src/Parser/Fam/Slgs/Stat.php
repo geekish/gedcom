@@ -47,7 +47,7 @@ class Stat extends \Geekish\Gedcom\Parser\Component
 
             match ($recordType) {
                 'DATE' => $stat->setDate(trim((string) $record[2])),
-                default => $parser->logUnhandledRecord(self::class.' @ '.__LINE__),
+                default => $parser->logUnhandledRecord(self::class . ' @ ' . __LINE__),
             };
 
             $parser->forward();

@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Parser\Indi;
 
-class Grad extends \Geekish\Gedcom\Parser\Indi\Even
-{
-}
+class Grad extends \Geekish\Gedcom\Parser\Indi\Even {}

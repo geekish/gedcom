@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Record\Indi;
 
-class Cast extends \Geekish\Gedcom\Record\Indi\Attr
-{
-}
+class Cast extends \Geekish\Gedcom\Record\Indi\Attr {}

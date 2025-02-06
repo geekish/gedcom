@@ -53,7 +53,7 @@ class Fone extends \Geekish\Gedcom\Parser\Component
                 'SPFX' => $fone->setSpfx(trim((string) $record[2])),
                 'SURN' => $fone->setSurn(trim((string) $record[2])),
                 'NSFX' => $fone->setNsfx(trim((string) $record[2])),
-                default => $parser->logUnhandledRecord(self::class.' @ '.__LINE__),
+                default => $parser->logUnhandledRecord(self::class . ' @ ' . __LINE__),
             };
 
             $parser->forward();

@@ -24,25 +24,25 @@ class Data
      */
     public static function convert(\Geekish\Gedcom\Record\Sour\Data &$data, $level = 0)
     {
-        $output = $level." DATA\n";
+        $output = $level . " DATA\n";
         $level++;
 
         // $_date;
         $date = $data->getDate();
         if (! empty($date)) {
-            $output .= $level.' DATE '.$date."\n";
+            $output .= $level . ' DATE ' . $date . "\n";
         }
 
         // $_agnc AGNC
         $_agnc = $data->getAgnc();
         if (! empty($_agnc)) {
-            $output .= $level.' AGNC '.$_agnc."\n";
+            $output .= $level . ' AGNC ' . $_agnc . "\n";
         }
 
         // $_text
         $_text = $data->getText();
         if (! empty($_text)) {
-            $output .= $level.' TEXT '.$_text."\n";
+            $output .= $level . ' TEXT ' . $_text . "\n";
         }
 
         // $_note

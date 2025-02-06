@@ -26,6 +26,6 @@ class Phon
      */
     public static function convert($phon, $level = 1)
     {
-        return "{$level} PHON ".$phon."\n";
+        return "{$level} PHON " . $phon . "\n";
     }
 }

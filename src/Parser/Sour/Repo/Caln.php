@@ -44,7 +44,7 @@ class Caln extends \Geekish\Gedcom\Parser\Component
 
             match ($recordType) {
                 'MEDI' => $caln->setMedi(trim((string) $record[2])),
-                default => $parser->logUnhandledRecord(self::class.' @ '.__LINE__),
+                default => $parser->logUnhandledRecord(self::class . ' @ ' . __LINE__),
             };
 
             $parser->forward();

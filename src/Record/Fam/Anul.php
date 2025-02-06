@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Record\Fam;
 
-class Anul extends \Geekish\Gedcom\Record\Fam\Even
-{
-}
+class Anul extends \Geekish\Gedcom\Record\Fam\Even {}

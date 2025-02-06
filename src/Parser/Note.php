@@ -51,15 +51,15 @@ class Note extends \Geekish\Gedcom\Parser\Component
 
             switch ($recordType) {
                 case 'CONT':
-                    $note->setNote($note->getNote()."\n");
+                    $note->setNote($note->getNote() . "\n");
                     if (isset($record[2])) {
-                        $note->setNote($note->getNote().$record[2]);
+                        $note->setNote($note->getNote() . $record[2]);
                     }
 
                     break;
                 case 'CONC':
                     if (isset($record[2])) {
-                        $note->setNote($note->getNote().$record[2]);
+                        $note->setNote($note->getNote() . $record[2]);
                     }
 
                     break;
@@ -83,7 +83,7 @@ class Note extends \Geekish\Gedcom\Parser\Component
 
                     break;
                 default:
-                    $parser->logUnhandledRecord(self::class.' @ '.__LINE__);
+                    $parser->logUnhandledRecord(self::class . ' @ ' . __LINE__);
             }
 
             $parser->forward();

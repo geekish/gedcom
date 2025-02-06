@@ -31,7 +31,7 @@ class Subm
         if (empty($_subm)) {
             return $output;
         } else {
-            $output .= $level.' '.$_subm.' SUBM '."\n";
+            $output .= $level . ' ' . $_subm . ' SUBM ' . "\n";
         }
         // level up
         $level++;
@@ -39,7 +39,7 @@ class Subm
         // NAME
         $name = $subm->getName();
         if (! empty($name)) {
-            $output .= $level.' NAME '.$name."\n";
+            $output .= $level . ' NAME ' . $name . "\n";
         }
         // $chan
         $chan = $subm->getChan();
@@ -58,13 +58,13 @@ class Subm
         // $rin
         $rin = $subm->getRin();
         if (! empty($rin)) {
-            $output .= $level.' RIN '.$rin."\n";
+            $output .= $level . ' RIN ' . $rin . "\n";
         }
 
         // $rfn
         $rfn = $subm->getRfn();
         if (! empty($rfn)) {
-            $output .= $level.' RFN '.$rfn."\n";
+            $output .= $level . ' RFN ' . $rfn . "\n";
         }
 
         // $lang = array()
@@ -72,7 +72,7 @@ class Subm
         if (! empty($langs) && $langs !== []) {
             foreach ($langs as $item) {
                 if ($item) {
-                    $_convert = $level.' LANG '.$item."\n";
+                    $_convert = $level . ' LANG ' . $item . "\n";
                     $output .= $_convert;
                 }
             }

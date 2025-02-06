@@ -22,7 +22,7 @@ abstract class Lds extends \Geekish\Gedcom\Parser\Component
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
         if (isset($record[1])) {
-            $className = '\\Geekish\Gedcom\\Record\\Indi\\'.ucfirst(strtolower(trim((string) $record[1])));
+            $className = '\\Geekish\Gedcom\\Record\\Indi\\' . ucfirst(strtolower(trim((string) $record[1])));
             $lds = new $className();
         } else {
             $parser->skipToNextLevel($depth);
@@ -74,12 +74,12 @@ abstract class Lds extends \Geekish\Gedcom\Parser\Component
                     break;
                 default:
                     $self = static::class;
-                    $method = 'parse'.$recordType;
+                    $method = 'parse' . $recordType;
 
                     if (method_exists($self, $method)) {
                         $self::$method($parser, $lds);
                     } else {
-                        $parser->logUnhandledRecord($self.' @ '.__LINE__);
+                        $parser->logUnhandledRecord($self . ' @ ' . __LINE__);
                     }
             }
 

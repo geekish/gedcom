@@ -42,7 +42,7 @@ class Deat extends \Geekish\Gedcom\Parser\Component
                 '_DATI' => $deat->setDati(trim((string) $record[2])),
                 'PLAC' => $deat->setPlac(trim((string) $record[2])),
                 'CAUS' => $deat->setCaus(trim((string) $record[2])),
-                default => $parser->logUnhandledRecord(self::class.' @ '.__LINE__),
+                default => $parser->logUnhandledRecord(self::class . ' @ ' . __LINE__),
             };
 
             $parser->forward();

@@ -43,7 +43,7 @@ class Phon extends \Geekish\Gedcom\Parser\Component
                 break;
             }
 
-            $parser->logUnhandledRecord(self::class.' @ '.__LINE__);
+            $parser->logUnhandledRecord(self::class . ' @ ' . __LINE__);
 
             $parser->forward();
         }

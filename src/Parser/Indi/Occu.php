@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Parser\Indi;
 
-class Occu extends \Geekish\Gedcom\Parser\Indi\Attr
-{
-}
+class Occu extends \Geekish\Gedcom\Parser\Indi\Attr {}

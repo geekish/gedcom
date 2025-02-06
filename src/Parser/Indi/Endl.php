@@ -15,6 +15,4 @@
 
 namespace Geekish\Gedcom\Parser\Indi;
 
-class Endl extends Lds
-{
-}
+class Endl extends Lds {}
