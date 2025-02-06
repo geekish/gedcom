@@ -13,11 +13,11 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser;
+namespace Geekish\Gedcom\Parser;
 
-class Repo extends \Gedcom\Parser\Component
+class Repo extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
@@ -29,7 +29,7 @@ class Repo extends \Gedcom\Parser\Component
             return null;
         }
 
-        $repo = new \Gedcom\Record\Repo();
+        $repo = new \Geekish\Gedcom\Record\Repo();
         $repo->setRepo($identifier);
 
         $parser->getGedcom()->addRepo($repo);
@@ -51,7 +51,7 @@ class Repo extends \Gedcom\Parser\Component
                     $repo->setName(trim((string) $record[2]));
                     break;
                 case 'ADDR':
-                    $addr = \Gedcom\Parser\Addr::parse($parser);
+                    $addr = \Geekish\Gedcom\Parser\Addr::parse($parser);
                     $repo->setAddr($addr);
                     break;
                 case 'PHON':
@@ -67,19 +67,19 @@ class Repo extends \Gedcom\Parser\Component
                     $repo->addWww(trim((string) $record[2]));
                     break;
                 case 'NOTE':
-                    if ($note = \Gedcom\Parser\NoteRef::parse($parser)) {
+                    if ($note = \Geekish\Gedcom\Parser\NoteRef::parse($parser)) {
                         $repo->addNote($note);
                     }
                     break;
                 case 'REFN':
-                    $refn = \Gedcom\Parser\Refn::parse($parser);
+                    $refn = \Geekish\Gedcom\Parser\Refn::parse($parser);
                     $repo->addRefn($refn);
                     break;
                 case 'RIN':
                     $repo->setRin(trim((string) $record[2]));
                     break;
                 case 'CHAN':
-                    $chan = \Gedcom\Parser\Chan::parse($parser);
+                    $chan = \Geekish\Gedcom\Parser\Chan::parse($parser);
                     $repo->setChan($chan);
                     break;
                 default:

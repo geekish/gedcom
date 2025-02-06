@@ -13,9 +13,9 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser\Indi;
+namespace Geekish\Gedcom\Parser\Indi;
 
-class Adop extends \Gedcom\Parser\Indi\Even
+class Adop extends \Geekish\Gedcom\Parser\Indi\Even
 {
     public static function parseAdop($parser, $even)
     {

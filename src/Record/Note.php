@@ -13,9 +13,9 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record;
+namespace Geekish\Gedcom\Record;
 
-class Note extends \Gedcom\Record implements Sourceable
+class Note extends \Geekish\Gedcom\Record implements Sourceable
 {
     protected $_id;
     protected $_note;

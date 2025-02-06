@@ -13,16 +13,16 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser\Head;
+namespace Geekish\Gedcom\Parser\Head;
 
-class Char extends \Gedcom\Parser\Component
+class Char extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
         if (isset($record[2])) {
-            $char = new \Gedcom\Record\Head\Char();
+            $char = new \Geekish\Gedcom\Record\Head\Char();
             $char->setChar(trim((string) $record[2]));
         } else {
             $parser->skipToNextLevel($depth);

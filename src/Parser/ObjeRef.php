@@ -13,16 +13,16 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser;
+namespace Geekish\Gedcom\Parser;
 
-class ObjeRef extends \Gedcom\Parser\Component
+class ObjeRef extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
 
-        $obje = new \Gedcom\Record\ObjeRef();
+        $obje = new \Geekish\Gedcom\Record\ObjeRef();
 
         if (isset($record[2])) {
             $obje->setIsReference(true);
@@ -54,7 +54,7 @@ class ObjeRef extends \Gedcom\Parser\Component
                     $obje->setForm(trim((string) $record[2]));
                     break;
                 case 'NOTE':
-                    $note = \Gedcom\Parser\NoteRef::parse($parser);
+                    $note = \Geekish\Gedcom\Parser\NoteRef::parse($parser);
                     if ($note) {
                         $obje->addNote($note);
                     }

@@ -1,10 +1,10 @@
 <?php
 
-use Gedcom\Gedcom;
-use Gedcom\Writer;
-use Gedcom\Writer\Head;
-use Gedcom\Writer\Sour;
-use Gedcom\Writer\Subn;
+use Geekish\Gedcom\Gedcom;
+use Geekish\Gedcom\Writer;
+use Geekish\Gedcom\Writer\Head;
+use Geekish\Gedcom\Writer\Sour;
+use Geekish\Gedcom\Writer\Subn;
 use PHPUnit\Framework\TestCase;
 
 class WriterTest extends TestCase
@@ -34,8 +34,8 @@ class WriterTest extends TestCase
 
     public function testConvertWithMultipleFamProperties()
     {
-        $fam1 = $this->createMock(\Gedcom\Record\Fam::class);
-        $fam2 = $this->createMock(\Gedcom\Record\Fam::class);
+        $fam1 = $this->createMock(\Geekish\Gedcom\Record\Fam::class);
+        $fam2 = $this->createMock(\Geekish\Gedcom\Record\Fam::class);
         $gedcom = $this->createMockGedcom(['Fam' => [$fam1, $fam2]]);
         $output = Writer::convert($gedcom);
         $this->assertConvertOutput($output, 'expected_output');

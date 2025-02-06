@@ -13,8 +13,8 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser\Fam;
+namespace Geekish\Gedcom\Parser\Fam;
 
-class Marr extends \Gedcom\Parser\Fam\Even
+class Marr extends \Geekish\Gedcom\Parser\Fam\Even
 {
 }

@@ -13,16 +13,16 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser\SourRef;
+namespace Geekish\Gedcom\Parser\SourRef;
 
-class Even extends \Gedcom\Parser\Component
+class Even extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
         if (isset($record[2])) {
-            $even = new \Gedcom\Record\SourRef\Even();
+            $even = new \Geekish\Gedcom\Record\SourRef\Even();
             $even->setEven(trim((string) $record[2]));
         } else {
             $parser->skipToNextLevel($depth);

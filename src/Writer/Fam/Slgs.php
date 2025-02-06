@@ -13,7 +13,7 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Writer\Fam;
+namespace Geekish\Gedcom\Writer\Fam;
 
 class Slgs
 {
@@ -22,7 +22,7 @@ class Slgs
      *
      * @return string
      */
-    public static function convert(\Gedcom\Record\Fam\Slgs &$slgs, $level)
+    public static function convert(\Geekish\Gedcom\Record\Fam\Slgs &$slgs, $level)
     {
         $output = '';
         $output .= $level." SLGS \n";
@@ -58,7 +58,7 @@ class Slgs
         $sour = $slgs->getSour();
         if (!empty($sour) && (is_countable($sour) ? count($sour) : 0) > 0) {
             foreach ($sour as $item) {
-                $_convert = \Gedcom\Writer\SourRef::convert($item, $level);
+                $_convert = \Geekish\Gedcom\Writer\SourRef::convert($item, $level);
                 $output .= $_convert;
             }
         }
@@ -66,7 +66,7 @@ class Slgs
         $note = $slgs->getNote();
         if (!empty($note) && (is_countable($note) ? count($note) : 0) > 0) {
             foreach ($note as $item) {
-                $_convert = \Gedcom\Writer\NoteRef::convert($item, $level);
+                $_convert = \Geekish\Gedcom\Writer\NoteRef::convert($item, $level);
                 $output .= $_convert;
             }
         }

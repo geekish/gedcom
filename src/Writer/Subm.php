@@ -13,17 +13,17 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Writer;
+namespace Geekish\Gedcom\Writer;
 
 class Subm
 {
     /**
-     * @param \Gedcom\Record\Subm $note
+     * @param \Geekish\Gedcom\Record\Subm $note
      * @param int                 $level
      *
      * @return string
      */
-    public static function convert(\Gedcom\Record\Subm &$subm)
+    public static function convert(\Geekish\Gedcom\Record\Subm &$subm)
     {
         $level = 0;
         $output = '';
@@ -44,14 +44,14 @@ class Subm
         // $chan
         $chan = $subm->getChan();
         if ($chan) {
-            $_convert = \Gedcom\Writer\Chan::convert($chan, $level);
+            $_convert = \Geekish\Gedcom\Writer\Chan::convert($chan, $level);
             $output .= $_convert;
         }
 
         // $addr
         $addr = $subm->getAddr();
         if ($addr) {
-            $_convert = \Gedcom\Writer\Addr::convert($addr, $level);
+            $_convert = \Geekish\Gedcom\Writer\Addr::convert($addr, $level);
             $output .= $_convert;
         }
 
@@ -83,7 +83,7 @@ class Subm
         if (!empty($phon) && $phon !== []) {
             foreach ($phon as $item) {
                 if ($item) {
-                    $_convert = \Gedcom\Writer\Phon::convert($item, $level);
+                    $_convert = \Geekish\Gedcom\Writer\Phon::convert($item, $level);
                     $output .= $_convert;
                 }
             }
@@ -93,7 +93,7 @@ class Subm
         $obje = $subm->getObje();
         if (!empty($obje) && $obje !== []) {
             foreach ($obje as $item) {
-                $_convert = \Gedcom\Writer\ObjeRef::convert($item, $level);
+                $_convert = \Geekish\Gedcom\Writer\ObjeRef::convert($item, $level);
                 $output .= $_convert;
             }
         }
@@ -102,7 +102,7 @@ class Subm
         $note = $subm->getNote();
         if (!empty($note) && $note !== []) {
             foreach ($note as $item) {
-                $_convert = \Gedcom\Writer\NoteRef::convert($item, $level);
+                $_convert = \Geekish\Gedcom\Writer\NoteRef::convert($item, $level);
                 $output .= $_convert;
             }
         }

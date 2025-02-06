@@ -13,16 +13,16 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser\Plac;
+namespace Geekish\Gedcom\Parser\Plac;
 
-class Map extends \Gedcom\Parser\Component
+class Map extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
 
-        $map = new \Gedcom\Record\Plac\Map();
+        $map = new \Geekish\Gedcom\Record\Plac\Map();
 
         $parser->forward();
 

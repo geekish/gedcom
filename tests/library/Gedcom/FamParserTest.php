@@ -1,8 +1,8 @@
 <?php
 
-namespace GedcomTest;
+namespace Geekish\GedcomTest;
 
-use Gedcom\Parser;
+use Geekish\Gedcom\Parser;
 
 /**
  * Class FamParserTest.
@@ -10,12 +10,12 @@ use Gedcom\Parser;
 class FamParserTest extends \PHPUnit\Framework\TestCase
 {
     /**
-     * @var \Gedcom\Parser
+     * @var \Geekish\Gedcom\Parser
      */
     protected $parser = null;
 
     /**
-     * @var \Gedcom\Gedcom
+     * @var \Geekish\Gedcom\Gedcom
      */
     protected $gedcom = null;
 
@@ -93,7 +93,7 @@ class FamParserTest extends \PHPUnit\Framework\TestCase
         $fam = $this->gedcom->getFam('F1');
 
         $event = $fam['F1']->getEven('MARR');
-        $this->assertInstanceOf(\Gedcom\Record\Fam\Even::class, $event);
+        $this->assertInstanceOf(\Geekish\Gedcom\Record\Fam\Even::class, $event);
 
         $this->assertEquals('Civil marriage', $event->getType());
     }
@@ -112,8 +112,8 @@ class FamParserTest extends \PHPUnit\Framework\TestCase
 
         $event1 = $events[0];
         $event2 = $events[1];
-        $this->assertInstanceOf(\Gedcom\Record\Fam\Even::class, $event1);
-        $this->assertInstanceOf(\Gedcom\Record\Fam\Even::class, $event2);
+        $this->assertInstanceOf(\Geekish\Gedcom\Record\Fam\Even::class, $event1);
+        $this->assertInstanceOf(\Geekish\Gedcom\Record\Fam\Even::class, $event2);
 
         $this->assertEquals('First civil marriage', $event1->getType());
         $this->assertEquals('Second civil marriage', $event2->getType());

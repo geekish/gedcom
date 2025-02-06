@@ -13,18 +13,18 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser;
+namespace Geekish\Gedcom\Parser;
 
-class Buri extends \Gedcom\Parser\Component
+class Buri extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
 
         $parser->forward();
 
-        $buri = new \Gedcom\Record\Buri();
+        $buri = new \Geekish\Gedcom\Record\Buri();
 
         while (!$parser->eof()) {
             $record = $parser->getCurrentLineRecord();

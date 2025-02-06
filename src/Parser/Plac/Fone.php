@@ -13,11 +13,11 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser\Plac;
+namespace Geekish\Gedcom\Parser\Plac;
 
-class Fone extends \Gedcom\Parser\Component
+class Fone extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
@@ -29,7 +29,7 @@ class Fone extends \Gedcom\Parser\Component
             return null;
         }
 
-        $fone = new \Gedcom\Record\Plac\Fone();
+        $fone = new \Geekish\Gedcom\Record\Plac\Fone();
         $fone->setPlac($_fone);
 
         $parser->forward();

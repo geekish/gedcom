@@ -13,11 +13,11 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser\Indi;
+namespace Geekish\Gedcom\Parser\Indi;
 
-class Fams extends \Gedcom\Parser\Component
+class Fams extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
@@ -31,7 +31,7 @@ class Fams extends \Gedcom\Parser\Component
 
         $fams = $parser->normalizeIdentifier($record[2]);
 
-        $fam = new \Gedcom\Record\Indi\Fams();
+        $fam = new \Geekish\Gedcom\Record\Indi\Fams();
         $fam->setFams($fams);
 
         $parser->forward();
@@ -48,7 +48,7 @@ class Fams extends \Gedcom\Parser\Component
 
             switch ($recordType) {
                 case 'NOTE':
-                    $note = \Gedcom\Parser\NoteRef::parse($parser);
+                    $note = \Geekish\Gedcom\Parser\NoteRef::parse($parser);
                     if ($note) {
                         $fam->addNote($note);
                     }

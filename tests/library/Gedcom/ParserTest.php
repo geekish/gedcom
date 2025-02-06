@@ -13,9 +13,9 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace GedcomTest;
+namespace Geekish\GedcomTest;
 
-use Gedcom\Parser;
+use Geekish\Gedcom\Parser;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

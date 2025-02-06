@@ -13,7 +13,7 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Writer;
+namespace Geekish\Gedcom\Writer;
 
 class NoteRef
 {
@@ -22,7 +22,7 @@ class NoteRef
      *
      * @return string
      */
-    public static function convert(\Gedcom\Record\NoteRef &$note, $level)
+    public static function convert(\Geekish\Gedcom\Record\NoteRef &$note, $level)
     {
         $output = '';
 
@@ -36,7 +36,7 @@ class NoteRef
         // $sour
         $sour = $note->getSour();
         foreach ($sour as $item) {
-            $_convert = \Gedcom\Writer\SourRef::convert($item, $level);
+            $_convert = \Geekish\Gedcom\Writer\SourRef::convert($item, $level);
             $output .= $_convert;
         }
 

@@ -13,9 +13,9 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record\Head;
+namespace Geekish\Gedcom\Record\Head;
 
-class Sour extends \Gedcom\Record
+class Sour extends \Geekish\Gedcom\Record
 {
     protected $_sour;
 
@@ -44,7 +44,7 @@ class Sour extends \Gedcom\Record
     }
 
     /**
-     * @param \Gedcom\Record\Head\Sour\Data $data
+     * @param \Geekish\Gedcom\Record\Head\Sour\Data $data
      */
     public function setData($data = [])
     {
@@ -52,7 +52,7 @@ class Sour extends \Gedcom\Record
     }
 
     /**
-     * @return \Gedcom\Record\Head\Sour\Data
+     * @return \Geekish\Gedcom\Record\Head\Sour\Data
      */
     public function getData()
     {

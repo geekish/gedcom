@@ -13,12 +13,12 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record;
+namespace Geekish\Gedcom\Record;
 
 /**
  * Class Sour.
  */
-class Sour extends \Gedcom\Record implements Noteable, Objectable
+class Sour extends \Geekish\Gedcom\Record implements Noteable, Objectable
 {
     /**
      * @var string
@@ -186,7 +186,7 @@ class Sour extends \Gedcom\Record implements Noteable, Objectable
     }
 
     /**
-     * @param \Gedcom\Record\Repo $repo
+     * @param \Geekish\Gedcom\Record\Repo $repo
      *
      * @return Sour
      */
@@ -198,7 +198,7 @@ class Sour extends \Gedcom\Record implements Noteable, Objectable
     }
 
     /**
-     * @return \Gedcom\Record\Repo
+     * @return \Geekish\Gedcom\Record\Repo
      */
     public function getRepo()
     {
@@ -266,7 +266,7 @@ class Sour extends \Gedcom\Record implements Noteable, Objectable
     }
 
     /**
-     * @param \Gedcom\Record\Chan $chan
+     * @param \Geekish\Gedcom\Record\Chan $chan
      *
      * @return Sour
      */
@@ -278,7 +278,7 @@ class Sour extends \Gedcom\Record implements Noteable, Objectable
     }
 
     /**
-     * @return \Gedcom\Record\Chan
+     * @return \Geekish\Gedcom\Record\Chan
      */
     public function getChan()
     {

@@ -13,9 +13,9 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record;
+namespace Geekish\Gedcom\Record;
 
-class SourRef extends \Gedcom\Record
+class SourRef extends \Geekish\Gedcom\Record
 {
     protected $_isRef = false;
 

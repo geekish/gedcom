@@ -13,8 +13,8 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record\Indi;
+namespace Geekish\Gedcom\Record\Indi;
 
-class Ssn extends \Gedcom\Record\Indi\Attr
+class Ssn extends \Geekish\Gedcom\Record\Indi\Attr
 {
 }

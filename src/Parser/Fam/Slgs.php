@@ -13,16 +13,16 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser\Fam;
+namespace Geekish\Gedcom\Parser\Fam;
 
-class Slgs extends \Gedcom\Parser\Component
+class Slgs extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
 
-        $slgs = new \Gedcom\Record\Fam\Slgs();
+        $slgs = new \Geekish\Gedcom\Record\Fam\Slgs();
 
         $parser->forward();
 
@@ -38,7 +38,7 @@ class Slgs extends \Gedcom\Parser\Component
 
             switch ($recordType) {
                 case 'STAT':
-                    $stat = \Gedcom\Parser\Fam\Slgs\Stat::parse($parser);
+                    $stat = \Geekish\Gedcom\Parser\Fam\Slgs\Stat::parse($parser);
                     $slgs->setStat($stat);
                     break;
                 case 'DATE':
@@ -51,11 +51,11 @@ class Slgs extends \Gedcom\Parser\Component
                     $slgs->setTemp(trim((string) $record[2]));
                     break;
                 case 'SOUR':
-                    $sour = \Gedcom\Parser\SourRef::parse($parser);
+                    $sour = \Geekish\Gedcom\Parser\SourRef::parse($parser);
                     $slgs->addSour($sour);
                     break;
                 case 'NOTE':
-                    $note = \Gedcom\Parser\NoteRef::parse($parser);
+                    $note = \Geekish\Gedcom\Parser\NoteRef::parse($parser);
                     if ($note) {
                         $slgs->addNote($note);
                     }

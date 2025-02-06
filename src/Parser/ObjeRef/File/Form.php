@@ -13,13 +13,13 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser\ObjeRef\File;
+namespace Geekish\Gedcom\Parser\ObjeRef\File;
 
-class Form extends \Gedcom\Parser\Component
+class Form extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
-        $form = new \Gedcom\Record\ObjeRef\File\Form();
+        $form = new \Geekish\Gedcom\Record\ObjeRef\File\Form();
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
         if (isset($record[2])) {

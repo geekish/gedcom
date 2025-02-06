@@ -13,11 +13,11 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record\Sour;
+namespace Geekish\Gedcom\Record\Sour;
 
-use Gedcom\Record\Noteable;
+use Geekish\Gedcom\Record\Noteable;
 
-class Data extends \Gedcom\Record implements Noteable
+class Data extends \Geekish\Gedcom\Record implements Noteable
 {
     protected $_even = [];
     protected $_agnc;

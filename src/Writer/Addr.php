@@ -13,7 +13,7 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Writer;
+namespace Geekish\Gedcom\Writer;
 
 class Addr
 {
@@ -23,7 +23,7 @@ class Addr
      *
      * @return string
      */
-    public static function convert(\Gedcom\Record\Addr &$addr, $format = self::GEDCOM55, $level = 1)
+    public static function convert(\Geekish\Gedcom\Record\Addr &$addr, $format = self::GEDCOM55, $level = 1)
     {
         $addrs = explode("\n", $addr->getAddr());
 

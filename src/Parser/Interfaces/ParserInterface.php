@@ -1,8 +1,8 @@
 <?php
 
-namespace Gedcom\Parser\Interfaces;
+namespace Geekish\Gedcom\Parser\Interfaces;
 
-use Gedcom\Gedcom;
+use Geekish\Gedcom\Gedcom;
 
 /**
  * Interface for parsers within the GEDCOM project.

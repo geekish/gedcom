@@ -13,9 +13,9 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record\Sour\Data;
+namespace Geekish\Gedcom\Record\Sour\Data;
 
-class Even extends \Gedcom\Record
+class Even extends \Geekish\Gedcom\Record
 {
     protected $_date;
     protected $_plac;

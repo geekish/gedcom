@@ -13,14 +13,14 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record\Indi;
+namespace Geekish\Gedcom\Record\Indi;
 
-use Gedcom\Record;
+use Geekish\Gedcom\Record;
 
 /**
  * Class Even.
  */
-class Even extends \Gedcom\Record implements Record\Objectable, Record\Sourceable, Record\Noteable
+class Even extends \Geekish\Gedcom\Record implements Record\Objectable, Record\Sourceable, Record\Noteable
 {
     /**
      * @var string
@@ -173,7 +173,7 @@ class Even extends \Gedcom\Record implements Record\Objectable, Record\Sourceabl
     }
 
     /**
-     * @param \Gedcom\Record\Addr $addr
+     * @param \Geekish\Gedcom\Record\Addr $addr
      *
      * @return Even
      */
@@ -185,7 +185,7 @@ class Even extends \Gedcom\Record implements Record\Objectable, Record\Sourceabl
     }
 
     /**
-     * @return \Gedcom\Record\Addr
+     * @return \Geekish\Gedcom\Record\Addr
      */
     public function getAddr()
     {
@@ -277,7 +277,7 @@ class Even extends \Gedcom\Record implements Record\Objectable, Record\Sourceabl
     }
 
     /**
-     * @param \Gedcom\Record\Indi\Even\Plac $plac
+     * @param \Geekish\Gedcom\Record\Indi\Even\Plac $plac
      *
      * @return Even
      */
@@ -289,7 +289,7 @@ class Even extends \Gedcom\Record implements Record\Objectable, Record\Sourceabl
     }
 
     /**
-     * @return \Gedcom\Record\Indi\Even\Plac
+     * @return \Geekish\Gedcom\Record\Indi\Even\Plac
      */
     public function getPlac()
     {

@@ -13,16 +13,16 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser;
+namespace Geekish\Gedcom\Parser;
 
-class Refn extends \Gedcom\Parser\Component
+class Refn extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
         if (isset($record[2])) {
-            $refn = new \Gedcom\Record\Refn();
+            $refn = new \Geekish\Gedcom\Record\Refn();
             $refn->setRefn(trim((string) $record[2]));
         } else {
             $parser->skipToNextLevel($depth);

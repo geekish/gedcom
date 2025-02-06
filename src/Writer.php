@@ -13,17 +13,17 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom;
+namespace Geekish\Gedcom;
 
-use Gedcom\Writer\Fam;
-use Gedcom\Writer\Head;
-use Gedcom\Writer\Indi;
-use Gedcom\Writer\Note;
-use Gedcom\Writer\Obje;
-use Gedcom\Writer\Repo;
-use Gedcom\Writer\Sour;
-use Gedcom\Writer\Subm;
-use Gedcom\Writer\Subn;
+use Geekish\Gedcom\Writer\Fam;
+use Geekish\Gedcom\Writer\Head;
+use Geekish\Gedcom\Writer\Indi;
+use Geekish\Gedcom\Writer\Note;
+use Geekish\Gedcom\Writer\Obje;
+use Geekish\Gedcom\Writer\Repo;
+use Geekish\Gedcom\Writer\Sour;
+use Geekish\Gedcom\Writer\Subm;
+use Geekish\Gedcom\Writer\Subn;
 
 class Writer
 {

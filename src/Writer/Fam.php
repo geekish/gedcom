@@ -13,17 +13,17 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Writer;
+namespace Geekish\Gedcom\Writer;
 
 class Fam
 {
     /**
-     * @param \Gedcom\Record\Fam $sour
+     * @param \Geekish\Gedcom\Record\Fam $sour
      * @param int                $level
      *
      * @return string
      */
-    public static function convert(\Gedcom\Record\Fam &$fam, $level = 0)
+    public static function convert(\Geekish\Gedcom\Record\Fam &$fam, $level = 0)
     {
         $output = '';
         $id = $fam->getId();
@@ -82,13 +82,13 @@ class Fam
         // CHAN
         $chan = $fam->getChan();
         if (!empty($chan)) {
-            $_convert = \Gedcom\Writer\Chan::convert($chan, $level);
+            $_convert = \Geekish\Gedcom\Writer\Chan::convert($chan, $level);
             $output .= $_convert;
         }
         // SLGS
         $slgs = $fam->getSlgs();
         if (!empty($slgs) && (is_countable($slgs) ? count($slgs) : 0) > 0 && $slgs) {
-            $_convert = \Gedcom\Writer\Fam\Slgs::convert($item, $level);
+            $_convert = \Geekish\Gedcom\Writer\Fam\Slgs::convert($item, $level);
             $output .= $_convert;
         }
 
@@ -97,7 +97,7 @@ class Fam
         if (!empty($refn) && (is_countable($refn) ? count($refn) : 0) > 0) {
             foreach ($refn as $item) {
                 if ($item) {
-                    $_convert = \Gedcom\Writer\Refn::convert($item, $level);
+                    $_convert = \Geekish\Gedcom\Writer\Refn::convert($item, $level);
                     $output .= $_convert;
                 }
             }
@@ -108,7 +108,7 @@ class Fam
         if (!empty($note) && (is_countable($note) ? count($note) : 0) > 0) {
             foreach ($note as $item) {
                 if ($item) {
-                    $_convert = \Gedcom\Writer\NoteRef::convert($item, $level);
+                    $_convert = \Geekish\Gedcom\Writer\NoteRef::convert($item, $level);
                     $output .= $_convert;
                 }
             }
@@ -119,7 +119,7 @@ class Fam
         if (!empty($sour) && (is_countable($sour) ? count($sour) : 0) > 0) {
             foreach ($sour as $item) {
                 if ($item) {
-                    $_convert = \Gedcom\Writer\SourRef::convert($item, $level);
+                    $_convert = \Geekish\Gedcom\Writer\SourRef::convert($item, $level);
                     $output .= $_convert;
                 }
             }
@@ -130,7 +130,7 @@ class Fam
         if (!empty($obje) && (is_countable($obje) ? count($obje) : 0) > 0) {
             foreach ($obje as $item) {
                 if ($item) {
-                    $_convert = \Gedcom\Writer\ObjeRef::convert($item, $level);
+                    $_convert = \Geekish\Gedcom\Writer\ObjeRef::convert($item, $level);
                     $output .= $_convert;
                 }
             }
@@ -142,7 +142,7 @@ class Fam
             foreach ($even as $eventType => $items) {
                 foreach ($items as $item) {
                     if ($item) {
-                        $_convert = \Gedcom\Writer\Fam\Even::convert($item, $eventType, $level);
+                        $_convert = \Geekish\Gedcom\Writer\Fam\Even::convert($item, $eventType, $level);
                         $output .= $_convert;
                     }
                 }

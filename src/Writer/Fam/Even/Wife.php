@@ -13,17 +13,17 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Writer\Fam\Even;
+namespace Geekish\Gedcom\Writer\Fam\Even;
 
 class Wife
 {
     /**
-     * @param \Gedcom\Record\Fam\Even\Wife $attr
+     * @param \Geekish\Gedcom\Record\Fam\Even\Wife $attr
      * @param int                          $level
      *
      * @return string
      */
-    public static function convert(\Gedcom\Record\Fam\Even\Wife &$wife, $level = 0)
+    public static function convert(\Geekish\Gedcom\Record\Fam\Even\Wife &$wife, $level = 0)
     {
         $output = '';
 

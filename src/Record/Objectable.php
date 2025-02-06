@@ -13,9 +13,9 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record;
+namespace Geekish\Gedcom\Record;
 
 interface Objectable
 {
-    public function addObje(\Gedcom\Record\ObjeRef $obje);
+    public function addObje(\Geekish\Gedcom\Record\ObjeRef $obje);
 }

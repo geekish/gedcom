@@ -13,7 +13,7 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Writer\Head;
+namespace Geekish\Gedcom\Writer\Head;
 
 class Plac
 {
@@ -23,7 +23,7 @@ class Plac
      *
      * @return string
      */
-    public static function convert(\Gedcom\Record\Head\Plac &$plac, $level)
+    public static function convert(\Geekish\Gedcom\Record\Head\Plac &$plac, $level)
     {
         $output = $level." PLAC \n";
 

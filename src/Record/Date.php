@@ -13,12 +13,12 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record;
+namespace Geekish\Gedcom\Record;
 
 /**
  * Class Date.
  */
-class Date extends \Gedcom\Record
+class Date extends \Geekish\Gedcom\Record
 {
     /**
      * @var string

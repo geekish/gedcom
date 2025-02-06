@@ -13,13 +13,13 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser\Sour;
+namespace Geekish\Gedcom\Parser\Sour;
 
-class Repo extends \Gedcom\Parser\Component
+class Repo extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
-        $repo = new \Gedcom\Record\Sour\Repo();
+        $repo = new \Geekish\Gedcom\Record\Sour\Repo();
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
         if (isset($record[2])) {
@@ -40,8 +40,8 @@ class Repo extends \Gedcom\Parser\Component
             }
 
             match ($recordType) {
-                'NOTE' => $repo->addNote(\Gedcom\Parser\NoteRef::parse($parser)),
-                'CALN' => $repo->addCaln(\Gedcom\Parser\Sour\Repo\Caln::parse($parser)),
+                'NOTE' => $repo->addNote(\Geekish\Gedcom\Parser\NoteRef::parse($parser)),
+                'CALN' => $repo->addCaln(\Geekish\Gedcom\Parser\Sour\Repo\Caln::parse($parser)),
                 default => $parser->logUnhandledRecord(self::class.' @ '.__LINE__),
             };
 

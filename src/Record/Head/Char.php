@@ -13,9 +13,9 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record\Head;
+namespace Geekish\Gedcom\Record\Head;
 
-class Char extends \Gedcom\Record
+class Char extends \Geekish\Gedcom\Record
 {
     protected $_char;
     protected $_vers;

@@ -13,7 +13,7 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record\Indi;
+namespace Geekish\Gedcom\Record\Indi;
 
 /**
  * @method string getName()
@@ -24,7 +24,7 @@ namespace Gedcom\Record\Indi;
  * @method string getSurn()
  * @method string getNsfx()
  */
-class Name extends \Gedcom\Record implements \Gedcom\Record\Sourceable
+class Name extends \Geekish\Gedcom\Record implements \Geekish\Gedcom\Record\Sourceable
 {
     protected $_name;
     protected $_npfx;

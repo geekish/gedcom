@@ -13,7 +13,7 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Writer\Sour;
+namespace Geekish\Gedcom\Writer\Sour;
 
 class Data
 {
@@ -22,7 +22,7 @@ class Data
      *
      * @return string
      */
-    public static function convert(\Gedcom\Record\Sour\Data &$data, $level = 0)
+    public static function convert(\Geekish\Gedcom\Record\Sour\Data &$data, $level = 0)
     {
         $output = $level." DATA\n";
         $level++;
@@ -48,14 +48,14 @@ class Data
         // $_note
         $note = $data->getNote();
         foreach ($note as $item) {
-            $_convert = \Gedcom\Writer\NoteRef::convert($item, $level);
+            $_convert = \Geekish\Gedcom\Writer\NoteRef::convert($item, $level);
             $output .= $_convert;
         }
 
         // $_even
         $_even = $data->getEven();
         foreach ($_even as $item) {
-            $_convert = \Gedcom\Writer\Sour\Data\Even::convert($item, $level);
+            $_convert = \Geekish\Gedcom\Writer\Sour\Data\Even::convert($item, $level);
             $output .= $_convert;
         }
 

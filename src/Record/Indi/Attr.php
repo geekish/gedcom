@@ -13,13 +13,13 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record\Indi;
+namespace Geekish\Gedcom\Record\Indi;
 
-use Gedcom\Record\Noteable;
-use Gedcom\Record\Objectable;
-use Gedcom\Record\Sourceable;
+use Geekish\Gedcom\Record\Noteable;
+use Geekish\Gedcom\Record\Objectable;
+use Geekish\Gedcom\Record\Sourceable;
 
-class Attr extends \Gedcom\Record\Indi\Even implements Sourceable, Noteable, Objectable
+class Attr extends \Geekish\Gedcom\Record\Indi\Even implements Sourceable, Noteable, Objectable
 {
     protected $type;
     protected $_attr;

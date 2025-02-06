@@ -13,12 +13,12 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record\ObjeRef;
+namespace Geekish\Gedcom\Record\ObjeRef;
 
 /**
  * Class Refn.
  */
-class File extends \Gedcom\Record
+class File extends \Geekish\Gedcom\Record
 {
     /**
      * @var string multimedia_file_refn

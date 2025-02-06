@@ -13,17 +13,17 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Writer;
+namespace Geekish\Gedcom\Writer;
 
 class Chan
 {
     /**
-     * @param \Gedcom\Record\Chan $note
+     * @param \Geekish\Gedcom\Record\Chan $note
      * @param int                 $level
      *
      * @return string
      */
-    public static function convert(\Gedcom\Record\Chan &$chan, $level)
+    public static function convert(\Geekish\Gedcom\Record\Chan &$chan, $level)
     {
         $output = $level." CHAN \n";
         // level up
@@ -42,7 +42,7 @@ class Chan
         $_note = $chan->getNote();
         if (!empty($_note) && $_note !== []) {
             foreach ($_note as $item) {
-                $_convert = \Gedcom\Writer\NoteRef::convert($item, $level);
+                $_convert = \Geekish\Gedcom\Writer\NoteRef::convert($item, $level);
                 $output .= $_convert;
             }
         }

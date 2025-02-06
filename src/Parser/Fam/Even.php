@@ -13,16 +13,16 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser\Fam;
+namespace Geekish\Gedcom\Parser\Fam;
 
-class Even extends \Gedcom\Parser\Component
+class Even extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
 
-        $even = new \Gedcom\Record\Fam\Even();
+        $even = new \Geekish\Gedcom\Record\Fam\Even();
 
         if (isset($record[1]) && strtoupper(trim((string) $record[1])) != 'EVEN') {
             $even->setType(trim((string) $record[1]));
@@ -45,20 +45,20 @@ class Even extends \Gedcom\Parser\Component
                     $even->setType(trim((string) $record[2]));
                     break;
                 case 'DATE':
-                    $dat = \Gedcom\Parser\Date::parse($parser);
+                    $dat = \Geekish\Gedcom\Parser\Date::parse($parser);
                     $even->setDate($dat);
                     //$even->setDate(trim($record[2]));
                     break;
                 case 'PLAC':
-                    $plac = \Gedcom\Parser\Plac::parse($parser);
+                    $plac = \Geekish\Gedcom\Parser\Plac::parse($parser);
                     $even->setPlac($plac);
                     break;
                 case 'ADDR':
-                    $addr = \Gedcom\Parser\Addr::parse($parser);
+                    $addr = \Geekish\Gedcom\Parser\Addr::parse($parser);
                     $even->setAddr($addr);
                     break;
                 case 'PHON':
-                    $phone = \Gedcom\Parser\Phon::parse($parser);
+                    $phone = \Geekish\Gedcom\Parser\Phon::parse($parser);
                     $even->addPhon($phone);
                     break;
                 case 'CAUS':
@@ -71,23 +71,23 @@ class Even extends \Gedcom\Parser\Component
                     $even->setAgnc(trim((string) $record[2]));
                     break;
                 case 'HUSB':
-                    $husb = \Gedcom\Parser\Fam\Even\Husb::parse($parser);
+                    $husb = \Geekish\Gedcom\Parser\Fam\Even\Husb::parse($parser);
                     $even->setHusb($husb);
                     break;
                 case 'WIFE':
-                    $wife = \Gedcom\Parser\Fam\Even\Wife::parse($parser);
+                    $wife = \Geekish\Gedcom\Parser\Fam\Even\Wife::parse($parser);
                     $even->setWife($wife);
                     break;
                 case 'SOUR':
-                    $sour = \Gedcom\Parser\SourRef::parse($parser);
+                    $sour = \Geekish\Gedcom\Parser\SourRef::parse($parser);
                     $even->addSour($sour);
                     break;
                 case 'OBJE':
-                    $obje = \Gedcom\Parser\ObjeRef::parse($parser);
+                    $obje = \Geekish\Gedcom\Parser\ObjeRef::parse($parser);
                     $even->addObje($obje);
                     break;
                 case 'NOTE':
-                    $note = \Gedcom\Parser\NoteRef::parse($parser);
+                    $note = \Geekish\Gedcom\Parser\NoteRef::parse($parser);
                     if ($note) {
                         $even->addNote($note);
                     }

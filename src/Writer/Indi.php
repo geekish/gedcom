@@ -13,7 +13,7 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Writer;
+namespace Geekish\Gedcom\Writer;
 
 class Indi
 {
@@ -22,7 +22,7 @@ class Indi
      *
      * @return string
      */
-    public static function convert(\Gedcom\Record\Indi &$indi)
+    public static function convert(\Geekish\Gedcom\Record\Indi &$indi)
     {
         $level = 0;
 
@@ -47,7 +47,7 @@ class Indi
         $attr = $indi->getAllAttr();
         if (!empty($attr) && $attr !== []) {
             foreach ($attr as $item) {
-                $_convert = \Gedcom\Writer\Indi\Even::convert($item, $level);
+                $_convert = \Geekish\Gedcom\Writer\Indi\Even::convert($item, $level);
                 $output .= $_convert;
             }
         }
@@ -58,7 +58,7 @@ class Indi
             foreach ($even as $items) {
                 foreach ($items as $item) {
                     if ($item) {
-                        $_convert = \Gedcom\Writer\Indi\Even::convert($item, $level);
+                        $_convert = \Geekish\Gedcom\Writer\Indi\Even::convert($item, $level);
                         $output .= $_convert;
                     }
                 }
@@ -70,7 +70,7 @@ class Indi
         $note = $indi->getNote();
         if (!empty($note) && $note !== []) {
             foreach ($note as $item) {
-                $_convert = \Gedcom\Writer\NoteRef::convert($item, $level);
+                $_convert = \Geekish\Gedcom\Writer\NoteRef::convert($item, $level);
                 $output .= $_convert;
             }
         }
@@ -79,7 +79,7 @@ class Indi
         $obje = $indi->getObje();
         if (!empty($obje) && $obje !== []) {
             foreach ($obje as $item) {
-                $_convert = \Gedcom\Writer\ObjeRef::convert($item, $level);
+                $_convert = \Geekish\Gedcom\Writer\ObjeRef::convert($item, $level);
                 $output .= $_convert;
             }
         }
@@ -88,7 +88,7 @@ class Indi
         $sour = $indi->getSour();
         if (!empty($sour) && $sour !== []) {
             foreach ($sour as $item) {
-                $_convert = \Gedcom\Writer\SourRef::convert($item, $level);
+                $_convert = \Geekish\Gedcom\Writer\SourRef::convert($item, $level);
                 $output .= $_convert;
             }
         }
@@ -97,7 +97,7 @@ class Indi
         $name = $indi->getName();
         if (!empty($name) && $name !== []) {
             foreach ($name as $item) {
-                $_convert = \Gedcom\Writer\Indi\Name::convert($item, $level);
+                $_convert = \Geekish\Gedcom\Writer\Indi\Name::convert($item, $level);
                 $output .= $_convert;
             }
         }
@@ -168,7 +168,7 @@ class Indi
         $fams = $indi->getFams();
         if (!empty($fams) && $fams !== []) {
             foreach ($fams as $item) {
-                $_convert = \Gedcom\Writer\Indi\Fams::convert($item, $level);
+                $_convert = \Geekish\Gedcom\Writer\Indi\Fams::convert($item, $level);
                 $output .= $_convert;
             }
         }
@@ -177,7 +177,7 @@ class Indi
         $famc = $indi->getFamc();
         if (!empty($famc) && $famc !== []) {
             foreach ($famc as $item) {
-                $_convert = \Gedcom\Writer\Indi\Famc::convert($item, $level);
+                $_convert = \Geekish\Gedcom\Writer\Indi\Famc::convert($item, $level);
                 $output .= $_convert;
             }
         }
@@ -186,7 +186,7 @@ class Indi
         $asso = $indi->getAsso();
         if (!empty($asso) && $asso !== []) {
             foreach ($asso as $item) {
-                $_convert = \Gedcom\Writer\Indi\Asso::convert($item, $level);
+                $_convert = \Geekish\Gedcom\Writer\Indi\Asso::convert($item, $level);
                 $output .= $_convert;
             }
         }
@@ -224,7 +224,7 @@ class Indi
         $refn = $indi->getRefn();
         if (!empty($refn) && $refn !== []) {
             foreach ($refn as $item) {
-                $_convert = \Gedcom\Writer\Refn::convert($item, $level);
+                $_convert = \Geekish\Gedcom\Writer\Refn::convert($item, $level);
                 $output .= $_convert;
             }
         }
@@ -241,7 +241,7 @@ class Indi
         // Currently Bapl is empty
         // $bapl = $indi->getBapl();
         // if(!empty($bapl)){
-        //     $_convert = \Gedcom\Writer\Indi\Bapl::convert($bapl, $level);
+        //     $_convert = \Geekish\Gedcom\Writer\Indi\Bapl::convert($bapl, $level);
         //     $output.=$_convert;
         // }
 
@@ -249,7 +249,7 @@ class Indi
         // Currently Conl is empty
         // $conl = $indi->getConl();
         // if(!empty($conl)){
-        //     $_convert = \Gedcom\Writer\Indi\Conl::convert($conl, $level);
+        //     $_convert = \Geekish\Gedcom\Writer\Indi\Conl::convert($conl, $level);
         //     $output.=$_convert;
         // }
 
@@ -257,7 +257,7 @@ class Indi
         // Currently Endl is empty
         // $endl = $indi->getEndl();
         // if(!empty($endl)){
-        //     $_convert = \Gedcom\Writer\Indi\Endl::convert($endl, $level);
+        //     $_convert = \Geekish\Gedcom\Writer\Indi\Endl::convert($endl, $level);
         //     $output.=$_convert;
         // }
 
@@ -265,7 +265,7 @@ class Indi
         // Currently Endl is empty
         // $slgc = $indi->getSlgc();
         // if(!empty($slgc)){
-        //     $_convert = \Gedcom\Writer\Indi\Slgc::convert($slgc, $level);
+        //     $_convert = \Geekish\Gedcom\Writer\Indi\Slgc::convert($slgc, $level);
         //     $output.=$_convert;
         // }
 

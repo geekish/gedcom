@@ -13,7 +13,7 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Writer\Indi\Even;
+namespace Geekish\Gedcom\Writer\Indi\Even;
 
 class Plac
 {
@@ -22,7 +22,7 @@ class Plac
      *
      * @return string
      */
-    public static function convert(\Gedcom\Record\Indi\Even\Plac &$plac, $level = 0)
+    public static function convert(\Geekish\Gedcom\Record\Indi\Even\Plac &$plac, $level = 0)
     {
         $output = '';
 
@@ -46,13 +46,13 @@ class Plac
         // $note -array
         $note = $plac->getNote();
         foreach ($note as $item) {
-            $_convert = \Gedcom\Writer\NoteRef::convert($item, $level);
+            $_convert = \Geekish\Gedcom\Writer\NoteRef::convert($item, $level);
             $output .= $_convert;
         }
         // $sour -array
         $sour = $plac->getSour();
         foreach ($sour as $item) {
-            $_convert = \Gedcom\Writer\SourRef::convert($item, $level);
+            $_convert = \Geekish\Gedcom\Writer\SourRef::convert($item, $level);
             $output .= $_convert;
         }
 

@@ -13,9 +13,9 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record\Head\Sour;
+namespace Geekish\Gedcom\Record\Head\Sour;
 
-class Corp extends \Gedcom\Record
+class Corp extends \Geekish\Gedcom\Record
 {
     protected $_corp;
     protected $_addr;

@@ -13,9 +13,9 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record\Fam\Even;
+namespace Geekish\Gedcom\Record\Fam\Even;
 
-class Wife extends \Gedcom\Record
+class Wife extends \Geekish\Gedcom\Record
 {
     protected $_age;
 }

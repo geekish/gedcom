@@ -13,16 +13,16 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser\Fam\Even;
+namespace Geekish\Gedcom\Parser\Fam\Even;
 
-class Husb extends \Gedcom\Parser\Component
+class Husb extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
 
-        $husband = new \Gedcom\Record\Fam\Even\Husb();
+        $husband = new \Geekish\Gedcom\Record\Fam\Even\Husb();
 
         $parser->forward();
 

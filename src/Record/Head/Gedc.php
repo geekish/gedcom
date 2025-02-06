@@ -13,9 +13,9 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record\Head;
+namespace Geekish\Gedcom\Record\Head;
 
-class Gedc extends \Gedcom\Record
+class Gedc extends \Geekish\Gedcom\Record
 {
     protected $_vers;
 

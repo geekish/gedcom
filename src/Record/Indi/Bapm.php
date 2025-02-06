@@ -13,8 +13,8 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record\Indi;
+namespace Geekish\Gedcom\Record\Indi;
 
-class Bapm extends \Gedcom\Record\Indi\Even
+class Bapm extends \Geekish\Gedcom\Record\Indi\Even
 {
 }

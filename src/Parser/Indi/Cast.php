@@ -13,8 +13,8 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser\Indi;
+namespace Geekish\Gedcom\Parser\Indi;
 
-class Cast extends \Gedcom\Parser\Indi\Attr
+class Cast extends \Geekish\Gedcom\Parser\Indi\Attr
 {
 }

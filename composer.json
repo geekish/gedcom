@@ -1,30 +1,45 @@
 {
-    "name": "liberu-genealogy/php-gedcom",
+    "name": "geekish/gedcom",
     "description": "A GEDCOM file parser (read + write) for PHP 8.4+",
-    "type": "library", 
-    "keywords": ["gedcom","parser"],
-    "homepage": "http://github.com/familytree365/php-gedcom",
+    "type": "library",
+    "keywords": [
+        "gedcom",
+        "parser"
+    ],
+    "homepage": "http://github.com/geekish/gedcom",
     "license": "MIT",
     "require": {
         "php": ">=8.4"
     },
     "require-dev": {
+        "driftingly/rector-laravel": "^1.0",
+        "friendsofphp/php-cs-fixer": "^3.21.1",
+        "phpstan/phpstan": "^1.12",
         "phpunit/phpunit": "^11.0",
-        "squizlabs/php_codesniffer": "^3.8",
         "rector/rector": "^1.0",
-        "driftingly/rector-laravel": "^1.0"
+        "squizlabs/php_codesniffer": "^3.8"
     },
     "autoload": {
         "psr-4": {
-            "Gedcom\\": "src/"
+            "Geekish\\Gedcom\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "GedcomTest\\": "tests/"
+            "Geekish\\GedcomTest\\": "tests/"
         }
     },
     "scripts": {
-        "test": "./vendor/bin/phpunit -c tests/phpunit.xml"
-    }
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage",
+        "format": "vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php --allow-risky=yes"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

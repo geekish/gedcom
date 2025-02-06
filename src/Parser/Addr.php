@@ -13,17 +13,17 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser;
+namespace Geekish\Gedcom\Parser;
 
-class Addr extends \Gedcom\Parser\Component
+class Addr extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
         $line = isset($record[2]) ? trim((string) $record[2]) : '';
 
-        $addr = new \Gedcom\Record\Addr();
+        $addr = new \Geekish\Gedcom\Record\Addr();
         $addr->setAddr($line);
         $parser->forward();
 

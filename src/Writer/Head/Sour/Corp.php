@@ -13,7 +13,7 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Writer\Head\Sour;
+namespace Geekish\Gedcom\Writer\Head\Sour;
 
 class Corp
 {
@@ -23,7 +23,7 @@ class Corp
      *
      * @return string
      */
-    public static function convert(\Gedcom\Record\Head\Sour\Corp &$corp, $level)
+    public static function convert(\Geekish\Gedcom\Record\Head\Sour\Corp &$corp, $level)
     {
         $output = '';
         $_corp = $corp->getCorp();
@@ -39,7 +39,7 @@ class Corp
         // ADDR
         $addr = $corp->getAddr();
         if ($addr) {
-            $_convert = \Gedcom\Writer\Addr::convert($addr, $level);
+            $_convert = \Geekish\Gedcom\Writer\Addr::convert($addr, $level);
             $output .= $_convert;
         }
 
@@ -47,7 +47,7 @@ class Corp
         $phon = $corp->getPhon();
         foreach ($phon as $item) {
             if ($item) {
-                $_convert = \Gedcom\Writer\Phon::convert($item, $level);
+                $_convert = \Geekish\Gedcom\Writer\Phon::convert($item, $level);
                 $output .= $_convert;
             }
         }

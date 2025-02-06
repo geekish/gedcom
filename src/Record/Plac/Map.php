@@ -13,12 +13,12 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record\Plac;
+namespace Geekish\Gedcom\Record\Plac;
 
 /**
  * Class Refn.
  */
-class Map extends \Gedcom\Record
+class Map extends \Geekish\Gedcom\Record
 {
     /**
      * @var string place_latitude

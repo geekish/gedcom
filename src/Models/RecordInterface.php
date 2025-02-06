@@ -1,6 +1,6 @@
 <?php
 
-namespace Gedcom\Models;
+namespace Geekish\Gedcom\Models;
 
 /**
  * Interface for GEDCOM record models.

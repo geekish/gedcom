@@ -13,16 +13,16 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser\Head;
+namespace Geekish\Gedcom\Parser\Head;
 
-class Sour extends \Gedcom\Parser\Component
+class Sour extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
         if (isset($record[2])) {
-            $source = new \Gedcom\Record\Head\Sour();
+            $source = new \Geekish\Gedcom\Record\Head\Sour();
             $source->setSour(trim((string) $record[2]));
         } else {
             $parser->skipToNextLevel($depth);
@@ -50,11 +50,11 @@ class Sour extends \Gedcom\Parser\Component
                     $source->setName(trim((string) $record[2]));
                     break;
                 case 'CORP':
-                    $corp = \Gedcom\Parser\Head\Sour\Corp::parse($parser);
+                    $corp = \Geekish\Gedcom\Parser\Head\Sour\Corp::parse($parser);
                     $source->setCorp($corp);
                     break;
                 case 'DATA':
-                    $data = \Gedcom\Parser\Head\Sour\Data::parse($parser);
+                    $data = \Geekish\Gedcom\Parser\Head\Sour\Data::parse($parser);
                     $source->setData($data);
                     break;
                 default:

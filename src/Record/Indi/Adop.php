@@ -13,9 +13,9 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record\Indi;
+namespace Geekish\Gedcom\Record\Indi;
 
-class Adop extends \Gedcom\Record\Indi\Even
+class Adop extends \Geekish\Gedcom\Record\Indi\Even
 {
     protected $_adop;
     protected $_famc;

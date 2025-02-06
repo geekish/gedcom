@@ -13,9 +13,9 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record;
+namespace Geekish\Gedcom\Record;
 
-class NoteRef extends \Gedcom\Record implements Sourceable
+class NoteRef extends \Geekish\Gedcom\Record implements Sourceable
 {
     protected $_isRef = false;
 

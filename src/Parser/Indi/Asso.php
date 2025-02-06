@@ -13,16 +13,16 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser\Indi;
+namespace Geekish\Gedcom\Parser\Indi;
 
-class Asso extends \Gedcom\Parser\Component
+class Asso extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
         if (isset($record[2])) {
-            $asso = new \Gedcom\Record\Indi\Asso();
+            $asso = new \Geekish\Gedcom\Record\Indi\Asso();
             $asso->setIndi($parser->normalizeIdentifier($record[2]));
         } else {
             $parser->skipToNextLevel($depth);
@@ -47,11 +47,11 @@ class Asso extends \Gedcom\Parser\Component
                     $asso->setRela(trim((string) $record[2]));
                     break;
                 case 'SOUR':
-                    $sour = \Gedcom\Parser\SourRef::parse($parser);
+                    $sour = \Geekish\Gedcom\Parser\SourRef::parse($parser);
                     $asso->addSour($sour);
                     break;
                 case 'NOTE':
-                    $note = \Gedcom\Parser\NoteRef::parse($parser);
+                    $note = \Geekish\Gedcom\Parser\NoteRef::parse($parser);
                     if ($note) {
                         $asso->addNote($note);
                     }

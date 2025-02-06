@@ -13,17 +13,17 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Writer\Indi;
+namespace Geekish\Gedcom\Writer\Indi;
 
 class Famc
 {
     /**
-     * @param \Gedcom\Record\Indi\Famc $attr
+     * @param \Geekish\Gedcom\Record\Indi\Famc $attr
      * @param int                      $level
      *
      * @return string
      */
-    public static function convert(\Gedcom\Record\Indi\Famc &$famc, $level = 0)
+    public static function convert(\Geekish\Gedcom\Record\Indi\Famc &$famc, $level = 0)
     {
         $output = '';
         // NAME
@@ -45,7 +45,7 @@ class Famc
         $note = $famc->getNote();
         if (!empty($note) && (is_countable($note) ? count($note) : 0) > 0) {
             foreach ($note as $item) {
-                $_convert = \Gedcom\Writer\NoteRef::convert($item, $level);
+                $_convert = \Geekish\Gedcom\Writer\NoteRef::convert($item, $level);
                 $output .= $_convert;
             }
         }

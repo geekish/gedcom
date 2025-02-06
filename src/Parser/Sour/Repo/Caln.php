@@ -13,13 +13,13 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser\Sour\Repo;
+namespace Geekish\Gedcom\Parser\Sour\Repo;
 
-class Caln extends \Gedcom\Parser\Component
+class Caln extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
-        $caln = new \Gedcom\Record\Sour\Repo\Caln();
+        $caln = new \Geekish\Gedcom\Record\Sour\Repo\Caln();
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
         if (isset($record[2])) {

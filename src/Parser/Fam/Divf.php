@@ -13,8 +13,8 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser\Fam;
+namespace Geekish\Gedcom\Parser\Fam;
 
-class Divf extends \Gedcom\Parser\Fam\Even
+class Divf extends \Geekish\Gedcom\Parser\Fam\Even
 {
 }

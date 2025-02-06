@@ -1,9 +1,9 @@
 <?php
 
-namespace GedcomTest;
+namespace Geekish\GedcomTest;
 
-use Gedcom\Parser;
-use Gedcom\Writer;
+use Geekish\Gedcom\Parser;
+use Geekish\Gedcom\Writer;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
@@ -13,12 +13,12 @@ use PHPUnit\Framework\TestCase;
 class FamWriterTest extends TestCase
 {
     /**
-     * @var \Gedcom\Parser
+     * @var \Geekish\Gedcom\Parser
      */
     protected $parser = null;
 
     /**
-     * @var \Gedcom\Gedcom
+     * @var \Geekish\Gedcom\Gedcom
      */
     protected $gedcom = null;
 

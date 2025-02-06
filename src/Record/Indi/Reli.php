@@ -13,8 +13,8 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record\Indi;
+namespace Geekish\Gedcom\Record\Indi;
 
-class Reli extends \Gedcom\Record\Indi\Attr
+class Reli extends \Geekish\Gedcom\Record\Indi\Attr
 {
 }

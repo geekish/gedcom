@@ -13,14 +13,14 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record\Indi\Even;
+namespace Geekish\Gedcom\Record\Indi\Even;
 
-use Gedcom\Record;
+use Geekish\Gedcom\Record;
 
 /**
  * Class Plac.
  */
-class Plac extends \Gedcom\Record implements Record\Noteable, Record\Sourceable
+class Plac extends \Geekish\Gedcom\Record implements Record\Noteable, Record\Sourceable
 {
     /**
      * @var string

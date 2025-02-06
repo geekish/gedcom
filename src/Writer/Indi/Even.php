@@ -13,7 +13,7 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Writer\Indi;
+namespace Geekish\Gedcom\Writer\Indi;
 
 class Even
 {
@@ -22,7 +22,7 @@ class Even
      *
      * @return string
      */
-    public static function convert(\Gedcom\Record\Indi\Even &$even, $level = 0)
+    public static function convert(\Geekish\Gedcom\Record\Indi\Even &$even, $level = 0)
     {
         $output = '';
 
@@ -50,7 +50,7 @@ class Even
         // Plac
         $plac = $even->getPlac();
         if (!empty($plac)) {
-            $_convert = \Gedcom\Writer\Indi\Even\Plac::convert($plac, $level);
+            $_convert = \Geekish\Gedcom\Writer\Indi\Even\Plac::convert($plac, $level);
             $output .= $_convert;
         }
 
@@ -69,7 +69,7 @@ class Even
         // $addr
         $addr = $even->getAddr();
         if (!empty($addr)) {
-            $_convert = \Gedcom\Writer\Addr::convert($addr, $level);
+            $_convert = \Geekish\Gedcom\Writer\Addr::convert($addr, $level);
             $output .= $_convert;
         }
 
@@ -77,7 +77,7 @@ class Even
         $phon = $even->getPhon();
         if (!empty($phon) && $phon !== []) {
             foreach ($phon as $item) {
-                $_convert = \Gedcom\Writer\Phon::convert($item, $level);
+                $_convert = \Geekish\Gedcom\Writer\Phon::convert($item, $level);
                 $output .= $_convert;
             }
         }
@@ -94,7 +94,7 @@ class Even
         $obje = $even->getObje();
         if (!empty($obje) && $obje !== []) {
             foreach ($obje as $item) {
-                $_convert = \Gedcom\Writer\ObjeRef::convert($item, $level);
+                $_convert = \Geekish\Gedcom\Writer\ObjeRef::convert($item, $level);
                 $output .= $_convert;
             }
         }
@@ -102,7 +102,7 @@ class Even
         $sour = $even->getSour();
         if (!empty($sour) && $sour !== []) {
             foreach ($sour as $item) {
-                $_convert = \Gedcom\Writer\SourRef::convert($item, $level);
+                $_convert = \Geekish\Gedcom\Writer\SourRef::convert($item, $level);
                 $output .= $_convert;
             }
         }
@@ -110,14 +110,14 @@ class Even
         $note = $even->getSour();
         if (!empty($note) && $note !== []) {
             foreach ($note as $item) {
-                $_convert = \Gedcom\Writer\NoteRef::convert($item, $level);
+                $_convert = \Geekish\Gedcom\Writer\NoteRef::convert($item, $level);
                 $output .= $_convert;
             }
         }
         // Record\Chan
         $chan = $even->getChan();
         if (!empty($chan)) {
-            $_convert = \Gedcom\Writer\Chan::convert($item, $level);
+            $_convert = \Geekish\Gedcom\Writer\Chan::convert($item, $level);
             $output .= $_convert;
         }
 

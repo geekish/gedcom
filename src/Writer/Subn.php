@@ -13,17 +13,17 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Writer;
+namespace Geekish\Gedcom\Writer;
 
 class Subn
 {
     /**
-     * @param \Gedcom\Record\Subn $note
+     * @param \Geekish\Gedcom\Record\Subn $note
      * @param int                 $level
      *
      * @return string
      */
-    public static function convert(\Gedcom\Record\Subn &$subn)
+    public static function convert(\Geekish\Gedcom\Record\Subn &$subn)
     {
         $level = 0;
         $output = '';

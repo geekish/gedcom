@@ -13,11 +13,11 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser;
+namespace Geekish\Gedcom\Parser;
 
-class Subm extends \Gedcom\Parser\Component
+class Subm extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
@@ -29,7 +29,7 @@ class Subm extends \Gedcom\Parser\Component
             return null;
         }
 
-        $subm = new \Gedcom\Record\Subm();
+        $subm = new \Geekish\Gedcom\Record\Subm();
         $subm->setSubm($identifier);
 
         $parser->getGedcom()->addSubm($subm);
@@ -51,11 +51,11 @@ class Subm extends \Gedcom\Parser\Component
                     $subm->setName(isset($record[2]) ? trim((string) $record[2]) : '');
                     break;
                 case 'ADDR':
-                    $addr = \Gedcom\Parser\Addr::parse($parser);
+                    $addr = \Geekish\Gedcom\Parser\Addr::parse($parser);
                     $subm->setAddr($addr);
                     break;
                 case 'PHON':
-                    $phone = \Gedcom\Parser\Phon::parse($parser);
+                    $phone = \Geekish\Gedcom\Parser\Phon::parse($parser);
                     $subm->addPhon($phone);
                     break;
                 case 'EMAIL':
@@ -71,17 +71,17 @@ class Subm extends \Gedcom\Parser\Component
                     $subm->addWww($www);
                     break;
                 case 'NOTE':
-                    $note = \Gedcom\Parser\NoteRef::parse($parser);
+                    $note = \Geekish\Gedcom\Parser\NoteRef::parse($parser);
                     if ($note) {
                         $subm->addNote($note);
                     }
                     break;
                 case 'OBJE':
-                    $obje = \Gedcom\Parser\ObjeRef::parse($parser);
+                    $obje = \Geekish\Gedcom\Parser\ObjeRef::parse($parser);
                     $subm->addObje($obje);
                     break;
                 case 'CHAN':
-                    $chan = \Gedcom\Parser\Chan::parse($parser);
+                    $chan = \Geekish\Gedcom\Parser\Chan::parse($parser);
                     $subm->setChan($chan);
                     break;
                 case 'RIN':

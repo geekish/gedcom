@@ -13,16 +13,16 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser;
+namespace Geekish\Gedcom\Parser;
 
-class SourRef extends \Gedcom\Parser\Component
+class SourRef extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
         if (isset($record[2])) {
-            $sour = new \Gedcom\Record\SourRef();
+            $sour = new \Geekish\Gedcom\Record\SourRef();
             $sour->setSour($parser->normalizeIdentifier($record[2]));
         } else {
             $parser->skipToNextLevel($depth);
@@ -59,13 +59,13 @@ class SourRef extends \Gedcom\Parser\Component
                     $sour->setText($parser->parseMultiLineRecord());
                     break;
                 case 'NOTE':
-                    $note = \Gedcom\Parser\NoteRef::parse($parser);
+                    $note = \Geekish\Gedcom\Parser\NoteRef::parse($parser);
                     if ($note) {
                         $sour->addNote($note);
                     }
                     break;
                 case 'DATA':
-                    $sour->setData(\Gedcom\Parser\SourRef\Data::parse($parser));
+                    $sour->setData(\Geekish\Gedcom\Parser\SourRef\Data::parse($parser));
                     break;
                 case 'QUAY':
                     $sour->setQuay(trim((string) $record[2]));
@@ -74,11 +74,11 @@ class SourRef extends \Gedcom\Parser\Component
                     $sour->setPage(trim((string) $record[2]));
                     break;
                 case 'EVEN':
-                    $even = \Gedcom\Parser\SourRef\Even::parse($parser);
+                    $even = \Geekish\Gedcom\Parser\SourRef\Even::parse($parser);
                     $sour->setEven($even);
                     break;
                 case 'OBJE':
-                    $obje = \Gedcom\Parser\ObjeRef::parse($parser);
+                    $obje = \Geekish\Gedcom\Parser\ObjeRef::parse($parser);
                     if ($obje) {
                         $sour->addNote($obje);
                     }

@@ -13,11 +13,11 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record\Indi;
+namespace Geekish\Gedcom\Record\Indi;
 
-use Gedcom\Record\Noteable;
+use Geekish\Gedcom\Record\Noteable;
 
-class Fams extends \Gedcom\Record implements Noteable
+class Fams extends \Geekish\Gedcom\Record implements Noteable
 {
     protected $_fams;
 

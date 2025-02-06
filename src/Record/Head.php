@@ -13,12 +13,12 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record;
+namespace Geekish\Gedcom\Record;
 
 /**
  * Stores the data from the HEAD section of a GEDCOM 5.5 file.
  */
-class Head extends \Gedcom\Record
+class Head extends \Geekish\Gedcom\Record
 {
     /**
      * @var Head\Sour
@@ -81,7 +81,7 @@ class Head extends \Gedcom\Record
     protected $note;
 
     /**
-     * @param \Gedcom\Record\Head\Sour $sour
+     * @param \Geekish\Gedcom\Record\Head\Sour $sour
      *
      * @return Head
      */
@@ -93,7 +93,7 @@ class Head extends \Gedcom\Record
     }
 
     /**
-     * @return \Gedcom\Record\Head\Sour
+     * @return \Geekish\Gedcom\Record\Head\Sour
      */
     public function getSour()
     {
@@ -101,7 +101,7 @@ class Head extends \Gedcom\Record
     }
 
     /**
-     * @param \Gedcom\Record\Head\Date $date
+     * @param \Geekish\Gedcom\Record\Head\Date $date
      *
      * @return Head
      */
@@ -113,7 +113,7 @@ class Head extends \Gedcom\Record
     }
 
     /**
-     * @return \Gedcom\Record\Head\Date
+     * @return \Geekish\Gedcom\Record\Head\Date
      */
     public function getDate()
     {
@@ -121,7 +121,7 @@ class Head extends \Gedcom\Record
     }
 
     /**
-     * @param \Gedcom\Record\Head\Gedc $gedc
+     * @param \Geekish\Gedcom\Record\Head\Gedc $gedc
      *
      * @return Head
      */
@@ -133,7 +133,7 @@ class Head extends \Gedcom\Record
     }
 
     /**
-     * @return \Gedcom\Record\Head\Gedc
+     * @return \Geekish\Gedcom\Record\Head\Gedc
      */
     public function getGedc()
     {
@@ -141,7 +141,7 @@ class Head extends \Gedcom\Record
     }
 
     /**
-     * @param \Gedcom\Record\Head\Char $char
+     * @param \Geekish\Gedcom\Record\Head\Char $char
      *
      * @return Head
      */
@@ -153,7 +153,7 @@ class Head extends \Gedcom\Record
     }
 
     /**
-     * @return \Gedcom\Record\Head\Char
+     * @return \Geekish\Gedcom\Record\Head\Char
      */
     public function getChar()
     {
@@ -161,7 +161,7 @@ class Head extends \Gedcom\Record
     }
 
     /**
-     * @param \Gedcom\Record\Head\Plac $plac
+     * @param \Geekish\Gedcom\Record\Head\Plac $plac
      *
      * @return Head
      */
@@ -173,7 +173,7 @@ class Head extends \Gedcom\Record
     }
 
     /**
-     * @return \Gedcom\Record\Head\Plac
+     * @return \Geekish\Gedcom\Record\Head\Plac
      */
     public function getPlac()
     {

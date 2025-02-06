@@ -13,18 +13,18 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser;
+namespace Geekish\Gedcom\Parser;
 
-class Deat extends \Gedcom\Parser\Component
+class Deat extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
 
         $parser->forward();
 
-        $deat = new \Gedcom\Record\Deat();
+        $deat = new \Geekish\Gedcom\Record\Deat();
 
         while (!$parser->eof()) {
             $record = $parser->getCurrentLineRecord();

@@ -13,18 +13,18 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser;
+namespace Geekish\Gedcom\Parser;
 
-class Chr extends \Gedcom\Parser\Component
+class Chr extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
 
         $parser->forward();
 
-        $chr = new \Gedcom\Record\Chr();
+        $chr = new \Geekish\Gedcom\Record\Chr();
 
         while (!$parser->eof()) {
             $record = $parser->getCurrentLineRecord();

@@ -13,7 +13,7 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Writer\Head;
+namespace Geekish\Gedcom\Writer\Head;
 
 class Char
 {
@@ -23,7 +23,7 @@ class Char
      *
      * @return string
      */
-    public static function convert(\Gedcom\Record\Head\Char &$char, $level)
+    public static function convert(\Geekish\Gedcom\Record\Head\Char &$char, $level)
     {
         $output = '';
         // char

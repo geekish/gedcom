@@ -20,7 +20,7 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom;
+namespace Geekish\Gedcom;
 
 /**
  * Parser class for GEDCOM files.
@@ -28,7 +28,7 @@ namespace Gedcom;
  * Implements the ParserInterface to provide methods for parsing GEDCOM files, navigating through the file,
  * and extracting data according to the GEDCOM standard.
  */
-class Parser implements \Gedcom\Parser\Interfaces\ParserInterface
+class Parser implements \Geekish\Gedcom\Parser\Interfaces\ParserInterface
 {
     protected $_file;
 
@@ -171,7 +171,7 @@ class Parser implements \Gedcom\Parser\Interfaces\ParserInterface
 
             switch ($recordType) {
                 case 'DATA':
-                    $dataInstance = new \Gedcom\Record\Data();
+                    $dataInstance = new \Geekish\Gedcom\Record\Data();
                     $this->forward();
 
                     while (!$this->eof()) {
@@ -366,23 +366,23 @@ class Parser implements \Gedcom\Parser\Interfaces\ParserInterface
                 }
 
                 if (isset($record[1]) && trim((string) $record[1]) == 'HEAD') {
-                    \Gedcom\Parser\Head::parse($this);
+                    \Geekish\Gedcom\Parser\Head::parse($this);
                 } elseif (isset($record[2]) && trim((string) $record[2]) == 'SUBN') {
-                    \Gedcom\Parser\Subn::parse($this);
+                    \Geekish\Gedcom\Parser\Subn::parse($this);
                 } elseif (isset($record[2]) && trim((string) $record[2]) == 'SUBM') {
-                    \Gedcom\Parser\Subm::parse($this);
+                    \Geekish\Gedcom\Parser\Subm::parse($this);
                 } elseif (isset($record[2]) && $record[2] == 'SOUR') {
-                    \Gedcom\Parser\Sour::parse($this);
+                    \Geekish\Gedcom\Parser\Sour::parse($this);
                 } elseif (isset($record[2]) && $record[2] == 'INDI') {
-                    \Gedcom\Parser\Indi::parse($this);
+                    \Geekish\Gedcom\Parser\Indi::parse($this);
                 } elseif (isset($record[2]) && $record[2] == 'FAM') {
-                    \Gedcom\Parser\Fam::parse($this);
+                    \Geekish\Gedcom\Parser\Fam::parse($this);
                 } elseif (isset($record[2]) && str_starts_with(trim((string) $record[2]), 'NOTE')) {
-                    \Gedcom\Parser\Note::parse($this);
+                    \Geekish\Gedcom\Parser\Note::parse($this);
                 } elseif (isset($record[2]) && $record[2] == 'REPO') {
-                    \Gedcom\Parser\Repo::parse($this);
+                    \Geekish\Gedcom\Parser\Repo::parse($this);
                 } elseif (isset($record[2]) && $record[2] == 'OBJE') {
-                    \Gedcom\Parser\Obje::parse($this);
+                    \Geekish\Gedcom\Parser\Obje::parse($this);
                 } elseif (isset($record[1]) && trim((string) $record[1]) == 'TRLR') {
                     // EOF
                     break;

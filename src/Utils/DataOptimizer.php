@@ -7,7 +7,7 @@
  * particularly strings, within the GEDCOM project.
  */
 
-namespace Gedcom\Utils;
+namespace Geekish\Gedcom\Utils;
 
 class DataOptimizer
 {

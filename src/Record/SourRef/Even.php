@@ -13,9 +13,9 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record\SourRef;
+namespace Geekish\Gedcom\Record\SourRef;
 
-class Even extends \Gedcom\Record
+class Even extends \Geekish\Gedcom\Record
 {
     protected $_even;
     protected $_role;

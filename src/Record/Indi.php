@@ -13,12 +13,12 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record;
+namespace Geekish\Gedcom\Record;
 
 /**
  * Class Indi.
  */
-class Indi extends \Gedcom\Record implements Noteable, Objectable, Sourceable
+class Indi extends \Geekish\Gedcom\Record implements Noteable, Objectable, Sourceable
 {
     /**
      * @var string
@@ -387,7 +387,7 @@ class Indi extends \Gedcom\Record implements Noteable, Objectable, Sourceable
     }
 
     /**
-     * @param \Gedcom\Record\NoteRef $note
+     * @param \Geekish\Gedcom\Record\NoteRef $note
      *
      * @return Indi
      */

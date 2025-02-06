@@ -13,16 +13,16 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser\Indi;
+namespace Geekish\Gedcom\Parser\Indi;
 
-abstract class Attr extends \Gedcom\Parser\Component
+abstract class Attr extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
         if (isset($record[1])) {
-            $className = '\\Gedcom\\Record\\Indi\\'.ucfirst(strtolower(trim((string) $record[1])));
+            $className = '\\Geekish\Gedcom\\Record\\Indi\\'.ucfirst(strtolower(trim((string) $record[1])));
             $attr = new $className();
 
             $attr->setType(trim((string) $record[1]));
@@ -56,14 +56,14 @@ abstract class Attr extends \Gedcom\Parser\Component
                     $attr->setDate(trim((string) $record[2]));
                     break;
                 case 'PLAC':
-                    $plac = \Gedcom\Parser\Indi\Even\Plac::parse($parser);
+                    $plac = \Geekish\Gedcom\Parser\Indi\Even\Plac::parse($parser);
                     $attr->setPlac($plac);
                     break;
                 case 'ADDR':
-                    $attr->setAddr(\Gedcom\Parser\Addr::parse($parser));
+                    $attr->setAddr(\Geekish\Gedcom\Parser\Addr::parse($parser));
                     break;
                 case 'PHON':
-                    $phone = \Gedcom\Parser\Phon::parse($parser);
+                    $phone = \Geekish\Gedcom\Parser\Phon::parse($parser);
                     $attr->addPhon($phone);
                     break;
                 case 'CAUS':
@@ -76,15 +76,15 @@ abstract class Attr extends \Gedcom\Parser\Component
                     $attr->setAgnc(trim((string) $record[2]));
                     break;
                 case 'SOUR':
-                    $sour = \Gedcom\Parser\SourRef::parse($parser);
+                    $sour = \Geekish\Gedcom\Parser\SourRef::parse($parser);
                     $attr->addSour($sour);
                     break;
                 case 'OBJE':
-                    $obje = \Gedcom\Parser\ObjeRef::parse($parser);
+                    $obje = \Geekish\Gedcom\Parser\ObjeRef::parse($parser);
                     $attr->addObje($obje);
                     break;
                 case 'NOTE':
-                    $note = \Gedcom\Parser\NoteRef::parse($parser);
+                    $note = \Geekish\Gedcom\Parser\NoteRef::parse($parser);
                     if ($note) {
                         $attr->addNote($note);
                     }

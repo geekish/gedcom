@@ -13,17 +13,17 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Writer;
+namespace Geekish\Gedcom\Writer;
 
 class Refn
 {
     /**
-     * @param \Gedcom\Record\Refn $note
+     * @param \Geekish\Gedcom\Record\Refn $note
      * @param int                 $level
      *
      * @return string
      */
-    public static function convert(\Gedcom\Record\Refn &$refn, $level)
+    public static function convert(\Geekish\Gedcom\Record\Refn &$refn, $level)
     {
         $output = '';
         $_refn = $refn->getRefn();

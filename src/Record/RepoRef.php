@@ -13,9 +13,9 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record;
+namespace Geekish\Gedcom\Record;
 
-class RepoRef extends \Gedcom\Record implements Noteable
+class RepoRef extends \Geekish\Gedcom\Record implements Noteable
 {
     protected $_repo;
 
