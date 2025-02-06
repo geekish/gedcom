@@ -13,16 +13,16 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser;
+namespace Geekish\Gedcom\Parser;
 
-class NoteRef extends \Gedcom\Parser\Component
+class NoteRef extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
 
-        $note = new \Gedcom\Record\NoteRef();
+        $note = new \Geekish\Gedcom\Record\NoteRef();
 
         if ((is_countable($record) ? count($record) : 0) < 3) {
             $parser->logSkippedRecord('Missing note information; '.self::class);
@@ -54,7 +54,7 @@ class NoteRef extends \Gedcom\Parser\Component
 
             switch ($recordType) {
                 case 'SOUR':
-                    $sour = \Gedcom\Parser\SourRef::parse($parser);
+                    $sour = \Geekish\Gedcom\Parser\SourRef::parse($parser);
                     $note->addSour($sour);
                     break;
                 default:

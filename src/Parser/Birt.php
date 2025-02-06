@@ -13,18 +13,18 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser;
+namespace Geekish\Gedcom\Parser;
 
-class Birt extends \Gedcom\Parser\Component
+class Birt extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
 
         $parser->forward();
 
-        $birt = new \Gedcom\Record\Birt();
+        $birt = new \Geekish\Gedcom\Record\Birt();
 
         while (!$parser->eof()) {
             $record = $parser->getCurrentLineRecord();

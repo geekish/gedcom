@@ -13,17 +13,17 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Writer;
+namespace Geekish\Gedcom\Writer;
 
 class Caln
 {
     /**
-     * @param \Gedcom\Record\Caln $note
+     * @param \Geekish\Gedcom\Record\Caln $note
      * @param int                 $level
      *
      * @return string
      */
-    public static function convert(\Gedcom\Record\Caln &$caln, $level)
+    public static function convert(\Geekish\Gedcom\Record\Caln &$caln, $level)
     {
         $output = '';
         $_caln = $caln->getCaln();

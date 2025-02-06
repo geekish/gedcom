@@ -13,9 +13,9 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record\Fam\Slgs;
+namespace Geekish\Gedcom\Record\Fam\Slgs;
 
-class Stat extends \Gedcom\Record
+class Stat extends \Geekish\Gedcom\Record
 {
     /**
      * string lds_spouse_sealing_date_status

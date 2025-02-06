@@ -13,11 +13,11 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser\Indi;
+namespace Geekish\Gedcom\Parser\Indi;
 
-class Even extends \Gedcom\Parser\Component
+class Even extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
@@ -28,10 +28,10 @@ class Even extends \Gedcom\Parser\Component
         }
 
         if (strtoupper(trim((string) $record[1])) != 'EVEN') {
-            $className = '\Gedcom\Record\Indi\\' . ucfirst(strtolower(trim((string) $record[1])));
+            $className = '\Geekish\Gedcom\Record\Indi\\' . ucfirst(strtolower(trim((string) $record[1])));
             $even = new $className();
         } else {
-            $even = new \Gedcom\Record\Indi\Even();
+            $even = new \Geekish\Gedcom\Record\Indi\Even();
         }
 
         if (isset($record[1]) && strtoupper(trim((string) $record[1])) != 'EVEN') {
@@ -60,19 +60,19 @@ class Even extends \Gedcom\Parser\Component
                     $even->setType(trim((string) $record[2]));
                     break;
                 case 'DATE':
-                    $dat = \Gedcom\Parser\Date::parse($parser);
+                    $dat = \Geekish\Gedcom\Parser\Date::parse($parser);
                     $even->setDate($dat);
                     //$even->setDate(trim($record[2]))
                     break;
                 case 'PLAC':
-                    $plac = \Gedcom\Parser\Indi\Even\Plac::parse($parser);
+                    $plac = \Geekish\Gedcom\Parser\Indi\Even\Plac::parse($parser);
                     $even->setPlac($plac);
                     break;
                 case 'ADDR':
-                    $even->setAddr(\Gedcom\Parser\Addr::parse($parser));
+                    $even->setAddr(\Geekish\Gedcom\Parser\Addr::parse($parser));
                     break;
                 case 'PHON':
-                    $phone = \Gedcom\Parser\Phon::parse($parser);
+                    $phone = \Geekish\Gedcom\Parser\Phon::parse($parser);
                     $even->addPhone($phone);
                     break;
                 case 'CAUS':
@@ -85,21 +85,21 @@ class Even extends \Gedcom\Parser\Component
                     $even->setAgnc(trim((string) $record[2]));
                     break;
                 case 'SOUR':
-                    $sour = \Gedcom\Parser\SourRef::parse($parser);
+                    $sour = \Geekish\Gedcom\Parser\SourRef::parse($parser);
                     $even->addSour($sour);
                     break;
                 case 'OBJE':
-                    $obje = \Gedcom\Parser\ObjeRef::parse($parser);
+                    $obje = \Geekish\Gedcom\Parser\ObjeRef::parse($parser);
                     $even->addObje($obje);
                     break;
                 case 'NOTE':
-                    $note = \Gedcom\Parser\NoteRef::parse($parser);
+                    $note = \Geekish\Gedcom\Parser\NoteRef::parse($parser);
                     if ($note) {
                         $even->addNote($note);
                     }
                     break;
                 case 'CHAN':
-                    $change = \Gedcom\Parser\Chan::parse($parser);
+                    $change = \Geekish\Gedcom\Parser\Chan::parse($parser);
                     $even->setChan($change);
                     break;
                 default:

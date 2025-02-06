@@ -13,8 +13,8 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser\Indi;
+namespace Geekish\Gedcom\Parser\Indi;
 
-class Buri extends \Gedcom\Parser\Indi\Even
+class Buri extends \Geekish\Gedcom\Parser\Indi\Even
 {
 }

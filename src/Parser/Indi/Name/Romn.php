@@ -13,16 +13,16 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser\Indi\Name;
+namespace Geekish\Gedcom\Parser\Indi\Name;
 
-class Romn extends \Gedcom\Parser\Component
+class Romn extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
         if (isset($record[2])) {
-            $romn = new \Gedcom\Record\Indi\Name\Romn();
+            $romn = new \Geekish\Gedcom\Record\Indi\Name\Romn();
             $romn->setRomn(trim((string) $record[2]));
         } else {
             $parser->skipToNextLevel($depth);

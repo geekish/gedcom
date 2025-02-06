@@ -13,12 +13,12 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record;
+namespace Geekish\Gedcom\Record;
 
 /**
  * Class Subn.
  */
-class Subn extends \Gedcom\Record
+class Subn extends \Geekish\Gedcom\Record
 {
     /**
      * @var string
@@ -66,7 +66,7 @@ class Subn extends \Gedcom\Record
     protected $_note = [];
 
     /**
-     * @var \Gedcom\Record\Chan
+     * @var \Geekish\Gedcom\Record\Chan
      */
     protected $_chan;
 

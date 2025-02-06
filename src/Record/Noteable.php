@@ -13,9 +13,9 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record;
+namespace Geekish\Gedcom\Record;
 
 interface Noteable
 {
-    public function addNote(\Gedcom\Record\NoteRef $note);
+    public function addNote(\Geekish\Gedcom\Record\NoteRef $note);
 }

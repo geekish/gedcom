@@ -1,8 +1,8 @@
 <?php
 
-namespace Gedcom\Tests\Utils;
+namespace Geekish\Gedcom\Tests\Utils;
 
-use Gedcom\Utils\DataOptimizer;
+use Geekish\Gedcom\Utils\DataOptimizer;
 use PHPUnit\Framework\TestCase;
 
 class DataOptimizerTest extends TestCase

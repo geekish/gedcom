@@ -13,16 +13,16 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser\Head\Sour;
+namespace Geekish\Gedcom\Parser\Head\Sour;
 
-class Corp extends \Gedcom\Parser\Component
+class Corp extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
         if (isset($record[2])) {
-            $corp = new \Gedcom\Record\Head\Sour\Corp();
+            $corp = new \Geekish\Gedcom\Record\Head\Sour\Corp();
             $corp->setCorp(trim((string) $record[2]));
         } else {
             $parser->skipToNextLevel($depth);
@@ -43,7 +43,7 @@ class Corp extends \Gedcom\Parser\Component
             }
 
             match ($recordType) {
-                'ADDR' => $corp->setAddr(\Gedcom\Parser\Addr::parse($parser)),
+                'ADDR' => $corp->setAddr(\Geekish\Gedcom\Parser\Addr::parse($parser)),
                 'PHON' => $corp->addPhon(trim((string) $record[2])),
                 default => $parser->logUnhandledRecord(self::class.' @ '.__LINE__),
             };

@@ -13,16 +13,16 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser\Indi\Even;
+namespace Geekish\Gedcom\Parser\Indi\Even;
 
-class Plac extends \Gedcom\Parser\Component
+class Plac extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
 
-        $plac = new \Gedcom\Record\Indi\Even\Plac();
+        $plac = new \Geekish\Gedcom\Record\Indi\Even\Plac();
 
         if (isset($record[2])) {
             $plac->setPlac(trim((string) $record[2]));
@@ -45,13 +45,13 @@ class Plac extends \Gedcom\Parser\Component
                     $plac->setForm(trim((string) $record[2]));
                     break;
                 case 'NOTE':
-                    $note = \Gedcom\Parser\NoteRef::parse($parser);
+                    $note = \Geekish\Gedcom\Parser\NoteRef::parse($parser);
                     if ($note) {
                         $plac->addNote($note);
                     }
                     break;
                 case 'SOUR':
-                    $sour = \Gedcom\Parser\SourRef::parse($parser);
+                    $sour = \Geekish\Gedcom\Parser\SourRef::parse($parser);
                     $plac->addSour($sour);
                     break;
                 default:

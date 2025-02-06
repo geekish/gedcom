@@ -13,11 +13,11 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser;
+namespace Geekish\Gedcom\Parser;
 
-class Indi extends \Gedcom\Parser\Component
+class Indi extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
@@ -29,7 +29,7 @@ class Indi extends \Gedcom\Parser\Component
             return null;
         }
 
-        $indi = new \Gedcom\Record\Indi();
+        $indi = new \Geekish\Gedcom\Record\Indi();
         $indi->setId($identifier);
 
         $parser->getGedcom()->addIndi($indi);
@@ -55,7 +55,7 @@ class Indi extends \Gedcom\Parser\Component
                     $indi->setUid(trim((string) $record[2]));
                     break;
                 case 'NAME':
-                    $name = \Gedcom\Parser\Indi\Name::parse($parser);
+                    $name = \Geekish\Gedcom\Parser\Indi\Name::parse($parser);
                     $indi->addName($name);
                     break;
                 case 'ALIA':
@@ -77,23 +77,23 @@ class Indi extends \Gedcom\Parser\Component
                     $indi->setAfn(trim((string) $record[2]));
                     break;
                 case 'CHAN':
-                    $chan = \Gedcom\Parser\Chan::parse($parser);
+                    $chan = \Geekish\Gedcom\Parser\Chan::parse($parser);
                     $indi->setChan($chan);
                     break;
                 case 'FAMS':
-                    $fams = \Gedcom\Parser\Indi\Fams::parse($parser);
+                    $fams = \Geekish\Gedcom\Parser\Indi\Fams::parse($parser);
                     if ($fams) {
                         $indi->addFams($fams);
                     }
                     break;
                 case 'FAMC':
-                    $famc = \Gedcom\Parser\Indi\Famc::parse($parser);
+                    $famc = \Geekish\Gedcom\Parser\Indi\Famc::parse($parser);
                     if ($famc) {
                         $indi->addFamc($famc);
                     }
                     break;
                 case 'ASSO':
-                    $asso = \Gedcom\Parser\Indi\Asso::parse($parser);
+                    $asso = \Geekish\Gedcom\Parser\Indi\Asso::parse($parser);
                     $indi->addAsso($asso);
                     break;
                 case 'ANCI':
@@ -106,7 +106,7 @@ class Indi extends \Gedcom\Parser\Component
                     $indi->addSubm($parser->normalizeIdentifier($record[2]));
                     break;
                 case 'REFN':
-                    $ref = \Gedcom\Parser\Refn::parse($parser);
+                    $ref = \Geekish\Gedcom\Parser\Refn::parse($parser);
                     $indi->addRefn($ref);
                     break;
                 case 'BAPL':
@@ -114,23 +114,23 @@ class Indi extends \Gedcom\Parser\Component
                 case 'ENDL':
                 case 'SLGC':
                     $className = ucfirst(strtolower($recordType));
-                    $class = '\\Gedcom\\Parser\\Indi\\' . $className;
+                    $class = '\\Geekish\Gedcom\\Parser\\Indi\\' . $className;
 
                     $lds = $class::parse($parser);
                     $indi->{'set' . $recordType}($lds);
                     break;
                 case 'OBJE':
-                    $obje = \Gedcom\Parser\ObjeRef::parse($parser);
+                    $obje = \Geekish\Gedcom\Parser\ObjeRef::parse($parser);
                     $indi->addObje($obje);
                     break;
                 case 'NOTE':
-                    $note = \Gedcom\Parser\NoteRef::parse($parser);
+                    $note = \Geekish\Gedcom\Parser\NoteRef::parse($parser);
                     if ($note) {
                         $indi->addNote($note);
                     }
                     break;
                 case 'SOUR':
-                    $sour = \Gedcom\Parser\SourRef::parse($parser);
+                    $sour = \Geekish\Gedcom\Parser\SourRef::parse($parser);
                     $indi->addSour($sour);
                     break;
                 case 'ADOP':
@@ -157,7 +157,7 @@ class Indi extends \Gedcom\Parser\Component
                 case 'WILL':
                 case 'EVEN':
                     $className = ucfirst(strtolower($recordType));
-                    $class = '\\Gedcom\\Parser\\Indi\\' . $className;
+                    $class = '\\Geekish\Gedcom\\Parser\\Indi\\' . $className;
 
                     $event = $class::parse($parser);
                     $indi->addEven($event);
@@ -176,7 +176,7 @@ class Indi extends \Gedcom\Parser\Component
                 case 'SSN':
                 case 'TITL':
                     $className = ucfirst(strtolower($recordType));
-                    $class = '\\Gedcom\\Parser\\Indi\\' . $className;
+                    $class = '\\Geekish\Gedcom\\Parser\\Indi\\' . $className;
 
                     $att = $class::parse($parser);
                     $indi->addAttr($att);

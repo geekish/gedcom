@@ -13,14 +13,14 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom;
+namespace Geekish\Gedcom;
 
 /**
  * Base class for various record types in the GEDCOM project.
  *
  * Provides common functionality such as ID and name handling for all record types.
  */
-abstract class Record implements \Gedcom\Models\RecordInterface
+abstract class Record implements \Geekish\Gedcom\Models\RecordInterface
 {
     private $_id;
 

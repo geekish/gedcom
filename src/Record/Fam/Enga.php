@@ -13,8 +13,8 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record\Fam;
+namespace Geekish\Gedcom\Record\Fam;
 
-class Enga extends \Gedcom\Record\Fam\Even
+class Enga extends \Geekish\Gedcom\Record\Fam\Even
 {
 }

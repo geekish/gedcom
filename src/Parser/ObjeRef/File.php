@@ -13,13 +13,13 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser\ObjeRef;
+namespace Geekish\Gedcom\Parser\ObjeRef;
 
-class File extends \Gedcom\Parser\Component
+class File extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
-        $file = new \Gedcom\Record\ObjeRef\File();
+        $file = new \Geekish\Gedcom\Record\ObjeRef\File();
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
         if (isset($record[2])) {
@@ -41,7 +41,7 @@ class File extends \Gedcom\Parser\Component
 
             switch ($recordType) {
                 case 'FORM':
-                    $file->setDate(\Gedcom\Parser\ObjeRef\File\Form::parse($parser));
+                    $file->setDate(\Geekish\Gedcom\Parser\ObjeRef\File\Form::parse($parser));
                     break;
                 case 'TITL':
                     $file->setTitl(trim((string) $record[2]));

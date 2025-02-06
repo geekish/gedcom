@@ -13,7 +13,7 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Writer\Head;
+namespace Geekish\Gedcom\Writer\Head;
 
 class Gedc
 {
@@ -23,7 +23,7 @@ class Gedc
      *
      * @return string
      */
-    public static function convert(\Gedcom\Record\Head\Gedc &$gedc, $level)
+    public static function convert(\Geekish\Gedcom\Record\Head\Gedc &$gedc, $level)
     {
         $output = $level." GEDC \n";
 

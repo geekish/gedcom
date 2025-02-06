@@ -13,9 +13,9 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record\SourRef;
+namespace Geekish\Gedcom\Record\SourRef;
 
-class Data extends \Gedcom\Record
+class Data extends \Geekish\Gedcom\Record
 {
     /**
      * string entry_recording_date.

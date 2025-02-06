@@ -13,11 +13,11 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser;
+namespace Geekish\Gedcom\Parser;
 
-class RepoRef extends \Gedcom\Parser\Component
+class RepoRef extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
@@ -29,7 +29,7 @@ class RepoRef extends \Gedcom\Parser\Component
             return null;
         }
 
-        $repo = new \Gedcom\Record\RepoRef();
+        $repo = new \Geekish\Gedcom\Record\RepoRef();
         $repo->setRepo($identifier);
 
         $parser->forward();
@@ -49,7 +49,7 @@ class RepoRef extends \Gedcom\Parser\Component
                     $repo->addCaln(\Parser\Caln::parse($parser));
                     break;
                 case 'NOTE':
-                    $note = \Gedcom\Parser\NoteRef::parse($parser);
+                    $note = \Geekish\Gedcom\Parser\NoteRef::parse($parser);
                     if ($note) {
                         $repo->addNote($note);
                     }

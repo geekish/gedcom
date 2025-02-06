@@ -47,7 +47,7 @@ spl_autoload_register(function ($class) {
 To parse a GEDCOM file and load it into a collection of PHP Objects, simply instantiate a new Parser object and pass it the file name to parse. The resulting Gedcom object will contain all the information stored within the supplied GEDCOM file:
 
 ```php
-$parser = new \Gedcom\Parser();
+$parser = new \Geekish\Gedcom\Parser();
 $gedcom = $parser->parse('tmp.ged');
 
 foreach ($gedcom->getIndi() as $individual) {

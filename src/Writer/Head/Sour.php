@@ -13,7 +13,7 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Writer\Head;
+namespace Geekish\Gedcom\Writer\Head;
 
 class Sour
 {
@@ -23,7 +23,7 @@ class Sour
      *
      * @return string
      */
-    public static function convert(\Gedcom\Record\Head\Sour &$sour, $level)
+    public static function convert(\Geekish\Gedcom\Record\Head\Sour &$sour, $level)
     {
         $output = '';
         $_sour = $sour->getSour();
@@ -51,14 +51,14 @@ class Sour
         // CORP
         $corp = $sour->getCorp();
         if ($corp) {
-            $_convert = \Gedcom\Writer\Head\Sour\Corp::convert($corp, $level);
+            $_convert = \Geekish\Gedcom\Writer\Head\Sour\Corp::convert($corp, $level);
             $output .= $_convert;
         }
 
         // DATA
         $data = $sour->getData();
         if ($data) {
-            $_convert = \Gedcom\Writer\Head\Sour\Data::convert($data, $level);
+            $_convert = \Geekish\Gedcom\Writer\Head\Sour\Data::convert($data, $level);
             $output .= $_convert;
         }
 

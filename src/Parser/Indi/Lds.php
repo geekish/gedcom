@@ -13,16 +13,16 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser\Indi;
+namespace Geekish\Gedcom\Parser\Indi;
 
-abstract class Lds extends \Gedcom\Parser\Component
+abstract class Lds extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
         if (isset($record[1])) {
-            $className = '\\Gedcom\\Record\\Indi\\'.ucfirst(strtolower(trim((string) $record[1])));
+            $className = '\\Geekish\Gedcom\\Record\\Indi\\'.ucfirst(strtolower(trim((string) $record[1])));
             $lds = new $className();
         } else {
             $parser->skipToNextLevel($depth);
@@ -56,11 +56,11 @@ abstract class Lds extends \Gedcom\Parser\Component
                     $lds->setTemp(trim((string) $record[2]));
                     break;
                 case 'SOUR':
-                    $sour = \Gedcom\Parser\SourRef::parse($parser);
+                    $sour = \Geekish\Gedcom\Parser\SourRef::parse($parser);
                     $lds->addSour($sour);
                     break;
                 case 'NOTE':
-                    $note = \Gedcom\Parser\NoteRef::parse($parser);
+                    $note = \Geekish\Gedcom\Parser\NoteRef::parse($parser);
                     if ($note) {
                         $lds->addNote($note);
                     }

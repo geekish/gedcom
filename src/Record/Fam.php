@@ -13,9 +13,9 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record;
+namespace Geekish\Gedcom\Record;
 
-class Fam extends \Gedcom\Record implements Noteable, Sourceable, Objectable, Extendable
+class Fam extends \Geekish\Gedcom\Record implements Noteable, Sourceable, Objectable, Extendable
 {
     protected $_id;
 
@@ -69,7 +69,7 @@ class Fam extends \Gedcom\Record implements Noteable, Sourceable, Objectable, Ex
     }
 
     /**
-     * @return void|\Gedcom\Record\Fam\Even|\Gedcom\Record\Fam\Even[]
+     * @return void|\Geekish\Gedcom\Record\Fam\Even|\Geekish\Gedcom\Record\Fam\Even[]
      */
     public function getEven($key = '')
     {

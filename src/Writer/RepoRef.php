@@ -13,7 +13,7 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Writer;
+namespace Geekish\Gedcom\Writer;
 
 class RepoRef
 {
@@ -22,7 +22,7 @@ class RepoRef
      *
      * @return string
      */
-    public static function convert(\Gedcom\Record\RepoRef &$reporef, $level)
+    public static function convert(\Geekish\Gedcom\Record\RepoRef &$reporef, $level)
     {
         $output = '';
         $_repo = $reporef->getRepo();
@@ -38,7 +38,7 @@ class RepoRef
         $note = $reporef->getNote();
         if (!empty($note) && (is_countable($note) ? count($note) : 0) > 0) {
             foreach ($note as $item) {
-                $_convert = \Gedcom\Writer\NoteRef::convert($item, $level);
+                $_convert = \Geekish\Gedcom\Writer\NoteRef::convert($item, $level);
                 $output .= $_convert;
             }
         }
@@ -47,7 +47,7 @@ class RepoRef
         $_caln = $reporef->getCaln();
         if (!empty($_caln) && (is_countable($_caln) ? count($_caln) : 0) > 0) {
             foreach ($_caln as $item) {
-                $_convert = \Gedcom\Writer\Caln::convert($item, $level);
+                $_convert = \Geekish\Gedcom\Writer\Caln::convert($item, $level);
                 $output .= $_convert;
             }
         }

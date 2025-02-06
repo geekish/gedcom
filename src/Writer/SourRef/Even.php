@@ -13,7 +13,7 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Writer\SourRef;
+namespace Geekish\Gedcom\Writer\SourRef;
 
 class Even
 {
@@ -22,7 +22,7 @@ class Even
      *
      * @return string
      */
-    public static function convert(\Gedcom\Record\SourRef\Even &$even, $level = 0)
+    public static function convert(\Geekish\Gedcom\Record\SourRef\Even &$even, $level = 0)
     {
         $output = '';
 

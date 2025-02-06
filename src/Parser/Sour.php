@@ -13,9 +13,9 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser;
+namespace Geekish\Gedcom\Parser;
 
-class Sour extends \Gedcom\Parser\Component
+class Sour extends \Geekish\Gedcom\Parser\Component
 /**
  * Parser for GEDCOM Source (SOUR) records.
  *
@@ -23,7 +23,7 @@ class Sour extends \Gedcom\Parser\Component
  * associated with sources.
  */
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
@@ -35,7 +35,7 @@ class Sour extends \Gedcom\Parser\Component
             return null;
         }
 
-        $sour = new \Gedcom\Record\Sour();
+        $sour = new \Geekish\Gedcom\Record\Sour();
         $sour->setSour($identifier);
 
         $parser->getGedcom()->addSour($sour);
@@ -52,8 +52,8 @@ class Sour extends \Gedcom\Parser\Component
 /**
  * Parses a source record from a GEDCOM file.
  *
- * @param \Gedcom\Parser $parser The parser instance.
- * @return \Gedcom\Record\Sour|null The parsed source record, or null if parsing fails.
+ * @param \Geekish\Gedcom\Parser $parser The parser instance.
+ * @return \Geekish\Gedcom\Record\Sour|null The parsed source record, or null if parsing fails.
  */
             $record = $parser->getCurrentLineRecord();
             $currentDepth = (int) $record[0];
@@ -72,7 +72,7 @@ class Sour extends \Gedcom\Parser\Component
  * based on the current depth and record type.
  */
                 case 'DATA':
-                    $sour->setData(\Gedcom\Parser\Sour\Data::parse($parser));
+                    $sour->setData(\Geekish\Gedcom\Parser\Sour\Data::parse($parser));
                     break;
                 case 'AUTH':
                     $sour->setAuth($parser->parseMultilineRecord());
@@ -96,17 +96,17 @@ class Sour extends \Gedcom\Parser\Component
                     $sour->setText($parser->parseMultilineRecord());
                     break;
                 case 'REPO':
-                    $sour->setRepo(\Gedcom\Parser\Sour\Repo::parse($parser));
+                    $sour->setRepo(\Geekish\Gedcom\Parser\Sour\Repo::parse($parser));
                     break;
                 case 'REFN':
-                    $refn = \Gedcom\Parser\Refn::parse($parser);
+                    $refn = \Geekish\Gedcom\Parser\Refn::parse($parser);
                     $sour->addRefn($refn);
                     break;
                 case 'RIN':
                     $sour->setRin(trim((string) $record[2]));
                     break;
                 case 'CHAN':
-                    $chan = \Gedcom\Parser\Chan::parse($parser);
+                    $chan = \Geekish\Gedcom\Parser\Chan::parse($parser);
                     $sour->setChan($chan);
                     break;
                 case 'NOTE':
@@ -116,13 +116,13 @@ class Sour extends \Gedcom\Parser\Component
  * Handles additional record types like TEXT, REPO, REFN, and sets their corresponding attributes
  * in the source record.
  */
-                    $note = \Gedcom\Parser\NoteRef::parse($parser);
+                    $note = \Geekish\Gedcom\Parser\NoteRef::parse($parser);
                     if ($note) {
                         $sour->addNote($note);
                     }
                     break;
                 case 'OBJE':
-                    $obje = \Gedcom\Parser\ObjeRef::parse($parser);
+                    $obje = \Geekish\Gedcom\Parser\ObjeRef::parse($parser);
                     $sour->addObje($obje);
                     break;
                 default:

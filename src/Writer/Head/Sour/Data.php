@@ -13,7 +13,7 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Writer\Head\Sour;
+namespace Geekish\Gedcom\Writer\Head\Sour;
 
 class Data
 {
@@ -23,7 +23,7 @@ class Data
      *
      * @return string
      */
-    public static function convert(\Gedcom\Record\Head\Sour\Data &$data, $level)
+    public static function convert(\Geekish\Gedcom\Record\Head\Sour\Data &$data, $level)
     {
         $output = '';
         $_data = $data->getData();

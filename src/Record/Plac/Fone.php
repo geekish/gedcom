@@ -13,12 +13,12 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record\Plac;
+namespace Geekish\Gedcom\Record\Plac;
 
 /**
  * Class Refn.
  */
-class Fone extends \Gedcom\Record
+class Fone extends \Geekish\Gedcom\Record
 {
     /**
      * @var string phonetic_variation

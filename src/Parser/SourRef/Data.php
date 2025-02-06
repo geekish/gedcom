@@ -13,13 +13,13 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser\SourRef;
+namespace Geekish\Gedcom\Parser\SourRef;
 
-class Data extends \Gedcom\Parser\Component
+class Data extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
-        $data = new \Gedcom\Record\SourRef\Data();
+        $data = new \Geekish\Gedcom\Record\SourRef\Data();
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
 

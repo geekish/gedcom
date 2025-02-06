@@ -13,7 +13,7 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Writer\Indi;
+namespace Geekish\Gedcom\Writer\Indi;
 
 class Attr
 {
@@ -22,7 +22,7 @@ class Attr
      *
      * @return string
      */
-    public static function convert(\Gedcom\Record\Indi\Attr &$attr, $level = 0)
+    public static function convert(\Geekish\Gedcom\Record\Indi\Attr &$attr, $level = 0)
     {
         return '';
     }

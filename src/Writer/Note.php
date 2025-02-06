@@ -13,17 +13,17 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Writer;
+namespace Geekish\Gedcom\Writer;
 
 class Note
 {
     /**
-     * @param \Gedcom\Record\Note $sour
+     * @param \Geekish\Gedcom\Record\Note $sour
      * @param int                 $level
      *
      * @return string
      */
-    public static function convert(\Gedcom\Record\Note &$note)
+    public static function convert(\Geekish\Gedcom\Record\Note &$note)
     {
         $level = 0;
         $output = '';
@@ -53,7 +53,7 @@ class Note
         if (!empty($refn) && (is_countable($refn) ? count($refn) : 0) > 0) {
             foreach ($refn as $item) {
                 if ($item) {
-                    $_convert = \Gedcom\Writer\Refn::convert($item, $level);
+                    $_convert = \Geekish\Gedcom\Writer\Refn::convert($item, $level);
                     $output .= $_convert;
                 }
             }
@@ -61,7 +61,7 @@ class Note
         // CHAN
         $chan = $note->getChan();
         if ($chan) {
-            $_convert = \Gedcom\Writer\Chan::convert($chan, $level);
+            $_convert = \Geekish\Gedcom\Writer\Chan::convert($chan, $level);
             $output .= $_convert;
         }
 
@@ -70,7 +70,7 @@ class Note
         if (!empty($sour) && (is_countable($sour) ? count($sour) : 0) > 0) {
             foreach ($sour as $item) {
                 if ($item) {
-                    $_convert = \Gedcom\Writer\SourRef::convert($item, $level);
+                    $_convert = \Geekish\Gedcom\Writer\SourRef::convert($item, $level);
                     $output .= $_convert;
                 }
             }

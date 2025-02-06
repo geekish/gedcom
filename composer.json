@@ -16,12 +16,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Gedcom\\": "src/"
+            "Geekish\\Gedcom\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "GedcomTest\\": "tests/"
+            "Geekish\\GedcomTest\\": "tests/"
         }
     },
     "scripts": {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Gedcom\Record\Head;
+namespace Geekish\Gedcom\Record\Head;
 
-class Dest extends \Gedcom\Record
+class Dest extends \Geekish\Gedcom\Record
 {
     protected $_dest;
 

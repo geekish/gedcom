@@ -13,12 +13,12 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record\Indi;
+namespace Geekish\Gedcom\Record\Indi;
 
-use Gedcom\Record\Noteable;
-use Gedcom\Record\Sourceable;
+use Geekish\Gedcom\Record\Noteable;
+use Geekish\Gedcom\Record\Sourceable;
 
-class Asso extends \Gedcom\Record implements Sourceable, Noteable
+class Asso extends \Geekish\Gedcom\Record implements Sourceable, Noteable
 {
     protected $_indi;
     protected $_rela;

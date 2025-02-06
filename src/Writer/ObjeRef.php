@@ -13,17 +13,17 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Writer;
+namespace Geekish\Gedcom\Writer;
 
 class ObjeRef
 {
     /**
-     * @param \Gedcom\Record\ObjeRef $note
+     * @param \Geekish\Gedcom\Record\ObjeRef $note
      * @param int                    $level
      *
      * @return string
      */
-    public static function convert(\Gedcom\Record\ObjeRef &$obje, $level)
+    public static function convert(\Geekish\Gedcom\Record\ObjeRef &$obje, $level)
     {
         $output = '';
 
@@ -58,7 +58,7 @@ class ObjeRef
         $_note = $obje->getNote();
         if (!empty($_note) && (is_countable($_note) ? count($_note) : 0) > 0) {
             foreach ($_note as $item) {
-                $_convert = \Gedcom\Writer\NoteRef::convert($item, $level);
+                $_convert = \Geekish\Gedcom\Writer\NoteRef::convert($item, $level);
                 $output .= $_convert;
             }
         }

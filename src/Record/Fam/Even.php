@@ -13,11 +13,11 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record\Fam;
+namespace Geekish\Gedcom\Record\Fam;
 
-use Gedcom\Record\Noteable;
-use Gedcom\Record\Objectable;
-use Gedcom\Record\Sourceable;
+use Geekish\Gedcom\Record\Noteable;
+use Geekish\Gedcom\Record\Objectable;
+use Geekish\Gedcom\Record\Sourceable;
 
 /**
  * Event record.
@@ -26,7 +26,7 @@ use Gedcom\Record\Sourceable;
  * @method \Record\Date getDate()
  * @method string       getPlac()
  */
-class Even extends \Gedcom\Record implements Objectable, Sourceable, Noteable
+class Even extends \Geekish\Gedcom\Record implements Objectable, Sourceable, Noteable
 {
     protected $_type;
     protected $_date;

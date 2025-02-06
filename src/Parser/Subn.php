@@ -13,11 +13,11 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser;
+namespace Geekish\Gedcom\Parser;
 
-class Subn extends \Gedcom\Parser\Component
+class Subn extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
@@ -29,7 +29,7 @@ class Subn extends \Gedcom\Parser\Component
             return null;
         }
 
-        $subn = new \Gedcom\Record\Subn();
+        $subn = new \Geekish\Gedcom\Record\Subn();
         $subn->setSubn($identifier);
 
         $parser->getGedcom()->setSubn($subn);
@@ -69,13 +69,13 @@ class Subn extends \Gedcom\Parser\Component
                     $subn->setRin(trim((string) $record[2]));
                     break;
                 case 'NOTE':
-                    $note = \Gedcom\Parser\NoteRef::parse($parser);
+                    $note = \Geekish\Gedcom\Parser\NoteRef::parse($parser);
                     if ($note) {
                         $subn->addNote($note);
                     }
                     break;
                 case 'CHAN':
-                    $chan = \Gedcom\Parser\Chan::parse($parser);
+                    $chan = \Geekish\Gedcom\Parser\Chan::parse($parser);
                     $subn->setChan($chan);
                     break;
                 default:

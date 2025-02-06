@@ -13,7 +13,7 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Writer;
+namespace Geekish\Gedcom\Writer;
 
 class SourRef
 {
@@ -22,7 +22,7 @@ class SourRef
      *
      * @return string
      */
-    public static function convert(\Gedcom\Record\SourRef &$sour, $level)
+    public static function convert(\Geekish\Gedcom\Record\SourRef &$sour, $level)
     {
         $output = '';
         $_sour = $sour->getSour();
@@ -38,13 +38,13 @@ class SourRef
         // protected $_note    = array();
         $note = $sour->getNote();
         foreach ($note as $item) {
-            $_convert = \Gedcom\Writer\NoteRef::convert($item, $level);
+            $_convert = \Geekish\Gedcom\Writer\NoteRef::convert($item, $level);
             $output .= $_convert;
         }
         // protected $_data    = null;
         $_data = $sour->getData();
         if ($_data) {
-            $_convert = \Gedcom\Writer\Sour\Data::convert($_data, $level);
+            $_convert = \Geekish\Gedcom\Writer\Sour\Data::convert($_data, $level);
             $output .= $_convert;
         }
         // protected $_page setPage
@@ -55,7 +55,7 @@ class SourRef
         // protected $_even    = null;
         $_even = $sour->getData();
         if ($_even) {
-            $_convert = \Gedcom\Writer\SourRef\Even::convert($_even, $level);
+            $_convert = \Geekish\Gedcom\Writer\SourRef\Even::convert($_even, $level);
             $output .= $_convert;
         }
         // protected $_quay

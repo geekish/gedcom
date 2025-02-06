@@ -13,12 +13,12 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record;
+namespace Geekish\Gedcom\Record;
 
 /**
  * Class Addr.
  */
-class Addr extends \Gedcom\Record
+class Addr extends \Geekish\Gedcom\Record
 {
     /**
      * @var string

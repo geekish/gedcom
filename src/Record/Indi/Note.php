@@ -13,8 +13,8 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record\Indi;
+namespace Geekish\Gedcom\Record\Indi;
 
-class Note extends \Gedcom\Record\NoteRefAbstract
+class Note extends \Geekish\Gedcom\Record\NoteRefAbstract
 {
 }

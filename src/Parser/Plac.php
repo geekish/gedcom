@@ -13,11 +13,11 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser;
+namespace Geekish\Gedcom\Parser;
 
-class Plac extends \Gedcom\Parser\Component
+class Plac extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
@@ -29,7 +29,7 @@ class Plac extends \Gedcom\Parser\Component
             return null;
         }
 
-        $plac = new \Gedcom\Record\Plac();
+        $plac = new \Geekish\Gedcom\Record\Plac();
         $plac->setPlac($_plac);
 
         $parser->forward();
@@ -49,20 +49,20 @@ class Plac extends \Gedcom\Parser\Component
                     $plac->setForm(trim((string) $record[2]));
                     break;
                 case 'FONE':
-                    $fone = \Gedcom\Parser\Plac\Fone::parse($parser);
+                    $fone = \Geekish\Gedcom\Parser\Plac\Fone::parse($parser);
                     $plac->setFone($fone);
                     break;
                 case 'ROMN':
-                    $romn = \Gedcom\Parser\Plac\Romn::parse($parser);
+                    $romn = \Geekish\Gedcom\Parser\Plac\Romn::parse($parser);
                     $plac->setRomn($romn);
                     break;
                 case 'NOTE':
-                    if ($note = \Gedcom\Parser\NoteRef::parse($parser)) {
+                    if ($note = \Geekish\Gedcom\Parser\NoteRef::parse($parser)) {
                         $plac->addNote($note);
                     }
                     break;
                 case 'MAP':
-                    $map = \Gedcom\Parser\Plac\Map::parse($parser);
+                    $map = \Geekish\Gedcom\Parser\Plac\Map::parse($parser);
                     $plac->setMap($map);
                     break;
                 default:

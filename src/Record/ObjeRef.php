@@ -13,9 +13,9 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record;
+namespace Geekish\Gedcom\Record;
 
-class ObjeRef extends \Gedcom\Record
+class ObjeRef extends \Geekish\Gedcom\Record
 {
     /**
      * @var bool
@@ -66,7 +66,7 @@ class ObjeRef extends \Gedcom\Record
     /**
      *
      */
-    public function addNote(\Gedcom\Record\NoteRef $note)
+    public function addNote(\Geekish\Gedcom\Record\NoteRef $note)
     {
         $this->_note[] = $note;
     }

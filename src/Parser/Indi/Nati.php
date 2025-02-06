@@ -13,8 +13,8 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser\Indi;
+namespace Geekish\Gedcom\Parser\Indi;
 
-class Nati extends \Gedcom\Parser\Indi\Attr
+class Nati extends \Geekish\Gedcom\Parser\Indi\Attr
 {
 }

@@ -13,7 +13,7 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Writer;
+namespace Geekish\Gedcom\Writer;
 
 class Sour
 {
@@ -22,7 +22,7 @@ class Sour
      *
      * @return string
      */
-    public static function convert(\Gedcom\Record\Sour &$sour, $level)
+    public static function convert(\Geekish\Gedcom\Record\Sour &$sour, $level)
     {
         $output = [];
         $_sour = $sour->getSour();
@@ -63,7 +63,7 @@ class Sour
             // REPO
             $repo = $sour->getRepo();
             if (!empty($repo)) {
-                $_convert = \Gedcom\Writer\RepoRef::convert($repo, $level);
+                $_convert = \Geekish\Gedcom\Writer\RepoRef::convert($repo, $level);
                 $output .= $_convert;
             }
 
@@ -73,7 +73,7 @@ class Sour
                 foreach ($collections as $collection => $items) {
                     if (!empty($items) && $items !== []) {
                         foreach ($items as $item) {
-                            $className = "\Gedcom\Writer\\" . ($collection === 'DATA' ? 'Sour\\' : '') . $collection;
+                            $className = "\Geekish\Gedcom\Writer\\" . ($collection === 'DATA' ? 'Sour\\' : '') . $collection;
                             $output[] = $className::convert($item, $level);
                         }
                     }
@@ -83,7 +83,7 @@ class Sour
                 $obje = $sour->getObje();
                 if (!empty($obje) && $obje !== []) {
                     foreach ($obje as $item) {
-                        $_convert = \Gedcom\Writer\ObjeRef::convert($item, $level);
+                        $_convert = \Geekish\Gedcom\Writer\ObjeRef::convert($item, $level);
                         $output .= $_convert;
                     }
                 }
@@ -92,7 +92,7 @@ class Sour
                 foreach ($collections as $collection => $items) {
                     if (!empty($items) && $items !== []) {
                         foreach ($items as $item) {
-                            $className = "\Gedcom\Writer\\" . $collection;
+                            $className = "\Geekish\Gedcom\Writer\\" . $collection;
                             $output[] = $className::convert($item, $level);
                         }
                     }

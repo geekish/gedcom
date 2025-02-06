@@ -13,12 +13,12 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record\Fam;
+namespace Geekish\Gedcom\Record\Fam;
 
-use Gedcom\Record\Noteable;
-use Gedcom\Record\Sourceable;
+use Geekish\Gedcom\Record\Noteable;
+use Geekish\Gedcom\Record\Sourceable;
 
-class Slgs extends \Gedcom\Record implements Sourceable, Noteable
+class Slgs extends \Geekish\Gedcom\Record implements Sourceable, Noteable
 {
     protected $_stat;
     protected $_date;

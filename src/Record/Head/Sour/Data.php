@@ -13,9 +13,9 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record\Head\Sour;
+namespace Geekish\Gedcom\Record\Head\Sour;
 
-class Data extends \Gedcom\Record
+class Data extends \Geekish\Gedcom\Record
 {
     protected $_data;
     protected $_date;

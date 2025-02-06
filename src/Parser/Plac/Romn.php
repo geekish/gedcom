@@ -13,11 +13,11 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser\Plac;
+namespace Geekish\Gedcom\Parser\Plac;
 
-class Romn extends \Gedcom\Parser\Component
+class Romn extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
@@ -29,7 +29,7 @@ class Romn extends \Gedcom\Parser\Component
             return null;
         }
 
-        $romn = new \Gedcom\Record\Plac\Romn();
+        $romn = new \Geekish\Gedcom\Record\Plac\Romn();
         $romn->setPlac($_romn);
 
         $parser->forward();

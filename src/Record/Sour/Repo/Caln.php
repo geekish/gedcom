@@ -13,9 +13,9 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record\Sour\Repo;
+namespace Geekish\Gedcom\Record\Sour\Repo;
 
-class Caln extends \Gedcom\Record
+class Caln extends \Geekish\Gedcom\Record
 {
     /**
      * string source_call_number.

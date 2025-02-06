@@ -13,11 +13,11 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser;
+namespace Geekish\Gedcom\Parser;
 
-class Note extends \Gedcom\Parser\Component
+class Note extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord(4);
         $depth = (int) $record[0];
@@ -29,7 +29,7 @@ class Note extends \Gedcom\Parser\Component
             return null;
         }
 
-        $note = new \Gedcom\Record\Note();
+        $note = new \Geekish\Gedcom\Record\Note();
         $note->setId($identifier);
 
         if (isset($record[3])) {
@@ -61,18 +61,18 @@ class Note extends \Gedcom\Parser\Component
                     }
                     break;
                 case 'REFN':
-                    $refn = \Gedcom\Parser\Refn::parse($parser);
+                    $refn = \Geekish\Gedcom\Parser\Refn::parse($parser);
                     $note->addRefn($refn);
                     break;
                 case 'RIN':
                     $note->setRin(trim((string) $record[2]));
                     break;
                 case 'SOUR':
-                    $sour = \Gedcom\Parser\SourRef::parse($parser);
+                    $sour = \Geekish\Gedcom\Parser\SourRef::parse($parser);
                     $note->addSour($sour);
                     break;
                 case 'CHAN':
-                    $chan = \Gedcom\Parser\Chan::parse($parser);
+                    $chan = \Geekish\Gedcom\Parser\Chan::parse($parser);
                     $note->setChan($chan);
                     break;
                 default:

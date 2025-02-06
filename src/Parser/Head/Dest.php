@@ -1,14 +1,14 @@
 <?php
 
-namespace Gedcom\Parser\Head;
+namespace Geekish\Gedcom\Parser\Head;
 
-class Dest extends \Gedcom\Parser\Component
+class Dest extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
-        $dest = new \Gedcom\Record\Head\Dest();
+        $dest = new \Geekish\Gedcom\Record\Head\Dest();
         $dest->setDest(trim((string) $record[2]));
 
         $parser->forward();

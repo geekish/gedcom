@@ -13,17 +13,17 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Writer;
+namespace Geekish\Gedcom\Writer;
 
 class Repo
 {
     /**
-     * @param \Gedcom\Record\Repo $sour
+     * @param \Geekish\Gedcom\Record\Repo $sour
      * @param int                 $level
      *
      * @return string
      */
-    public static function convert(\Gedcom\Record\Repo &$repo)
+    public static function convert(\Geekish\Gedcom\Record\Repo &$repo)
     {
         $level = 0;
         $output = '';
@@ -46,14 +46,14 @@ class Repo
         // ADDR
         $addr = $repo->getAddr();
         if ($addr) {
-            $_convert = \Gedcom\Writer\Addr::convert($addr, $level);
+            $_convert = \Geekish\Gedcom\Writer\Addr::convert($addr, $level);
             $output .= $_convert;
         }
 
         // PHON
         $phon = $repo->getPhon();
         if ($phon !== []) {
-            $_convert = \Gedcom\Writer\Phon::convert($phon, $level);
+            $_convert = \Geekish\Gedcom\Writer\Phon::convert($phon, $level);
             $output .= $_convert;
         }
 
@@ -61,7 +61,7 @@ class Repo
         $note = $repo->getNote();
         foreach ($note as $item) {
             if ($item) {
-                $_convert = \Gedcom\Writer\NoteRef::convert($item, $level);
+                $_convert = \Geekish\Gedcom\Writer\NoteRef::convert($item, $level);
                 $output .= $_convert;
             }
         }
@@ -71,7 +71,7 @@ class Repo
         if (!empty($refn) && $refn !== []) {
             foreach ($refn as $item) {
                 if ($item) {
-                    $_convert = \Gedcom\Writer\Refn::convert($item, $level);
+                    $_convert = \Geekish\Gedcom\Writer\Refn::convert($item, $level);
                     $output .= $_convert;
                 }
             }
@@ -80,7 +80,7 @@ class Repo
         // CHAN
         $chan = $repo->getChan();
         if ($chan) {
-            $_convert = \Gedcom\Writer\Chan::convert($chan, $level);
+            $_convert = \Geekish\Gedcom\Writer\Chan::convert($chan, $level);
             $output .= $_convert;
         }
 

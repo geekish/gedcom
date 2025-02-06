@@ -13,11 +13,11 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser;
+namespace Geekish\Gedcom\Parser;
 
-class Obje extends \Gedcom\Parser\Component
+class Obje extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
@@ -29,7 +29,7 @@ class Obje extends \Gedcom\Parser\Component
             return null;
         }
 
-        $obje = new \Gedcom\Record\Obje();
+        $obje = new \Geekish\Gedcom\Record\Obje();
         $obje->setId($identifier);
 
         $parser->getGedcom()->addObje($obje);
@@ -60,20 +60,20 @@ class Obje extends \Gedcom\Parser\Component
                     $obje->setRin(trim($record[2]));
                     break;
                 case 'REFN':
-                    $refn = \Gedcom\Parser\Refn::parse($parser);
+                    $refn = \Geekish\Gedcom\Parser\Refn::parse($parser);
                     $obje->addRefn($refn);
                     break;
                 case 'BLOB':
                     $obje->setBlob($parser->parseMultiLineRecord());
                     break;
                 case 'NOTE':
-                    $note = \Gedcom\Parser\NoteRef::parse($parser);
+                    $note = \Geekish\Gedcom\Parser\NoteRef::parse($parser);
                     if ($note) {
                         $obje->addNote($note);
                     }
                     break;
                 case 'CHAN':
-                    $chan = \Gedcom\Parser\Chan::parse($parser);
+                    $chan = \Geekish\Gedcom\Parser\Chan::parse($parser);
                     $obje->setChan($chan);
                     break;
                 default:

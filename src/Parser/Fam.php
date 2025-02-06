@@ -13,9 +13,9 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser;
+namespace Geekish\Gedcom\Parser;
 
-class Fam extends \Gedcom\Parser\Component
+class Fam extends \Geekish\Gedcom\Parser\Component
 {
     protected static $_eventTypes = [
         'ANUL',
@@ -30,7 +30,7 @@ class Fam extends \Gedcom\Parser\Component
         'MARS',
     ];
 
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
@@ -42,7 +42,7 @@ class Fam extends \Gedcom\Parser\Component
             return null;
         }
 
-        $fam = new \Gedcom\Record\Fam();
+        $fam = new \Geekish\Gedcom\Record\Fam();
         $fam->setId($identifier);
 
         $parser->getGedcom()->addFam($fam);
@@ -75,7 +75,7 @@ class Fam extends \Gedcom\Parser\Component
                 case 'MARL':
                 case 'MARS':
                     $className = ucfirst(strtolower($recordType));
-                    $class = '\\Gedcom\\Parser\\Fam\\'.$className;
+                    $class = '\\Geekish\Gedcom\\Parser\\Fam\\'.$className;
 
                     $even = $class::parse($parser);
                     $fam->addEven($recordType, $even);
@@ -96,32 +96,32 @@ class Fam extends \Gedcom\Parser\Component
                     $fam->addSubm($parser->normalizeIdentifier($record[2]));
                     break;
                 case 'SLGS':
-                    $slgs = \Gedcom\Parser\Fam\Slgs::parse($parser);
+                    $slgs = \Geekish\Gedcom\Parser\Fam\Slgs::parse($parser);
                     $fam->addSlgs($slgs);
                     break;
                 case 'REFN':
-                    $ref = \Gedcom\Parser\Refn::parse($parser);
+                    $ref = \Geekish\Gedcom\Parser\Refn::parse($parser);
                     $fam->addRefn($ref);
                     break;
                 case 'RIN':
                     $fam->setRin(trim((string) $record[2]));
                     break;
                 case 'CHAN':
-                    $chan = \Gedcom\Parser\Chan::parse($parser);
+                    $chan = \Geekish\Gedcom\Parser\Chan::parse($parser);
                     $fam->setChan($chan);
                     break;
                 case 'NOTE':
-                    $note = \Gedcom\Parser\NoteRef::parse($parser);
+                    $note = \Geekish\Gedcom\Parser\NoteRef::parse($parser);
                     if ($note) {
                         $fam->addNote($note);
                     }
                     break;
                 case 'SOUR':
-                    $sour = \Gedcom\Parser\SourRef::parse($parser);
+                    $sour = \Geekish\Gedcom\Parser\SourRef::parse($parser);
                     $fam->addSour($sour);
                     break;
                 case 'OBJE':
-                    $obje = \Gedcom\Parser\ObjeRef::parse($parser);
+                    $obje = \Geekish\Gedcom\Parser\ObjeRef::parse($parser);
                     $fam->addObje($obje);
                     break;
 

@@ -13,12 +13,12 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record;
+namespace Geekish\Gedcom\Record;
 
 /**
  * Class Data.
  */
-class Data extends \Gedcom\Record
+class Data extends \Geekish\Gedcom\Record
 {
     /**
      * @var string

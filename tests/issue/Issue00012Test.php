@@ -1,8 +1,8 @@
 <?php
 
-namespace GedcomTest;
+namespace Geekish\GedcomTest;
 
-use Gedcom\Parser;
+use Geekish\Gedcom\Parser;
 
 /**
  * Class Issue00012Test.

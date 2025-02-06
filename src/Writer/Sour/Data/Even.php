@@ -13,7 +13,7 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Writer\Sour\Data;
+namespace Geekish\Gedcom\Writer\Sour\Data;
 
 class Even
 {
@@ -22,7 +22,7 @@ class Even
      *
      * @return string
      */
-    public static function convert(\Gedcom\Record\Sour\Data\Even &$even, $level)
+    public static function convert(\Geekish\Gedcom\Record\Sour\Data\Even &$even, $level)
     {
         $output = $level." EVEN\n";
         $level++;

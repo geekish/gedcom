@@ -13,12 +13,12 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record\Indi\Name;
+namespace Geekish\Gedcom\Record\Indi\Name;
 
 /**
  * Class Refn.
  */
-class Romn extends \Gedcom\Record
+class Romn extends \Geekish\Gedcom\Record
 {
     /**
      * @var string romanized_variation

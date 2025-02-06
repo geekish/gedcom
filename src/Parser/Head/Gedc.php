@@ -13,16 +13,16 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser\Head;
+namespace Geekish\Gedcom\Parser\Head;
 
-class Gedc extends \Gedcom\Parser\Component
+class Gedc extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
 
-        $gedc = new \Gedcom\Record\Head\Gedc();
+        $gedc = new \Geekish\Gedcom\Record\Head\Gedc();
 
         $parser->forward();
 

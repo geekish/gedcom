@@ -13,12 +13,12 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record;
+namespace Geekish\Gedcom\Record;
 
 /**
  * Class Repo.
  */
-class Repo extends \Gedcom\Record implements Noteable
+class Repo extends \Geekish\Gedcom\Record implements Noteable
 {
     /**
      * @var string
@@ -152,14 +152,14 @@ class Repo extends \Gedcom\Record implements Noteable
     }
 
     /**
-     * @param null|\Gedcom\Record\Refn $refn
+     * @param null|\Geekish\Gedcom\Record\Refn $refn
      *
      * @return Repo
      */
     public function addRefn($refn = null)
     {
         if (empty($refn)) {
-            $refn = new \Gedcom\Record\Refn();
+            $refn = new \Geekish\Gedcom\Record\Refn();
         }
         $this->refn[] = $refn;
 
@@ -175,14 +175,14 @@ class Repo extends \Gedcom\Record implements Noteable
     }
 
     /**
-     * @param null|\Gedcom\Record\NoteRef $note
+     * @param null|\Geekish\Gedcom\Record\NoteRef $note
      *
      * @return Repo
      */
     public function addNote($note = null)
     {
         if (empty($node)) {
-            $note = new \Gedcom\Record\NoteRef();
+            $note = new \Geekish\Gedcom\Record\NoteRef();
         }
         $this->note[] = $note;
 
@@ -238,14 +238,14 @@ class Repo extends \Gedcom\Record implements Noteable
     }
 
     /**
-     * @param null|\Gedcom\Record\Addr $addr
+     * @param null|\Geekish\Gedcom\Record\Addr $addr
      *
      * @return Repo
      */
     public function setAddr($addr = null)
     {
         if (empty($addr)) {
-            $addr = new \Gedcom\Record\Addr();
+            $addr = new \Geekish\Gedcom\Record\Addr();
         }
         $this->addr = $addr;
 
@@ -253,7 +253,7 @@ class Repo extends \Gedcom\Record implements Noteable
     }
 
     /**
-     * @return \Gedcom\Record\Addr
+     * @return \Geekish\Gedcom\Record\Addr
      */
     public function getAddr()
     {
@@ -281,7 +281,7 @@ class Repo extends \Gedcom\Record implements Noteable
     }
 
     /**
-     * @param \Gedcom\Record\Chan $chan
+     * @param \Geekish\Gedcom\Record\Chan $chan
      *
      * @return Repo
      */
@@ -293,7 +293,7 @@ class Repo extends \Gedcom\Record implements Noteable
     }
 
     /**
-     * @return \Gedcom\Record\Chan
+     * @return \Geekish\Gedcom\Record\Chan
      */
     public function getChan()
     {

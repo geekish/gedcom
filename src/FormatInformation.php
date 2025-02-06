@@ -1,6 +1,6 @@
 <?php
 
-namespace Gedcom;
+namespace Geekish\Gedcom;
 
 class FormatInformation
 {

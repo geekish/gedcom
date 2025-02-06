@@ -13,18 +13,18 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser;
+namespace Geekish\Gedcom\Parser;
 
-class Chan extends \Gedcom\Parser\Component
+class Chan extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
         $depth = (int) $record[0];
 
         $parser->forward();
 
-        $chan = new \Gedcom\Record\Chan();
+        $chan = new \Geekish\Gedcom\Record\Chan();
 
         while (!$parser->eof()) {
             $record = $parser->getCurrentLineRecord();
@@ -44,7 +44,7 @@ class Chan extends \Gedcom\Parser\Component
                     $chan->setTime(trim((string) $record[2]));
                     break;
                 case 'NOTE':
-                    $note = \Gedcom\Parser\NoteRef::parse($parser);
+                    $note = \Geekish\Gedcom\Parser\NoteRef::parse($parser);
                     if ($note) {
                         $chan->addNote($note);
                     }

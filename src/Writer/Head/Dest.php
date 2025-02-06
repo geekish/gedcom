@@ -1,10 +1,10 @@
 <?php
 
-namespace Gedcom\Writer\Head;
+namespace Geekish\Gedcom\Writer\Head;
 
 class Dest
 {
-    public static function convert(\Gedcom\Record\Head\Dest $dest, $level)
+    public static function convert(\Geekish\Gedcom\Record\Head\Dest $dest, $level)
     {
         $output = '';
         $_dest = $dest->getDest();

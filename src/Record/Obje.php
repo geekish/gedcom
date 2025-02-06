@@ -13,9 +13,9 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record;
+namespace Geekish\Gedcom\Record;
 
-class Obje extends \Gedcom\Record implements Noteable
+class Obje extends \Geekish\Gedcom\Record implements Noteable
 {
     protected $_id   = null;
 
@@ -35,7 +35,7 @@ class Obje extends \Gedcom\Record implements Noteable
     /**
      *
      */
-    public function addRefn(\Gedcom\Record\Refn $refn)
+    public function addRefn(\Geekish\Gedcom\Record\Refn $refn)
     {
         $this->_refn[] = $refn;
     }
@@ -43,7 +43,7 @@ class Obje extends \Gedcom\Record implements Noteable
     /**
      *
      */
-    public function addNote(\Gedcom\Record\NoteRef $note)
+    public function addNote(\Geekish\Gedcom\Record\NoteRef $note)
     {
         $this->_note[] = $note;
     }

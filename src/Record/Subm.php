@@ -13,14 +13,14 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Record;
+namespace Geekish\Gedcom\Record;
 
-use Gedcom\Record;
+use Geekish\Gedcom\Record;
 
 /**
  * Class Subm.
  */
-class Subm extends \Gedcom\Record implements Objectable
+class Subm extends \Geekish\Gedcom\Record implements Objectable
 {
     /**
      * @var string
@@ -260,7 +260,7 @@ class Subm extends \Gedcom\Record implements Objectable
     }
 
     /**
-     * @param \Gedcom\Record\Chan $chan
+     * @param \Geekish\Gedcom\Record\Chan $chan
      *
      * @return Subm
      */
@@ -272,7 +272,7 @@ class Subm extends \Gedcom\Record implements Objectable
     }
 
     /**
-     * @return \Gedcom\Record\Chan
+     * @return \Geekish\Gedcom\Record\Chan
      */
     public function getChan()
     {

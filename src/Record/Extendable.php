@@ -1,6 +1,6 @@
 <?php
 
-namespace Gedcom\Record;
+namespace Geekish\Gedcom\Record;
 
 interface Extendable
 {

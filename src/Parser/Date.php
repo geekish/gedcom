@@ -13,16 +13,16 @@
  * @link            http://github.com/mrkrstphr/php-gedcom
  */
 
-namespace Gedcom\Parser;
+namespace Geekish\Gedcom\Parser;
 
-class Date extends \Gedcom\Parser\Component
+class Date extends \Geekish\Gedcom\Parser\Component
 {
-    public static function parse(\Gedcom\Parser $parser)
+    public static function parse(\Geekish\Gedcom\Parser $parser)
     {
         $record = $parser->getCurrentLineRecord();
 
         if (isset($record[1])) {
-            $dat = new \Gedcom\Record\Date();
+            $dat = new \Geekish\Gedcom\Record\Date();
             if (!empty($record[2])) {
                 $dat->setDate($record[2]);
             }
