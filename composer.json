@@ -1,9 +1,12 @@
 {
-    "name": "liberu-genealogy/php-gedcom",
+    "name": "geekish/gedcom",
     "description": "A GEDCOM file parser (read + write) for PHP 8.4+",
-    "type": "library", 
-    "keywords": ["gedcom","parser"],
-    "homepage": "http://github.com/familytree365/php-gedcom",
+    "type": "library",
+    "keywords": [
+        "gedcom",
+        "parser"
+    ],
+    "homepage": "http://github.com/geekish/gedcom",
     "license": "MIT",
     "require": {
         "php": ">=8.4"

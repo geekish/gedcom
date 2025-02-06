@@ -1,25 +1,22 @@
-# php-gedcom
- ![Latest Stable Version](https://img.shields.io/github/release/liberu-genealogy/php-gedcom.svg)
-[![Tests](https://github.com/liberu-genealogy/php-gedcom/actions/workflows/run-tests.yml/badge.svg)](https://github.com/liberu-genealogy/php-gedcom/actions/workflows/run-tests.yml)
-
-
-
+# geekish/gedcom
+ ![Latest Stable Version](https://img.shields.io/github/release/geekish/gedcom.svg)
+[![Tests](https://github.com/geekish/gedcom/actions/workflows/run-tests.yml/badge.svg)](https://github.com/geekish/gedcom/actions/workflows/run-tests.yml)
 
 ## Requirements
 
-* php-gedcom 1.0+ requires PHP 8.4 (or later).
+* `geekish/gedcom` requires PHP 8.4 (or later).
 
 ## Installation
 
-There are two ways of installing php-gedcom.
+There are two ways of installing `geekish/gedcom`.
 
 ### Composer
 
-To install php-gedcom in your project using composer, simply add the following require line to your project's `composer.json` file:
+To install `geekish/gedcom` in your project using composer, simply add the following require line to your project's `composer.json` file:
 
     {
         "require": {
-            "liberu-genealogy/php-gedcom": "2.0.*"
+            "geekish/gedcom": "2.0.*"
         }
     }
 
@@ -69,6 +66,6 @@ MIT License (see License.md). This means you must retain the copyright and permi
 
 ## Contributors
 
-<a href = "https://github.com/liberu-genealogy/php-gedcom/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo=liberu-genealogy/php-gedcom"/>
+<a href = "https://github.com/geekish/gedcom/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo=geekish/gedcom"/>
 </a>
