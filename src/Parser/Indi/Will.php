@@ -15,4 +15,6 @@
 
 namespace Geekish\Gedcom\Parser\Indi;
 
-class Will extends \Geekish\Gedcom\Parser\Indi\Even {}
+class Will extends \Geekish\Gedcom\Parser\Indi\Even
+{
+}

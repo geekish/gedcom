@@ -15,4 +15,6 @@
 
 namespace Geekish\Gedcom\Record\Indi;
 
-class Buri extends \Geekish\Gedcom\Record\Indi\Even {}
+class Buri extends \Geekish\Gedcom\Record\Indi\Even
+{
+}

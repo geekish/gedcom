@@ -15,4 +15,6 @@
 
 namespace Geekish\Gedcom\Record\Fam;
 
-class Cens extends \Geekish\Gedcom\Record\Fam\Even {}
+class Cens extends \Geekish\Gedcom\Record\Fam\Even
+{
+}

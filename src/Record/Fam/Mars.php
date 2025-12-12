@@ -15,4 +15,6 @@
 
 namespace Geekish\Gedcom\Record\Fam;
 
-class Mars extends \Geekish\Gedcom\Record\Fam\Even {}
+class Mars extends \Geekish\Gedcom\Record\Fam\Even
+{
+}

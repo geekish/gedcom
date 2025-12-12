@@ -15,4 +15,6 @@
 
 namespace Geekish\Gedcom\Parser\Indi;
 
-class Conl extends Lds {}
+class Conl extends Lds
+{
+}

@@ -15,4 +15,6 @@
 
 namespace Geekish\Gedcom\Record\Indi;
 
-class Nchi extends \Geekish\Gedcom\Record\Indi\Attr {}
+class Nchi extends \Geekish\Gedcom\Record\Indi\Attr
+{
+}

@@ -15,4 +15,6 @@
 
 namespace Geekish\Gedcom\Record\Indi;
 
-class Conl extends Lds {}
+class Conl extends Lds
+{
+}

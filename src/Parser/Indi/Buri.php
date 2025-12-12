@@ -15,4 +15,6 @@
 
 namespace Geekish\Gedcom\Parser\Indi;
 
-class Buri extends \Geekish\Gedcom\Parser\Indi\Even {}
+class Buri extends \Geekish\Gedcom\Parser\Indi\Even
+{
+}

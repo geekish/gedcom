@@ -15,4 +15,6 @@
 
 namespace Geekish\Gedcom\Parser\Indi;
 
-class Fcom extends \Geekish\Gedcom\Parser\Indi\Even {}
+class Fcom extends \Geekish\Gedcom\Parser\Indi\Even
+{
+}

@@ -15,4 +15,6 @@
 
 namespace Geekish\Gedcom\Parser\Indi;
 
-class Titl extends \Geekish\Gedcom\Parser\Indi\Attr {}
+class Titl extends \Geekish\Gedcom\Parser\Indi\Attr
+{
+}

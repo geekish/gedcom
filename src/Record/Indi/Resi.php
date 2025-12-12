@@ -15,4 +15,6 @@
 
 namespace Geekish\Gedcom\Record\Indi;
 
-class Resi extends \Geekish\Gedcom\Record\Indi\Attr {}
+class Resi extends \Geekish\Gedcom\Record\Indi\Attr
+{
+}

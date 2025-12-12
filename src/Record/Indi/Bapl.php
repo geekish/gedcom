@@ -15,4 +15,6 @@
 
 namespace Geekish\Gedcom\Record\Indi;
 
-class Bapl extends Lds {}
+class Bapl extends Lds
+{
+}

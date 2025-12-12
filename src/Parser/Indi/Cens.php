@@ -15,4 +15,6 @@
 
 namespace Geekish\Gedcom\Parser\Indi;
 
-class Cens extends \Geekish\Gedcom\Parser\Indi\Even {}
+class Cens extends \Geekish\Gedcom\Parser\Indi\Even
+{
+}

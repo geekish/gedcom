@@ -15,4 +15,6 @@
 
 namespace Geekish\Gedcom\Record\Indi;
 
-class Chra extends \Geekish\Gedcom\Record\Indi\Even {}
+class Chra extends \Geekish\Gedcom\Record\Indi\Even
+{
+}

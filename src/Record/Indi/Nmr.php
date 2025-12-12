@@ -15,4 +15,6 @@
 
 namespace Geekish\Gedcom\Record\Indi;
 
-class Nmr extends \Geekish\Gedcom\Record\Indi\Attr {}
+class Nmr extends \Geekish\Gedcom\Record\Indi\Attr
+{
+}

@@ -15,4 +15,6 @@
 
 namespace Geekish\Gedcom\Record\Indi;
 
-class Bapm extends \Geekish\Gedcom\Record\Indi\Even {}
+class Bapm extends \Geekish\Gedcom\Record\Indi\Even
+{
+}

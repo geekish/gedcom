@@ -15,4 +15,6 @@
 
 namespace Geekish\Gedcom\Parser\Fam;
 
-class Anul extends \Geekish\Gedcom\Parser\Fam\Even {}
+class Anul extends \Geekish\Gedcom\Parser\Fam\Even
+{
+}

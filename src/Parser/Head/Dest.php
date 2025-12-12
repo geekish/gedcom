@@ -25,7 +25,7 @@ class Dest extends \Geekish\Gedcom\Parser\Component
             }
 
             switch ($recordType) {
-                    // Add cases for DEST sub-tags here if needed
+                // Add cases for DEST sub-tags here if needed
                 default:
                     $parser->logUnhandledRecord(self::class . ' @ ' . __LINE__);
             }

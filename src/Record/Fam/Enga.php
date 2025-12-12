@@ -15,4 +15,6 @@
 
 namespace Geekish\Gedcom\Record\Fam;
 
-class Enga extends \Geekish\Gedcom\Record\Fam\Even {}
+class Enga extends \Geekish\Gedcom\Record\Fam\Even
+{
+}

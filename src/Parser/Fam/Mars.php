@@ -15,4 +15,6 @@
 
 namespace Geekish\Gedcom\Parser\Fam;
 
-class Mars extends \Geekish\Gedcom\Parser\Fam\Even {}
+class Mars extends \Geekish\Gedcom\Parser\Fam\Even
+{
+}

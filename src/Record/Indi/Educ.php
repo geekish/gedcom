@@ -15,4 +15,6 @@
 
 namespace Geekish\Gedcom\Record\Indi;
 
-class Educ extends \Geekish\Gedcom\Record\Indi\Attr {}
+class Educ extends \Geekish\Gedcom\Record\Indi\Attr
+{
+}

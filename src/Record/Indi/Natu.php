@@ -15,4 +15,6 @@
 
 namespace Geekish\Gedcom\Record\Indi;
 
-class Natu extends \Geekish\Gedcom\Record\Indi\Even {}
+class Natu extends \Geekish\Gedcom\Record\Indi\Even
+{
+}

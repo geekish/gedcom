@@ -15,4 +15,6 @@
 
 namespace Geekish\Gedcom\Record\Indi;
 
-class Prob extends \Geekish\Gedcom\Record\Indi\Even {}
+class Prob extends \Geekish\Gedcom\Record\Indi\Even
+{
+}

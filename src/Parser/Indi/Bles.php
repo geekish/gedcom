@@ -15,4 +15,6 @@
 
 namespace Geekish\Gedcom\Parser\Indi;
 
-class Bles extends \Geekish\Gedcom\Parser\Indi\Even {}
+class Bles extends \Geekish\Gedcom\Parser\Indi\Even
+{
+}

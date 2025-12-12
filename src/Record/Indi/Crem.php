@@ -15,4 +15,6 @@
 
 namespace Geekish\Gedcom\Record\Indi;
 
-class Crem extends \Geekish\Gedcom\Record\Indi\Even {}
+class Crem extends \Geekish\Gedcom\Record\Indi\Even
+{
+}

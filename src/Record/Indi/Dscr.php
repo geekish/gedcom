@@ -15,4 +15,6 @@
 
 namespace Geekish\Gedcom\Record\Indi;
 
-class Dscr extends \Geekish\Gedcom\Record\Indi\Attr {}
+class Dscr extends \Geekish\Gedcom\Record\Indi\Attr
+{
+}

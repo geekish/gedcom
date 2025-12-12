@@ -15,4 +15,6 @@
 
 namespace Geekish\Gedcom\Parser\Indi;
 
-class Idno extends \Geekish\Gedcom\Parser\Indi\Attr {}
+class Idno extends \Geekish\Gedcom\Parser\Indi\Attr
+{
+}
